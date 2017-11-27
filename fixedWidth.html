@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.2.0/jquery.js"></script>
+    <script>
+        // 扩展jQuery方法
+        ;(function($){
+            $.extend($,{
+                fixedWidth:function(str,len,suffix) {
+                    if(!str) return "";  
+                    if(len<= 0) return "";  
+                    if(!suffix) suffix = "...";  
+                    var templen=0;
+                    // alert(str.length);
+                    for(var i=0;i<str.length;i++){  
+                        if(str.charCodeAt(i)>255){  
+                            templen+=2;  
+                        }else{  
+                            templen++  //1+2
+                        }  
+                        if(templen == len){
+                            return str.substring(0,i+1)+suffix;  
+                        }else if(templen >len){  
+                            return str.substring(0,i)+suffix;  
+                        }  
+                    }  
+                    return str;          
+                }
+            });
+        })(jQuery);
+    </script>
+    <script>
+        $(function(){
+            $('li a').each(function(){
+                var str = $(this).text();
+                str = $.fixedWidth(str,32);
+                $(this).text(str);
+            });
+        });
+    </script>
+    <style type="text/css">
+        ul{width: 240px; border: 1px solid #aabbcc;padding: 1.5em; font-size: 14px; background: rgba(192, 223, 16, 0.863);}
+        a{text-decoration: none;}
+    </style>
+</head>
+<body>
+    <ul>
+        <li><a href="#">定宽插件文本：2010年广西公务员考试题泄露18:45</a></li>
+        <li><a href="#">广东今年普通高校招生录取首次实施平行志愿09:25</a></li>
+        <li><a href="#">教师绩效改革标准制定难09:31</a></li>
+        <li><a href="#">Top US Military Officer:Let Gays Serve openly 11:20</a></li>
+        <li><a href="#">Some US Students Learn Mandarin With China's Help 3:43</a></li>
+        <li><a href="#">A Roungh Road for Toyota 17:14</a></li>
+    </ul>
+</body>
+</html>
