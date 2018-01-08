@@ -65,10 +65,16 @@ module.exports = {
         new HtmlWebpackPlugin({
             filename: '../in.html',
             template: './src/index.html'
+        }),
+        new webpack.ProvidePlugin({
+            React:'react',
+            ReactDOM:'react-dom',
+            Component:['react','Component'],
+            PT:'prop-types'
         })
     ],
 
-    devtool: 'cheap-module-eval-source-map'
+    devtool: 'eval-source-map'
 
 
 }
