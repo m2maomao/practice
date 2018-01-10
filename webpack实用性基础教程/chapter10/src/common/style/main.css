@@ -1,3 +1,13 @@
-body{
-    /* background: red url(../img/avatar.png); */
+@font-face{
+    font-family: 'f';
+    src: url('../fonts/glyphicons-halflings-regular.woff');
+}
+
+.star{
+    font-family: f;
+    font-size: 50px;
+}
+
+.star::before{
+    content:"\e006"
 }
