@@ -18,10 +18,10 @@ class Nav extends Component{
 
 class Body extends Component{
 
-    render(){
+    render() {
         return (
             <div>
-                <img src={require('./common/img/128H.jpg')} className="img"/>
+                <img src={require("./common/img/128H.jpg")} className="img" />
             </div>
         )
     }
