@@ -44,6 +44,7 @@ module.exports = {
                     }
                 }]
             },
+            // webpack会忽略“?”问号，以及问号后面的参数都将被忽略
             {
                 test:/\.(svg|ttf|eot|svg|woff|woff2)$/,
                 use:['file-loader']
