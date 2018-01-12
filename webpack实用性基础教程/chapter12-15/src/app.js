@@ -19,7 +19,6 @@ ReactDOM.render(
     <div className="ot">less应用的文案
         <span className={style.ob}>OB use module css style</span>
     </div>
-
     , 
     document.getElementById('root')
 ) 
