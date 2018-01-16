@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "babel": "babel src/app.js -o out/a.js"
+    "babel": "babel src/app.js -o out/a.js",
+    "start":"webpack-dev-server --config webpack.config.dev.js"
   },
   "author": "",
   "license": "ISC",
