@@ -143,7 +143,7 @@ fn1();//5
 // ES6引入了块级作用域，明确允许在块级作用域之中声明函数。ES6规定，块级作用域之中，
 // 函数声明语句的行为类似于let，在块级作用域之外不可引用。
 
-function f() { console.log('I am outside!'); }
+/*function f() { console.log('I am outside!'); }
 
 (function () {
   // 重复声明一次函数f
@@ -152,7 +152,7 @@ function f() { console.log('I am outside!'); }
   }
 
   f();//I am inside!
-}());
+}());*/
 
 /*
   - 允许在块级作用域内声明函数。
@@ -163,7 +163,78 @@ function f() { console.log('I am outside!'); }
   根据这三条规则，在浏览器的ES6环境中，块级作用域内声明的函数，行为类似于var声明的变量
 */
 
-ES6
+
+// const命令
+// const声明一个只读的常量。一旦声明，常量的值就不能改变
+
+/*const PI = 3.1415;
+PI = 3;//Uncaught TypeError:Assignment to constant variable.*/
+
+// const 声明的变量不得改变值，这意味着，const一旦声明变量，就必须立即初始化，不能留到以后赋值。
+//const的作用域与let命令相同：值在声明所在的块级作用域内有效。
+/*if (true) {
+  const MAX = 5;
+}
+Max //Uncaught ReferenceError:MAX is not defined*/
+// const命令声明的常量也是不提升，同样存在暂时性死区，只能在声明的位置后面使用。
+/*if (true) {
+  console.log(MAX);//ReferenceError
+  const MAX = 5;
+}*/
+// const 声明的常量，也与let一样不可重复声明
+
+// 如果真的想将对象冻结，应该使用Object.freeze方法。
+
+/*const foo = Object.freeze({});
+// 常规模式时，下面一行不起作用；
+// 严格模式时，该行会报错
+foo.prop = 123;*/
+
+// 上面代码中，常量foo指向一个冻结的对象，所以添加新属性不起作用，严格模式时还会报错。
+
+
+// ES6声明变量的六种方法
+// ES5只有两种声明变量的方法：var,function
+// ES6增加了let,const,import,class
+
+// 4.顶层对象的属性
+// 顶层对象，在浏览器环境指的是window对象，在Node指的是global对象。ES5之中，顶层对象的属性与全局变量是等价的。
+
+// window.a = 1;
+// a//1
+// a = 2;
+// window.a //2
+
+// ES6为了改变这一点，一方面规定，为了保持兼容性，var命令和function命令声明的全局变量，依旧是顶层对象的属性；
+// 另一方面规定，let命令，const命令，class命令声明的全局变量，不属于顶层对象属性。
+// 也就是说，从ES6开始，全局变量将逐步与顶层对象的属性脱钩。
+
+/*var a = 1;
+// 如果在Node的REPL环境，可以写成 global.a
+// 或者采用通用方法，写成 this.a
+window.a //1
+
+let b = 1;
+window.b //undefined*/
+
+
+
+// global对象
+/*
+  ES5的顶层对象，本身也是一个问题，因为它在各种实现里面是不统一的。
+  -浏览器里面，顶层对象是window，但Node和Web Worker没有window。
+  -浏览器和Web Worker里面，self也指向顶层对象，但是Node 没有self。
+  -Node里面，顶层对象是global，但其他环境都不支持。
+*/
+
+
+
+
+
+
+
+
+
 
 
 
