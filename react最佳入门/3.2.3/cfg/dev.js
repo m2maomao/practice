@@ -24,6 +24,7 @@ let config = Object.assign(dfConfig, {
         modules: [
             'node_modules',
             dfPath.src,
+            dfPath.styleFolder,
             dfPath.common,
             dfPath.components,
             dfPath.layout,

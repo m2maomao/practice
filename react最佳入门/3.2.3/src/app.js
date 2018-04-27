@@ -1,5 +1,8 @@
 import Item from 'components/Item';
-import Item from 'components/Footer';
+import Footer from 'components/Footer';
+
+require('common/style/base.css');
+require('common/style/index.css');
 
 export default class App extends React.Component {
   constructor(props) {
@@ -20,6 +23,7 @@ export default class App extends React.Component {
             <Item />
           </ul>
         </section>
+        <Footer />
       </div>
   );
   }
