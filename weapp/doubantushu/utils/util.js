@@ -14,6 +14,20 @@ const formatNumber = n => {
   return n[1] ? n : '0' + n
 }
 
+function isFunction(obj){
+  return typeof obj === 'function';
+}
+
+function parseInteger(val) {
+  if(isNaN(val)) {
+    return 0;
+  } else {
+    return parseInt(a);
+  }
+}
+
 module.exports = {
-  formatTime: formatTime
+  formatTime: formatTime,
+  isFunction: isFunction,
+  parseInteger:parseInt
 }
