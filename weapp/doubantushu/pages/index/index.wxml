@@ -1,0 +1,22 @@
+<view class='search-container'>
+  <input type='text' placeholder='请输入书名搜索' bindinput='searchInputEvent'></input>
+  <icon type='search' size='20' bindtap='searchClickEvent'></icon>
+</view>
+
+<scroll-view scroll-y="true" bindscrolltolower="scrollLowerEvent">
+
+   <!-- <view class='logo' wx:if="{{!loadingMore && totalRecord == 0 && !isInit}}">
+    <icon type='cancel' color='#B0AAAA' size='50'></icon>
+    <view>
+      <text>没有找到相关图书</text>
+    </view>
+  </view>  -->
+
+  <view class='logo' wx:if="{{isInit}}">
+    <image src='../../img/book.png'></image>
+    <view><text>豆瓣图书</text></view>
+    <text style='font-size:30rpx'>Designed by Michael</text>
+  </view>
+</scroll-view>
+
+
