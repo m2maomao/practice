@@ -29,6 +29,12 @@ function requestSearchBook(data,successCb,errorCb,completeCb) {
   request(api.API_BOOK_SEARCH,data,successCb,errorCb,completeCb);
 }
 
+// 获取图书详细信息
+function requestBookDokDetail(data,successCb,errorCb,completeCb) {
+  request(api.API_BOOK_DETAIL,data,successCb,errorCb,completeCb);
+}
+
 module.exports = {
-  requestSearchBook:requestSearchBook
+  requestSearchBook:requestSearchBook,
+  requestBookDokDetail: requestBookDokDetail
 }

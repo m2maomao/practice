@@ -52,3 +52,7 @@ page{
   color: #A6A6A6;
   font-size: 35rpx;
 }
+.refresh-footer{
+  padding: 10rpx 0;
+  text-align: center;
+}

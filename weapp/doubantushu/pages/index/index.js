@@ -53,9 +53,20 @@ Page({
     } else {
       requestData.call(this);
     }
+  },
+  // 跳转到详情页面
+  toDetailPage:function(e) {
+    var bid = e.currentTarget.dataset.bid;
+    wx.navigateTo({
+      url:'../detail/detail?id=' + bid
+    });
   }
+  
 });
 
+/*
+请求图书信息
+*/ 
 function requestData() {
   var _this = this;
   var q = this.data.searchKey;
