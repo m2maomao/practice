@@ -3,9 +3,8 @@ let utils = require('../../utils/util.js');
 
 // 定义加载动画颜色
 let iconColor = [
-  '#42BD56',
-  '#31A040'
-]
+  '#42BD56','#31A040'
+];
 
 Page({
   data: {
@@ -75,6 +74,8 @@ function requestData() {
     loadingMore:true,
     isInit:false
   });
+
+  updateRefreshBall.call(this);
   
   requests.requestSearchBook({q:q,start:start},(data) => {
     if(data.total == 0) {
@@ -93,4 +94,22 @@ function requestData() {
   },()=>{
     _this.setData({loadingMore:false});
   });
+}
+
+/*
+加载动画
+*/ 
+function updateRefreshBall() {
+  var cIndex = 0;
+  var _this = this;
+  var timer = setInterval(function(){
+    if(!_this.data['loadingMore']) {
+      clearInterval(timer);
+    }
+    if(cIndex >= iconColor.length) 
+      cindex = 0;
+    _this.setData({
+      footerIconColor: iconColor[cIndex++]
+    });
+  },100);
 }

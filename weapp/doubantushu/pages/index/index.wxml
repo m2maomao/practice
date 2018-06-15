@@ -42,7 +42,8 @@
 
   </view>
 
-  <view class='refresh-footer' wx:if="{{loadingMore}}">
-    <icon type='waiting' size='30' color='{{footerIconColor}}'></icon>
+  <view class="refresh-footer" wx:if="{{loadingMore}}">
+    <icon type="waiting" size="30" color="{{footerIconColor}}"  />
   </view>
+  
 </scroll-view>

@@ -15,11 +15,10 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function (option) {
     this.setData({
-      id:options.id
+      id:option.id
     });
-
   },
 
   /**
@@ -31,19 +30,18 @@ Page({
     requests.requestBookDokDetail(
       id,
       {fields:'image,summary,publisher,title,rating,pubdate,author,author_intro,catalog'},
-      (data) => {
+      ( data ) => {
         _this.setData({
           bookData:data
         });
-        console.log(bookData);
+        console.log(this.data.bookData);
       }, () => {
         wx.navigateBack();
       }, () => {
         _this.setData({
           loadingHidden:true
         });
-      }
-    )
+      });
   }
 
-})
+});

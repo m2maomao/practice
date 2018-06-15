@@ -30,8 +30,13 @@ function requestSearchBook(data,successCb,errorCb,completeCb) {
 }
 
 // 获取图书详细信息
-function requestBookDokDetail(data,successCb,errorCb,completeCb) {
-  request(api.API_BOOK_DETAIL,data,successCb,errorCb,completeCb);
+function requestBookDokDetail(id,data,successCb,errorCb,completeCb) {
+  request(api.API_BOOK_DETAIL.replace(':id',id),data,successCb,errorCb,completeCb);
+}
+
+// 关键字是否是tag
+function requestHasTag(tag,successCb,errorCb,completeCb) {
+  request(api.API_BOOK_SEARCH,{tag:tag,count:1},successCb,errorCb,completeCb);
 }
 
 module.exports = {
