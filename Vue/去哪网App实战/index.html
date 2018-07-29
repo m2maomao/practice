@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Hello World</title>
+  <script src="./vue.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <input id="ipt" type="text" v-model="inputValue" v-focus ref="content" />
+    <button v-on:click="handleBtnClick">提交</button>
+    <ul>
+      <li v-for="item in list">{{item}}</li>
+    </ul>
+  </div>
+  <script>
+    // MVVM M层 V层 VM层
+    Vue.directive('focus', {
+      inserted: function (el, value) {
+        if (value) {
+          el.focus()
+        }
+      }
+    })
+    var app = new Vue({
+      el: '#app',
+      data: {
+        list: [],
+        inputValue: ''
+      },
+      methods: {
+        handleBtnClick: function () {
+          this.list.push(this.inputValue)
+          this.inputValue = ''
+          this.$refs.content.focus()
+        },
+        getFocus: function () {
+          this.$refs.content.focus()
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
