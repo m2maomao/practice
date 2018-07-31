@@ -11,8 +11,8 @@
 
 <body>
   <div id="app">
-    <counter :count="0" @increase="handleInc"></counter>
-    <counter :count="0" @increase="handleInc"></counter>
+    <counter :count="0" @increase="handleIncrease"></counter>
+    <counter :count="0" @increase="handleIncrease"></counter>
     <div>{{total}}</div>
   </div>
   <script>
@@ -23,9 +23,9 @@
           number: this.count
         }
       },
-      template: '<div @click="inc">{{number}}</div>',
+      template: '<div @click="handleClick">{{number}}</div>',
       methods: {
-        inc: function () {
+        handleClick: function () {
           this.number = this.number + 2
           this.$emit('increase', 2)
         }
@@ -40,7 +40,7 @@
         counter: counter
       },
       methods: {
-        handleInc: function (step) {
+        handleIncrease: function (step) {
           this.total = this.total + step
         }
       }
