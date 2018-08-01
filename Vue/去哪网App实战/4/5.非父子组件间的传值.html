@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,26 +8,40 @@
     <title>非父子组件间的传值(Bus/总线/发布订阅模式/观察者模式)</title>
     <script src="./vue.js"></script>
 </head>
+
 <body>
     <div id="app">
         <child content="Dell"></child>
         <child content="Mac"></child>
     </div>
     <script>
+        // 原型挂载bus属性，指向实例
         Vue.prototype.bus = new Vue()
 
-        Vue.component('child',{
-            props:['content'],
-            template:'<div @click="handleClick">{{content}}</div>',
-            methods:{
-                handleClick:function() {
-                    this.bus.$emit('change',this.content)
+        Vue.component('child', {
+            data: function () {
+                return {
+                    selfContent: this.content
                 }
+            },
+            props: ['content'],
+            template: '<div @click="handleClick">{{selfContent}}</div>',
+            methods: {
+                handleClick: function () {
+                    this.bus.$emit('change', this.selfContent)
+                }
+            },
+            mounted: function () {
+                var _this = this
+                this.bus.$on('change', function (msg) {
+                    _this.selfContent = msg
+                })
             }
         })
         var vm = new Vue({
-            el:'#app'
+            el: '#app'
         })
     </script>
 </body>
+
 </html>
