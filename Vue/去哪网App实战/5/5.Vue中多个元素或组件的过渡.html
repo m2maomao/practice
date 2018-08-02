@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Vue中多个元素或组件的过渡</title>
+    <script src="./vue.js"></script>
+    <style>
+        .v-enter,.v-leave-to{
+            opacity: 0;
+        }
+        .v-enter-active,.v-leave-active{
+            transition: opacity 1s
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <transition mode="out-in">
+            <component :is="type"></component>
+            <!-- <child v-if="show"></child>
+            <child-one v-else></child-one> -->
+            <!-- <div v-if="show" key="hello">内容~~~</div>
+            <div v-else key="bye">Bye World</div> -->
+        </transition>
+        <button @click="handleClick">toggle</button>
+    </div>
+
+    <script>
+        Vue.component('child',{
+            template:'<div>child</div>'
+        })
+        Vue.component('child-one',{
+            template:'<div>child-one</div>'
+        })
+        var vm  =new Vue({
+            el:'#app',
+            data:{
+                show:false,
+                type:'child'
+            },
+            methods:{
+                handleClick:function() {
+                    // this.show = !this.show
+                    this.type = this.type === 'child' ? 'child-one' : 'child'
+                }
+            }
+        })
+    </script>
+</body>
+</html>
