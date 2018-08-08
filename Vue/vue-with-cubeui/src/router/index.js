@@ -6,6 +6,7 @@ import Tabbar from '@/pages/Tabbar'
 import Checkbox from '@/pages/form/Checkbox'
 import Checkboxgroup from '@/pages/form/Checkboxgroup'
 import Radio from '@/pages/form/Radio'
+import Input from '@/pages/form/Input'
 
 Vue.use(Router)
 
@@ -16,6 +17,7 @@ export default new Router({
     { path: '/tabbar', name: 'Tabbar', component: Tabbar },
     { path: '/checkbox', name: 'Checkbox', component: Checkbox },
     { path: '/checkboxgroup', name: 'Checkboxgroup', component: Checkboxgroup },
-    { path: '/radio', name: 'Radio', component: Radio }
+    { path: '/radio', name: 'Radio', component: Radio },
+    { path: '/input', name: 'Input', component: Input }
   ]
 })
