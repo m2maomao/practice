@@ -8,6 +8,8 @@ import Checkboxgroup from '@/pages/form/Checkboxgroup'
 import Radio from '@/pages/form/Radio'
 import Input from '@/pages/form/Input'
 import Textarea from '@/pages/form/Textarea'
+import Hello from '@/components/Hello'
+import Select from '@/pages/form/Select'
 
 Vue.use(Router)
 
@@ -20,6 +22,8 @@ export default new Router({
     { path: '/checkboxgroup', name: 'Checkboxgroup', component: Checkboxgroup },
     { path: '/radio', name: 'Radio', component: Radio },
     { path: '/input', name: 'Input', component: Input },
-    { path: '/textarea', name: 'Textarea', component: Textarea }
+    { path: '/textarea', name: 'Textarea', component: Textarea },
+    { path: '/hello', name: 'Hello', component: Hello },
+    { path: '/select', name: 'Select', component: Select }
   ]
 })
