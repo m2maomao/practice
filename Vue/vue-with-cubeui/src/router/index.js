@@ -7,6 +7,7 @@ import Checkbox from '@/pages/form/Checkbox'
 import Checkboxgroup from '@/pages/form/Checkboxgroup'
 import Radio from '@/pages/form/Radio'
 import Input from '@/pages/form/Input'
+import Textarea from '@/pages/form/Textarea'
 
 Vue.use(Router)
 
@@ -18,6 +19,7 @@ export default new Router({
     { path: '/checkbox', name: 'Checkbox', component: Checkbox },
     { path: '/checkboxgroup', name: 'Checkboxgroup', component: Checkboxgroup },
     { path: '/radio', name: 'Radio', component: Radio },
-    { path: '/input', name: 'Input', component: Input }
+    { path: '/input', name: 'Input', component: Input },
+    { path: '/textarea', name: 'Textarea', component: Textarea }
   ]
 })
