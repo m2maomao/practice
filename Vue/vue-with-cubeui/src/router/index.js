@@ -10,6 +10,7 @@ import Input from '@/pages/form/Input'
 import Textarea from '@/pages/form/Textarea'
 import Hello from '@/components/Hello'
 import Select from '@/pages/form/Select'
+import Switch from '@/pages/form/Switch'
 
 Vue.use(Router)
 
@@ -24,6 +25,7 @@ export default new Router({
     { path: '/input', name: 'Input', component: Input },
     { path: '/textarea', name: 'Textarea', component: Textarea },
     { path: '/hello', name: 'Hello', component: Hello },
-    { path: '/select', name: 'Select', component: Select }
+    { path: '/select', name: 'Select', component: Select },
+    { path: '/switch', name: 'Switch', component: Switch }
   ]
 })
