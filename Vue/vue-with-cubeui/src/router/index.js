@@ -12,6 +12,7 @@ import Hello from '@/components/Hello'
 import Select from '@/pages/form/Select'
 import Switch from '@/pages/form/Switch'
 import Rate from '@/pages/form/Rate'
+import Validator1 from '@/pages/form/validator/Validator1'
 
 Vue.use(Router)
 
@@ -28,6 +29,7 @@ export default new Router({
     { path: '/hello', name: 'Hello', component: Hello },
     { path: '/select', name: 'Select', component: Select },
     { path: '/switch', name: 'Switch', component: Switch },
-    { path: '/rate', name: 'Rate', component: Rate }
+    { path: '/rate', name: 'Rate', component: Rate },
+    { path: '/validator1', name: 'Validator1', component: Validator1 }
   ]
 })
