@@ -23,13 +23,13 @@ export default {
   },
   methods: {
     processFile (file, next) {
-      compress(file, {
-        compress: {
-          width: 1600,
-          height: 1600,
-          quality: 0.5
-        }
-      }, next)
+      // compress(file, {
+      //   compress: {
+      //     width: 1600,
+      //     height: 1600,
+      //     quality: 0.5
+      //   }
+      // }, next)
     },
     fileSubmitted (file) {
       file.base64Value = file.file.base64
