@@ -17,9 +17,12 @@ import Validator2 from '@/pages/form/validator/Validator2'
 import Validator3 from '@/pages/form/validator/Validator3'
 import Validator4 from '@/pages/form/validator/Validator4'
 import Validator5 from '@/pages/form/validator/Validator5'
-import Upload from '@/pages/upload'
-import Upload2 from '@/pages/upload2'
-import Upload3 from '@/pages/upload3'
+import Upload from '@/pages/Upload'
+import Upload2 from '@/pages/Upload2'
+import Upload3 from '@/pages/Upload3'
+import Form1 from '@/pages/Form1'
+// import Form2 from '@/pages/Form2'
+import Popup from '@/pages/Popup'
 
 Vue.use(Router)
 
@@ -44,6 +47,9 @@ export default new Router({
     { path: '/validator5', name: 'Validator5', component: Validator5 },
     { path: '/upload', name: 'Upload', component: Upload },
     { path: '/upload2', name: 'Upload2', component: Upload2 },
-    { path: '/upload3', name: 'Upload3', component: Upload3 }
+    { path: '/upload3', name: 'Upload3', component: Upload3 },
+    { path: '/form1', name: 'Form1', component: Form1 },
+    // { path: '/form2', name: 'Form2', components: Form2 },
+    { path: '/popup', name: 'Popup', component: Popup }
   ]
 })
