@@ -25,6 +25,7 @@ import Form1 from '@/pages/Form1'
 import Popup from '@/pages/Popup'
 import Popup2 from '@/pages/Popup2'
 import Toast from '@/pages/Toast'
+import Picker from '@/pages/Picker'
 
 Vue.use(Router)
 
@@ -54,6 +55,7 @@ export default new Router({
     // { path: '/form2', name: 'Form2', components: Form2 },
     { path: '/popup', name: 'Popup', component: Popup },
     { path: '/popup2', name: 'Popup2', component: Popup2 },
-    { path: '/toast', name: 'Toast', component: Toast }
+    { path: '/toast', name: 'Toast', component: Toast },
+    { path: '/picker', name: 'Picker', component: Picker }
   ]
 })
