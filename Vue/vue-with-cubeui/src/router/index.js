@@ -23,6 +23,7 @@ import Upload3 from '@/pages/Upload3'
 import Form1 from '@/pages/Form1'
 // import Form2 from '@/pages/Form2'
 import Popup from '@/pages/Popup'
+import Popup2 from '@/pages/Popup2'
 
 Vue.use(Router)
 
@@ -50,6 +51,7 @@ export default new Router({
     { path: '/upload3', name: 'Upload3', component: Upload3 },
     { path: '/form1', name: 'Form1', component: Form1 },
     // { path: '/form2', name: 'Form2', components: Form2 },
-    { path: '/popup', name: 'Popup', component: Popup }
+    { path: '/popup', name: 'Popup', component: Popup },
+    { path: '/popup2', name: 'Popup2', component: Popup2 }
   ]
 })
