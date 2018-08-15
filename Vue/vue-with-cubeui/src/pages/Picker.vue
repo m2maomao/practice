@@ -3,6 +3,8 @@
     <cube-button @click="showPicker">Picker</cube-button>
     <cube-button @click="showMultiPicker">MultiPicker</cube-button>
     <cube-button @click="showAliasPicker">Use Alias</cube-button>
+    <cube-button @click="showSetDataPicker">Use SetData</cube-button>
+    <cube-button @click="showSubtitlePicker">Use Subtitle</cube-button>
   </div>
 </template>
 
@@ -107,6 +109,37 @@ export default {
         }).show()
       }
     })
+    // setData
+    this.setDataPicker = this.$createPicker({
+      title: 'use setData',
+      onSelect: (selectedVal, selectedIndex, selectedText) => {
+        this.$createDialog({
+          type: 'warn',
+          content: `
+            Selected Item: <br />
+            - selectedVal:${selectedVal.join(',')} <br />
+            - selectedIndex:${selectedIndex.join(',')} <br />
+            - selectedText:${selectedText.join(' ')}
+          `,
+          icon: 'cubeic-alert'
+        }).show()
+      },
+      onCancel: () => {
+        this.$createToast({
+          type: 'correct',
+          txt: 'Picker canceled',
+          time: 1000
+        }).show()
+      }
+    })
+    // subtitle
+    this.subtitlePicer = this.$createPicker({
+      title: 'Main Title',
+      subTitle: 'sub Title',
+      data: [col1Data, col2Data],
+      onSelect: this.selectHandle,
+      onCancel: this.cancelHandle
+    })
   },
   methods: {
     showPicker () {
@@ -117,6 +150,34 @@ export default {
     },
     showAliasPicker () {
       this.aliasPicker.show()
+    },
+    showSetDataPicker () {
+      // 实例方法setData可接受2个参数，都为数组类型。
+      // 第一个参数为滚轴需要显示的数据，第二个参数为选中值得索引
+      this.setDataPicker.setData([col1Data, col2Data, col3Data], [1, 1, 0])
+      this.setDataPicker.show()
+    },
+    showSubtitlePicker () {
+      this.subtitlePicer.show()
+    },
+    selectHandle (selectedVal, selectedIndex, selectedText) {
+      this.$createDialog({
+        type: 'warn',
+        content: `
+          selected Item:<br />
+          - selectedVal:${selectedVal.join(',')} <br />
+          - selectedIndex:${selectedIndex.join(',')} <br />
+          - selectedText:${selectedText.join('-')}
+        `,
+        icon: 'cubeic-alert'
+      }).show()
+    },
+    cancelHandle () {
+      this.$createToast({
+        time: 1000,
+        type: 'correct',
+        txt: 'picker canceled'
+      }).show()
     }
   }
 }
