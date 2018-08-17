@@ -26,7 +26,7 @@ import Popup from '@/pages/Popup'
 import Popup2 from '@/pages/Popup2'
 import Toast from '@/pages/Toast'
 import Picker from '@/pages/Picker'
-import Cascadepicker from '@/pages/Cascadepicker'
+// import Cascadepicker from '@/pages/CascadePicker'
 import CascadeAsyncPicker from '@/pages/CascadeAsyncPicker'
 
 Vue.use(Router)
@@ -59,7 +59,11 @@ export default new Router({
     { path: '/popup2', name: 'Popup2', component: Popup2 },
     { path: '/toast', name: 'Toast', component: Toast },
     { path: '/picker', name: 'Picker', component: Picker },
-    { path: '/cascadepicker', name: 'Cascadepicker', component: Cascadepicker },
-    { path: '/cascadeAsyncPicker', name: 'cascadeAsyncPicker', component: CascadeAsyncPicker }
+    // { path: '/cascadepicker', name: 'Cascadepicker', component: Cascadepicker },
+    {
+      path: '/cascadeAsyncPicker',
+      name: 'CascadeAsyncPicker',
+      component: CascadeAsyncPicker
+    }
   ]
 })

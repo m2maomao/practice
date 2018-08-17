@@ -26,18 +26,18 @@ const cascadeData = [
       {
         value: 'Apple',
         text: 'Apple',
-        children: [{value: 1, text: 'One'}, {value: 2, text: 'Two'}]
+        children: [{ value: 1, text: 'One' }, { value: 2, text: 'Two' }]
       },
       {
         value: 'Banana',
         text: 'Banana',
         children: [
-          {value: 1, text: 'One'},
-          {value: 2, text: 'Two'},
-          {value: 3, text: 'Three'},
-          {value: 4, text: 'Four'},
-          {value: 5, text: 'Five'},
-          {value: 6, text: 'Six'}
+          { value: 1, text: 'One' },
+          { value: 2, text: 'Two' },
+          { value: 3, text: 'Three' },
+          { value: 4, text: 'Four' },
+          { value: 5, text: 'Five' },
+          { value: 6, text: 'Six' }
         ]
       }
     ]
@@ -50,16 +50,16 @@ const cascadeData = [
         value: 'Coffee',
         text: 'Coffee',
         children: [
-          {value: 1, text: 'One'},
-          {value: 2, text: 'Two'},
-          {value: 3, text: 'Three'}
+          { value: 1, text: 'One' },
+          { value: 2, text: 'Two' },
+          { value: 3, text: 'Three' }
         ]
       },
       {
         value: 'Cola',
         text: 'Cola',
         children: [
-          {value: 1, text: 'One Cup'}
+          { value: 1, text: 'One Cup' }
         ]
       }
     ]
@@ -121,6 +121,7 @@ export default {
 </script>
 
 <style lang="stylus" scoped>
+
 button
   border 10px solid #ffffff
 </style>
