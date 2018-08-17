@@ -4,26 +4,19 @@
   <cube-button @click="showCascadePicker">Cascade Picker</cube-button>
   <cube-button @click="showAddressPicker">Address Picker</cube-button>
   <cube-button @click="showSetDataPicker">SetData Picker</cube-button>
-  <cube-button @click="showAsyncPicker">Async Load Data</cube-button>
 </div>
 </template>
 
 <script>
 import { provinceList, cityList, areaList } from 'static/data/area'
 const addressData = provinceList
+
 addressData.forEach(province => {
   province.children = cityList[province.value]
   province.children.forEach(city => {
     city.children = areaList[city.value]
   })
 })
-
-const asyncData = provinceList
-const asyncSelectedIndex = [0, 0, 0]
-asyncData[0].children = cityList[asyncData[0].value]
-asyncData[0].children[0].children = areaList[asyncData[0].children[0].value]
-
-console.log(asyncData)
 
 const cascadeData = [
   {
@@ -108,9 +101,6 @@ export default {
       setTimeout(() => {
         this.setDataPicker.setData(addressData, [1, 1, 0])
       }, 5000)
-    },
-    showAsyncPicker () {
-
     },
     selectHandle (selectedVal, selectedIndex, selectedText) {
       this.$createDialog({
