@@ -28,6 +28,7 @@ import Toast from '@/pages/Toast'
 import Picker from '@/pages/Picker'
 // import Cascadepicker from '@/pages/CascadePicker'
 import CascadeAsyncPicker from '@/pages/CascadeAsyncPicker'
+import DatePicker from '@/pages/DatePicker'
 
 Vue.use(Router)
 
@@ -64,6 +65,7 @@ export default new Router({
       path: '/cascadeAsyncPicker',
       name: 'CascadeAsyncPicker',
       component: CascadeAsyncPicker
-    }
+    },
+    { path: '/datePicker', name: 'datePicker', component: DatePicker }
   ]
 })
