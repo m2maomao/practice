@@ -30,6 +30,9 @@ import Picker from '@/pages/Picker'
 import CascadeAsyncPicker from '@/pages/CascadeAsyncPicker'
 import DatePicker from '@/pages/DatePicker'
 import TimePicker from '@/pages/TimePicker'
+import SegmentPicker from '@/pages/SegmentPicker'
+import Dialog from '@/pages/Dialog'
+import ActionSheet from '@/pages/ActionSheet'
 
 Vue.use(Router)
 
@@ -68,6 +71,13 @@ export default new Router({
       component: CascadeAsyncPicker
     },
     { path: '/datepicker', name: 'datePicker', component: DatePicker },
-    { path: '/timepicker', name: 'timePicker', component: TimePicker }
+    { path: '/timepicker', name: 'timePicker', component: TimePicker },
+    {
+      path: '/segementpicker',
+      name: 'SegmentPicker',
+      component: SegmentPicker
+    },
+    { path: '/dialog', name: 'Dialog', component: Dialog },
+    { path: '/actionsheet', name: 'ActionSheet', component: ActionSheet }
   ]
 })
