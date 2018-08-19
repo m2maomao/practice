@@ -33,6 +33,7 @@ import TimePicker from '@/pages/TimePicker'
 import SegmentPicker from '@/pages/SegmentPicker'
 import Dialog from '@/pages/Dialog'
 import ActionSheet from '@/pages/ActionSheet'
+import Drawer from '@/pages/Drawer'
 
 Vue.use(Router)
 
@@ -78,6 +79,7 @@ export default new Router({
       component: SegmentPicker
     },
     { path: '/dialog', name: 'Dialog', component: Dialog },
-    { path: '/actionsheet', name: 'ActionSheet', component: ActionSheet }
+    { path: '/actionsheet', name: 'ActionSheet', component: ActionSheet },
+    { path: '/drawer', name: 'Drawer', component: Drawer }
   ]
 })
