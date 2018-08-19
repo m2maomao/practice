@@ -34,6 +34,7 @@ import SegmentPicker from '@/pages/SegmentPicker'
 import Dialog from '@/pages/Dialog'
 import ActionSheet from '@/pages/ActionSheet'
 import Drawer from '@/pages/Drawer'
+import ImagePreview from '@/pages/ImagePreview'
 
 Vue.use(Router)
 
@@ -80,6 +81,7 @@ export default new Router({
     },
     { path: '/dialog', name: 'Dialog', component: Dialog },
     { path: '/actionsheet', name: 'ActionSheet', component: ActionSheet },
-    { path: '/drawer', name: 'Drawer', component: Drawer }
+    { path: '/drawer', name: 'Drawer', component: Drawer },
+    { path: '/imagepreview', name: 'ImagePreview', component: ImagePreview }
   ]
 })
