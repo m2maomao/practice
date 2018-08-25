@@ -16,7 +16,12 @@
         <div class="item_list_container" v-if="itemDetail.length > 0">
           <header class="item_title">{{itemDetail[itemNum-1].topic_name}}</header>
           <ul>
-            <li v-for="(item,index) of itemDetail[itemNum-1].topic_answer" @click="choosed(index,item.topic_answer_id)" class="item_list" :key="index">
+            <li
+              v-for="(item,index) of itemDetail[itemNum-1].topic_answer"
+              @click="choosed(index,item.topic_answer_id)"
+              class="item_list"
+              :key="index"
+            >
               <span class="option_style" v-bind:class="{'has_choosed':choosedNum==index}">{{chooseType(index)}}</span>
               <span class="option_detail">{{item.answer_name}}</span>
             </li>
@@ -60,7 +65,7 @@ export default {
       }
     },
     // 索引0-3对应答案A-B
-    chooseType: type => {
+    chooseType: type => { // index->type
       switch (type) {
         case 0: return 'A'
         case 1: return 'B'
@@ -69,9 +74,9 @@ export default {
       }
     },
     // 选中的答案信息
-    choosed (type, id) {
-      this.choosedNum = type
-      this.choosedId = id
+    choosed (type, id) { // index->type,id=>item.topic_answer_id
+      this.choosedNum = type // 点击后修改选中答案的索引
+      this.choosedId = id // 点击后存储选中的答案
     },
     // 到达最后一题，交卷，清空定时器，跳转分数页面
     submitAnswer () {
