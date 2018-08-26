@@ -5,6 +5,10 @@ export default {
     commit('REMBER_ANSWER', id)
     if (state.itemNum < state.itemDetail.length) {
       commit('ADD_ITEMNUM', 1)
+      // mutations
+      // [ADD_ITEMNUM](state, num) {
+      //   state.itemNum += num
+      // }
     }
   },
   initializeData ({ commit }) {
