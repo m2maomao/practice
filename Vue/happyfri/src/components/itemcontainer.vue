@@ -74,7 +74,7 @@ export default {
       }
     },
     // 选中的答案信息
-    choosed (type, id) { // index->type,id=>item.topic_answer_id
+    choosed (type, id) { // index->type,item.topic_answer_id=>id
       this.choosedNum = type // 点击后修改选中答案的索引
       this.choosedId = id // 点击后存储选中的答案
     },

@@ -1,9 +1,87 @@
 <template>
-  <div></div>
+  <div>
+    <div class="your_scores_container">
+      <header class="your_scores">
+        <span class="score_num">{{score}}</span>
+        <span class="fenshu">分！</span>
+      </header>
+      <div class="result_tip">{{scoreTips}}</div>
+      <div class="allTime">您耗时了：{{allTime}}秒</div>
+    </div>
+    <div class="share_button" @click="showCover"></div>
+    <div class="share_code">
+      <header class="share_header">关注葡萄架，获取答案。</header>
+      <img src="../../images/4-4.png" height="212" width="212" class="code_img">
+    </div>
+    <div class="share_cover" v-show="showHide" @click="showCover">
+      <img src="../../images/5-2.png" class="share_img">
+    </div>
+  </div>
 </template>
 
 <script>
-
+import { mapState } from 'vuex'
+export default {
+  name: 'score',
+  data () {
+    return {
+      showHide: false, // 是否显示提示
+      score: 0,
+      scoreTips: '',
+      rightAnswer: [2, 7, 12, 13, 18], // 正确答案
+      scoreTipsArr: [
+        '20分，好意思哦',
+        '比最差强一个等级',
+        '刚好及格，加油',
+        '你离满分就差一点点',
+        '太牛逼了，满分哦！'
+      ]
+    }
+  },
+  computed: {
+    ...mapState(['answerid', 'allTime'])
+  },
+  created () {
+    this.computedScore()
+    this.getScoreTip()
+  },
+  methods: {
+    // 计算分数
+    computedScore () {
+      this.answerid.forEach((item, index) => {
+        if (item === this.rightAnswer[index]) {
+          this.score += 20
+        }
+      })
+    },
+    // 是否显示分享提示
+    showCover: function () {
+      this.showHide = !this.showHide
+    },
+    // 根据分数显示提示
+    getScoreTip: function () {
+      if (this.score <= 20) {
+        this.scoreTips = this.scoreTipsArr[0]
+        return
+      }
+      if (this.score <= 40) {
+        this.scoreTips = this.scoreTipsArr[1]
+        return
+      }
+      if (this.score <= 60) {
+        this.scoreTips = this.scoreTipsArr[2]
+        return
+      }
+      if (this.score <= 80) {
+        this.scoreTips = this.scoreTipsArr[3]
+        return
+      }
+      if (this.score <= 100) {
+        this.scoreTips = this.scoreTipsArr[4]
+      }
+    }
+  }
+}
 </script>
 
 <style lang="stylus" scoped>
@@ -74,4 +152,9 @@ body
   top 0.5rem
   left 50%
   margin-left -5.975rem
+.allTime
+  position fixed
+  background #fff
+  border-radius 30px
+  bottom 20px
 </style>

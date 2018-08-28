@@ -12,7 +12,7 @@ export default {
     itemcontainer
   },
   created () {
-    this.$store.commit('REMEMBER_TIME')
+    this.$store.commit('REMBER_TIME')
   }
 }
 </script>
