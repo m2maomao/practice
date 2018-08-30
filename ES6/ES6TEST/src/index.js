@@ -115,11 +115,54 @@
 // console.log(list.next().value);
 // console.log('666666666666666');
 
-function add (a,b=1) {
-  if(a === 0) {
-    //抛出异常
-    throw new Error('A is Error');
-  }
-  return a+b
-}
-console.log(add(0));
+// function add (a=1,b=1) {
+//   // 'use strict'
+//   if(a === 0) {
+//     //抛出异常
+//     throw new Error('A is Error');
+//   }
+//   return a+b
+// }
+// console.log(add.length);//获取必须传递的个数
+
+// 箭头函数内不允许使用new，构造函数
+// var add = (a,b) => {
+//   console.log('JS')
+//   return a+b
+// }
+// console.log(add(1,2));
+
+// 10、对象的函数解构
+// let json = {
+//   a:"1",
+//   c:"2"
+// }
+// function fun({a,b='Michael'}){
+//   console.log(a,b)
+// }
+// fun(json)
+
+// let arr = ['1','2','3'];
+// function fun(a,b,c){
+//   console.log(a,b,c)
+// }
+// fun(...arr)
+
+// in的用法
+// let obj = {
+//   a:'michael',
+//   b:'yuanxiao'
+// }
+// console.log('a' in obj)
+
+// let arr = ['maomao',,,];
+// console.log(1 in arr)
+
+let arr = ['michael','zhang','blog'];
+// arr.forEach((val,index)=>console.log(index,val))
+// arr.filter(x => console.log(x))
+// arr.some(x => console.log(x))
+// console.log(arr.map(x=>'web'))
+// console.log(arr)
+console.log(arr.toString());
+console.log(arr.join('---'));
