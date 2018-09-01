@@ -206,15 +206,133 @@
 
 // assign 合并对象
 
-let a = {a:'Michael'};
-let b = {b:'迈克'};
-let c = {c:'Web Develop'};
+// let a = {a:'Michael'};
+// let b = {b:'迈克'};
+// let c = {c:'Web Develop'};
 
-let d = Object.assign(a,b,c);
-console.log(d);
+// let d = Object.assign(a,b,c);
+// console.log(d);
 
-let name = 'Michael';
-let age = 27;
+// let name = 'Michael';
+// let age = 27;
+
+// var arr1 = ['a','b','c','d'];
+// var arr2 = ['d'];
+// var arr3 = ['e','f'];
+// //第一种复制数组
+// var cc = arr1.concat();
+// cc[1] = 'Michael';
+
+// console.log('cc:',cc);//['a','Michael','c','d']
+// console.log('arr1:',arr1);//['a','b','c','d']
+
+// // 第二种复制数组
+// console.log(...arr1);//a b c d
+// var ee = [...arr1];
+// ee[3] = '!';
+// console.log(ee);//['a','b','c','!'];
+// console.log(arr1);//['a','b','c','d'];
+
+// // 以下情形不是复制，是引用，会改变原有数组值
+// var dd = arr1;
+// dd[2] = 'Zhang';
+// console.log('dd:',dd);//['a','b','Zhang','d']
+// console.log('arr1:',arr1);//['a','b','Zhang','d']
+
+//合并数组
+// var arr1 = ['a','b','c'];
+// var arr2 = ['d'];
+// // var arr3 = arr1.concat(arr2);
+// var arr3 = [...arr1,...arr2];
+// console.log(arr3);
+
+//12.Symbol在对象中的作用
+
+// var a = new String;
+// var b = new Number;
+// var c = new Boolean;
+// var d = new Array;
+// var e = new Object;
+// // 全局的原始数据
+// let f = Symbol();
+
+// console.log(typeof(f));//Symbol
+
+// let michael = Symbol('张国龙')
+
+// console.log(michael)
+// console.log(michael.toString())
+
+// let michael = Symbol();
+// let obj = {
+//   [michael] : '毛毛'
+// }
+
+// console.log(obj[michael]);
+
+// obj[michael] = '张先森'
+// console.log(obj[michael]);
+
+// let obj = {
+//   name:'michael',
+//   skill:'web'
+// }
+// let age = Symbol();
+// obj[age] = 18;//保护
+// // console.log(obj);
+
+// for(item in obj) {
+//   console.log(obj[item]);
+// }
+// console.log(obj[age]);
+
+// var g = Symbol('michael');
+// console.log(g);//红色 Symbol(michael)
+// console.log(g.toString());//普通 Symbol(michael)
+
+// let obj = {name:'Michael',skill:'web'}
+// let age = Symbol();
+// obj[age] = 18;
+// for(let item in obj) {
+//     console.log(obj[item]);//Michael,web
+// }
+// console.log(obj);
+
+// 13.Set和WeakSet数据结构
+let setArr = new Set(['michael','毛毛','web','michael']);
+let weakObj = new WeakSet();
+let obj = {
+  a:'Michael',
+  b:'Xinxin',
+  c:'family',
+  d:'家庭'
+}
+let obj1 = {
+  a:'Michael',
+  b:'Xinxin',
+  c:'family',
+  d:'家庭'
+}
+weakObj.add(obj);
+weakObj.add(obj1);
+console.log(weakObj);
 
 
+// setArr.add('前端');
+// setArr.delete('web');
 
+// console.log(setArr);
+// // console.log(setArr.has('michael'));
+
+// setArr.clear();
+// console.log(setArr);
+
+// for(let item of setArr) {
+//   console.log(item);
+// }
+
+// setArr.forEach((x) => {
+//   console.log(x);
+// });
+
+// console.log(setArr.size)//3
