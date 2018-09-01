@@ -158,11 +158,63 @@
 // let arr = ['maomao',,,];
 // console.log(1 in arr)
 
-let arr = ['michael','zhang','blog'];
-// arr.forEach((val,index)=>console.log(index,val))
-// arr.filter(x => console.log(x))
-// arr.some(x => console.log(x))
-// console.log(arr.map(x=>'web'))
-// console.log(arr)
-console.log(arr.toString());
-console.log(arr.join('---'));
+// let arr = ['michael','zhang','blog'];
+// // arr.forEach((val,index)=>console.log(index,val))
+// // arr.filter(x => console.log(x))
+// // arr.some(x => console.log(x))
+// // console.log(arr.map(x=>'web'))
+// // console.log(arr)
+// console.log(arr.toString());
+// console.log(arr.join('---'));
+
+// 11.ES6中的对象
+
+// let name = 'Michael';
+// let age = '12';
+
+// // let obj = {name:name,age:age}
+// let obj = {name,age}
+// console.log(obj)
+// key值的构建
+// let key = 'skill';
+// var obj = {
+//   [key]:'web'//不知道key值的情况下，可以使用key值构建
+// }
+// console.log(obj)
+
+// let obj = {
+//   add:function(a,b){
+//     return a+b
+//   }
+// }
+// console.log(obj.add(1,2));
+
+// is() 对两个对象进行比较
+// let obj1 = {name:'Michael'};
+// let obj2 = {name:'Michael'};
+
+// // console.log(obj1.name === obj2.name)
+// console.log(Object.is(obj1.name,obj2.name));
+
+//同值相等
+// console.log(+0===-0) //true
+// console.log(NaN===NaN); //false
+
+// // 严格相等
+// console.log(Object.is(+0,-0));//false
+// console.log(Object.is(NaN,NaN)); //true
+
+// assign 合并对象
+
+let a = {a:'Michael'};
+let b = {b:'迈克'};
+let c = {c:'Web Develop'};
+
+let d = Object.assign(a,b,c);
+console.log(d);
+
+let name = 'Michael';
+let age = 27;
+
+
+
