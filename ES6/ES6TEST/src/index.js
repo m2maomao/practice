@@ -299,23 +299,23 @@
 // console.log(obj);
 
 // 13.Set和WeakSet数据结构
-let setArr = new Set(['michael','毛毛','web','michael']);
-let weakObj = new WeakSet();
-let obj = {
-  a:'Michael',
-  b:'Xinxin',
-  c:'family',
-  d:'家庭'
-}
-let obj1 = {
-  a:'Michael',
-  b:'Xinxin',
-  c:'family',
-  d:'家庭'
-}
-weakObj.add(obj);
-weakObj.add(obj1);
-console.log(weakObj);
+// let setArr = new Set(['michael','毛毛','web','michael']);
+// let weakObj = new WeakSet();
+// let obj = {
+//   a:'Michael',
+//   b:'Xinxin',
+//   c:'family',
+//   d:'家庭'
+// }
+// let obj1 = {
+//   a:'Michael',
+//   b:'Xinxin',
+//   c:'family',
+//   d:'家庭'
+// }
+// weakObj.add(obj);
+// weakObj.add(obj1);
+// console.log(weakObj);
 
 
 // setArr.add('前端');
@@ -336,3 +336,9 @@ console.log(weakObj);
 // });
 
 // console.log(setArr.size)//3
+
+let weakObj = new WeakSet();
+let obj = {a:1,b:2}
+weakObj.add(obj);
+console.log(weakObj);//
+
