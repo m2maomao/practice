@@ -337,8 +337,8 @@
 
 // console.log(setArr.size)//3
 
-let weakObj = new WeakSet();
-let obj = {a:1,b:2}
-weakObj.add(obj);
-console.log(weakObj);//
+// let weakObj = new WeakSet();
+// let obj = {a:1,b:2}
+// weakObj.add(obj);
+// console.log(weakObj);//
 
