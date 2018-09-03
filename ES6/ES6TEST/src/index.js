@@ -317,7 +317,6 @@
 // weakObj.add(obj1);
 // console.log(weakObj);
 
-
 // setArr.add('前端');
 // setArr.delete('web');
 
@@ -341,4 +340,4 @@
 // let obj = {a:1,b:2}
 // weakObj.add(obj);
 // console.log(weakObj);//
-
+console.log(weakObj)
