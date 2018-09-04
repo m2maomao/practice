@@ -340,4 +340,67 @@
 // let obj = {a:1,b:2}
 // weakObj.add(obj);
 // console.log(weakObj);//
-console.log(weakObj)
+
+// 15.用Proxy进行预处理
+// let obj = {
+//   add: function(val) {
+//     return val + 100
+//   },
+//   name: 'I am Michael'
+// }
+// // console.log(obj.add(100))
+// // console.log(obj.name)
+
+// let pro = new Proxy(
+//   {
+//     add: function(val) {
+//       return val + 100
+//     },
+//     name: 'I am Michael',
+//     a: '哈哈，我是a值'
+//   },
+//   {
+//     //get set apply
+//     get: function(target, key, property) {
+//       console.log('come in Get')
+//       console.log(target, key)
+//       return target[key]
+//     },
+//     set: function(target, key, value, receiver) {
+//       console.log(` setting ${key} = ${value}`)
+//       return (target[key] = value)
+//     }
+//   }
+// )
+
+// console.log(pro.a)
+// pro.name = 'maomao'
+// console.log(pro.name)
+
+// let target = function() {
+//   return `I am Michael`
+// }
+// let handler = {
+//   apply(target, ctx, args) {
+//     console.log('do apply')
+//     return Reflect.apply(...arguments)
+//   }
+// }
+
+// let pro = new Proxy(target, handler)
+
+// console.log(pro())
+
+target = function() {
+  return 'I am Michael'
+}
+var handler = {
+  apply(target, ctx, args) {
+    console.log('do apply')
+    return Reflect.apply(...arguments)
+  }
+}
+
+var pro = new Proxy(target, handler)
+
+console.log(pro())
