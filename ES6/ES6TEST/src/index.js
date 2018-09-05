@@ -489,36 +489,56 @@
 // })
 
 // 17.class的使用
-class Coder {
-  name(val) {
-    console.log(val)
-    return val
-  }
+// class Coder {
+//   name(val) {
+//     console.log(val)
+//     return val
+//   }
 
-  skill(val) {
-    console.log(this.name('毛毛') + ':' + 'Skill-' + val)
-  }
-  // 类的参数
-  constructor(a, b) {
-    this.a = a
-    this.b = b
-  }
+//   skill(val) {
+//     console.log(this.name('毛毛') + ':' + 'Skill-' + val)
+//   }
+//   // 类的参数
+//   constructor(a, b) {
+//     this.a = a
+//     this.b = b
+//   }
 
-  add() {
-    return this.a + this.b
-  }
-}
+//   add() {
+//     return this.a + this.b
+//   }
+// }
 
-let michael = new Coder(2, 3)
+// let michael = new Coder(2, 3)
 
-// michael.name('Hello world!')
+// // michael.name('Hello world!')
 
-// michael.skill('web前端工程师')
-console.log(michael.add())
+// // michael.skill('web前端工程师')
+// console.log(michael.add())
 
-//不继承属性
-class htmler extends Coder {}
+// //不继承属性
+// class htmler extends Coder {}
 
-let mao = new htmler()
-mao.name('哈哈哈')
-console.log(michael.a)
+// let mao = new htmler()
+// mao.name('哈哈哈')
+// console.log(michael.a)
+
+// class Coder {
+//   name(val) {
+//     console.log(val)
+//   }
+// }
+
+// let person = new Coder()
+// person.name('毛毛')
+// //毛毛
+// import { name, skill, area } from './temp'
+
+// console.log(name)
+// import { a, add } from './temp'
+
+// console.log(a)
+
+import maomao from './temp'
+
+console.log(maomao)
