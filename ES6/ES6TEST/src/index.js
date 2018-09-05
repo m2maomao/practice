@@ -449,41 +449,76 @@
 //     console.log(val)
 //   })
 
-let state = 1
+// let state = 1
 
-function step1(resolve, reject) {
-  console.log('1.开始-洗菜做饭')
-  if (state === 1) {
-    resolve('洗菜做饭-完成')
-  } else {
-    reject('洗菜做饭-出错')
-  }
-}
+// function step1(resolve, reject) {
+//   console.log('1.开始-洗菜做饭')
+//   if (state === 1) {
+//     resolve('洗菜做饭-完成')
+//   } else {
+//     reject('洗菜做饭-出错')
+//   }
+// }
 
-function step2(resolve, reject) {
-  console.log('2.开始-坐下来吃饭')
-  if (state === 1) {
-    resolve('坐下来吃饭-完成')
-  } else {
-    reject('坐下来吃饭-出错')
-  }
-}
+// function step2(resolve, reject) {
+//   console.log('2.开始-坐下来吃饭')
+//   if (state === 1) {
+//     resolve('坐下来吃饭-完成')
+//   } else {
+//     reject('坐下来吃饭-出错')
+//   }
+// }
 
-function step3(resolve, reject) {
-  console.log('3.开始-收拾桌子洗碗')
-  if (state === 1) {
-    resolve('收拾桌子洗碗-完成')
-  } else {
-    reject('收拾桌子洗碗-失败')
-  }
-}
+// function step3(resolve, reject) {
+//   console.log('3.开始-收拾桌子洗碗')
+//   if (state === 1) {
+//     resolve('收拾桌子洗碗-完成')
+//   } else {
+//     reject('收拾桌子洗碗-失败')
+//   }
+// }
 
-new Promise(step1).then(function(val) {
-  console.log(val)
-  return new Promise(step2).then(function(val) {
+// new Promise(step1).then(function(val) {
+//   console.log(val)
+//   return new Promise(step2).then(function(val) {
+//     console.log(val)
+//     return new Promise(step3).then(function(val) {
+//       console.log(val)
+//     })
+//   })
+// })
+
+// 17.class的使用
+class Coder {
+  name(val) {
     console.log(val)
-    return new Promise(step3).then(function(val) {
-      console.log(val)
-    })
-  })
-})
+    return val
+  }
+
+  skill(val) {
+    console.log(this.name('毛毛') + ':' + 'Skill-' + val)
+  }
+  // 类的参数
+  constructor(a, b) {
+    this.a = a
+    this.b = b
+  }
+
+  add() {
+    return this.a + this.b
+  }
+}
+
+let michael = new Coder(2, 3)
+
+// michael.name('Hello world!')
+
+// michael.skill('web前端工程师')
+console.log(michael.add())
+
+//不继承属性
+class htmler extends Coder {}
+
+let mao = new htmler()
+mao.name('哈哈哈')
+console.log(michael.a)
