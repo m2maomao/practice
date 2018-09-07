@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Bind from '@/components/Bind'
 import Condition from '@/components/Condition'
 import Vfor from '@/components/Vfor'
+import Vmodel from '@/components/Vmodel'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/vfor',
       name: 'vfor',
       component: Vfor
+    },
+    {
+      path: '/vmodel',
+      name: 'vmodel',
+      component: Vmodel
     }
   ]
 })
