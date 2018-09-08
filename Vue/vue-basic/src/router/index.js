@@ -5,6 +5,7 @@ import Bind from '@/components/Bind'
 import Condition from '@/components/Condition'
 import Vfor from '@/components/Vfor'
 import Vmodel from '@/components/Vmodel'
+import Von from '@/components/Von'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/vmodel',
       name: 'vmodel',
       component: Vmodel
+    },
+    {
+      path: '/von',
+      name: 'von',
+      component: Von
     }
   ]
 })
