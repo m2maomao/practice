@@ -6,6 +6,8 @@ import Condition from '@/components/Condition'
 import Vfor from '@/components/Vfor'
 import Vmodel from '@/components/Vmodel'
 import Von from '@/components/Von'
+import Vtext from '@/components/Vtext'
+import Directive from '@/components/Directive'
 
 Vue.use(Router)
 
@@ -40,6 +42,16 @@ export default new Router({
       path: '/von',
       name: 'von',
       component: Von
+    },
+    {
+      path: '/vtext',
+      name: 'vtext',
+      component: Vtext
+    },
+    {
+      path: '/directive',
+      name: 'directive',
+      component: Directive
     }
   ]
 })
