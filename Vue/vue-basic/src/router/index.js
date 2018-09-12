@@ -1,57 +1,51 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import HelloWorld from '@/components/HelloWorld'
 import Bind from '@/components/Bind'
-import Condition from '@/components/Condition'
-import Vfor from '@/components/Vfor'
-import Vmodel from '@/components/Vmodel'
-import Von from '@/components/Von'
-import Vtext from '@/components/Vtext'
-import Directive from '@/components/Directive'
 
 Vue.use(Router)
 
-export default new Router({
-  routes: [
-    {
-      path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld
-    },
-    {
-      path: '/bind',
-      name: 'bind',
-      component: Bind
-    },
-    {
-      path: '/condition',
-      name: 'condition',
-      component: Condition
-    },
-    {
-      path: '/vfor',
-      name: 'vfor',
-      component: Vfor
-    },
-    {
-      path: '/vmodel',
-      name: 'vmodel',
-      component: Vmodel
-    },
-    {
-      path: '/von',
-      name: 'von',
-      component: Von
-    },
-    {
-      path: '/vtext',
-      name: 'vtext',
-      component: Vtext
-    },
-    {
-      path: '/directive',
-      name: 'directive',
-      component: Directive
-    }
-  ]
+const routes = [
+  {
+    path: '/',
+    component: resolve => require(['@/components/HelloWorld'], resolve) // 懒加载，不会打包到主app.js文件中
+  },
+  {
+    path: '/bind',
+    component: Bind // 将打包到主app.js文件中
+  },
+  {
+    path: '/condition',
+    // component: Condition //将打包道主app.js文件中
+    component: resolve => require(['@/components/Condition'], resolve)
+  },
+  {
+    path: '/vfor',
+    component: resolve => require(['@/components/Vfor'], resolve)
+  },
+  {
+    path: '/vmodel',
+    component: resolve => require(['@/components/Vmodel'], resolve)
+  },
+  {
+    path: '/von',
+    component: resolve => require(['@/components/Von'], resolve)
+  },
+  {
+    path: '/vtext',
+    component: resolve => require(['@/components/Vtext'], resolve)
+  },
+  {
+    path: '/directive',
+    component: resolve => require(['@/components/Directive'], resolve)
+  },
+  {
+    path: '/extend',
+    component: resolve => require(['@/components/Extend'], resolve)
+  }
+]
+
+const router = new Router({
+  routes
 })
+
+export default router

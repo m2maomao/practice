@@ -45,8 +45,13 @@ export default {
         console.log(binding)
       }
     },
+    // focus: {
+    //   inserted: function (el) {
+    //     el.focus()
+    //   }
+    // }
     focus: {
-      inserted: function (el) {
+      inserted: (el) => {
         el.focus()
       }
     }
