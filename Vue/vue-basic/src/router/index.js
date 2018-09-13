@@ -41,6 +41,10 @@ const routes = [
   {
     path: '/extend',
     component: resolve => require(['@/components/Extend'], resolve)
+  },
+  {
+    path: '/set',
+    component: resolve => require(['@/components/Set'], resolve)
   }
 ]
 
