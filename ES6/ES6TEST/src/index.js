@@ -542,3 +542,5 @@
 import maomao from './temp'
 
 console.log(maomao)
+
+console.log('a')
