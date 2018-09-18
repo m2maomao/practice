@@ -317,7 +317,6 @@
 // weakObj.add(obj1);
 // console.log(weakObj);
 
-
 // setArr.add('前端');
 // setArr.delete('web');
 
@@ -342,6 +341,7 @@
 // weakObj.add(obj);
 // console.log(weakObj);//
 
+<<<<<<< HEAD
 // 14.map数据结构
 let json = {
   name:'Michael',
@@ -365,3 +365,208 @@ console.log(map);
 console.log(map.size);
 //has true/false
 console.log(map.has('jsjsjs'));
+=======
+// 15.用Proxy进行预处理
+// let obj = {
+//   add: function(val) {
+//     return val + 100
+//   },
+//   name: 'I am Michael'
+// }
+// // console.log(obj.add(100))
+// // console.log(obj.name)
+
+// let pro = new Proxy(
+//   {
+//     add: function(val) {
+//       return val + 100
+//     },
+//     name: 'I am Michael',
+//     a: '哈哈，我是a值'
+//   },
+//   {
+//     //get set apply
+//     get: function(target, key, property) {
+//       console.log('come in Get')
+//       console.log(target, key)
+//       return target[key]
+//     },
+//     set: function(target, key, value, receiver) {
+//       console.log(` setting ${key} = ${value}`)
+//       return (target[key] = value)
+//     }
+//   }
+// )
+
+// console.log(pro.a)
+// pro.name = 'maomao'
+// console.log(pro.name)
+
+// let target = function() {
+//   return `I am Michael`
+// }
+// let handler = {
+//   apply(target, ctx, args) {
+//     console.log('do apply')
+//     return Reflect.apply(...arguments)
+//   }
+// }
+
+// let pro = new Proxy(target, handler)
+
+// console.log(pro())
+
+// target = function() {
+//   return 'I am Michael'
+// }
+// var handler = {
+//   apply(target, ctx, args) {
+//     console.log('do apply')
+//     return Reflect.apply(...arguments)
+//   }
+// }
+
+// var pro = new Proxy(target, handler)
+
+// console.log(pro())
+
+// 16.promise对象的使用
+// 1.洗菜做饭 2.坐下来吃饭 3.收拾桌子吃饭
+// let state = 1
+
+// function step1(resolve, reject) {
+//   console.log('1.开始洗菜做饭')
+//   if (state === 1) {
+//     resolve(`洗菜做饭-完成`)
+//   } else {
+//     reject(`洗菜做饭-出错`)
+//   }
+// }
+
+// function step2(resolve, reject) {
+//   console.log('2.开始坐下来吃饭')
+//   if (state === 1) {
+//     resolve(`坐下来吃饭-完成`)
+//   } else {
+//     reject(`坐下来吃饭-出错`)
+//   }
+// }
+
+// function step3(resolve, reject) {
+//   console.log('3.开始收拾桌子洗碗')
+//   if (state === 1) {
+//     resolve(`收拾桌子洗碗-完成`)
+//   } else {
+//     reject(`收拾桌子洗碗-出错`)
+//   }
+// }
+
+// new Promise(step1)
+//   .then(function(val) {
+//     console.log(val)
+//     return new Promise(step2)
+//   })
+//   .then(function(val) {
+//     console.log(val)
+//     return new Promise(step3)
+//   })
+//   .then(function(val) {
+//     console.log(val)
+//   })
+
+// let state = 1
+
+// function step1(resolve, reject) {
+//   console.log('1.开始-洗菜做饭')
+//   if (state === 1) {
+//     resolve('洗菜做饭-完成')
+//   } else {
+//     reject('洗菜做饭-出错')
+//   }
+// }
+
+// function step2(resolve, reject) {
+//   console.log('2.开始-坐下来吃饭')
+//   if (state === 1) {
+//     resolve('坐下来吃饭-完成')
+//   } else {
+//     reject('坐下来吃饭-出错')
+//   }
+// }
+
+// function step3(resolve, reject) {
+//   console.log('3.开始-收拾桌子洗碗')
+//   if (state === 1) {
+//     resolve('收拾桌子洗碗-完成')
+//   } else {
+//     reject('收拾桌子洗碗-失败')
+//   }
+// }
+
+// new Promise(step1).then(function(val) {
+//   console.log(val)
+//   return new Promise(step2).then(function(val) {
+//     console.log(val)
+//     return new Promise(step3).then(function(val) {
+//       console.log(val)
+//     })
+//   })
+// })
+
+// 17.class的使用
+// class Coder {
+//   name(val) {
+//     console.log(val)
+//     return val
+//   }
+
+//   skill(val) {
+//     console.log(this.name('毛毛') + ':' + 'Skill-' + val)
+//   }
+//   // 类的参数
+//   constructor(a, b) {
+//     this.a = a
+//     this.b = b
+//   }
+
+//   add() {
+//     return this.a + this.b
+//   }
+// }
+
+// let michael = new Coder(2, 3)
+
+// // michael.name('Hello world!')
+
+// // michael.skill('web前端工程师')
+// console.log(michael.add())
+
+// //不继承属性
+// class htmler extends Coder {}
+
+// let mao = new htmler()
+// mao.name('哈哈哈')
+// console.log(michael.a)
+
+// class Coder {
+//   name(val) {
+//     console.log(val)
+//   }
+// }
+
+// let person = new Coder()
+// person.name('毛毛')
+// //毛毛
+// import { name, skill, area } from './temp'
+
+// console.log(name)
+// import { a, add } from './temp'
+
+// console.log(a)
+
+import maomao from './temp'
+
+console.log(maomao)
+
+console.log('a')
+>>>>>>> 1dfeb7d5ff07f04ecb8899905b63fbb1684678ce

@@ -1,16 +1,18 @@
 {
-  "name": "ES6TEST",
+  "name": "es6webpack",
   "version": "0.1.0",
   "description": "ES6 代码",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build":"babel src/index.js -o dist/index.js"
+    "build": "webpack && webpack-dev-server"
   },
   "keywords": [],
   "author": "michael <m2maomao@163com> (http://github.com/m2maomao)",
   "license": "MIT",
   "devDependencies": {
-    "babel-preset-es2015": "^6.24.1"
+    "babel-preset-es2015": "^6.24.1",
+    "html-webpack-plugin": "^3.2.0",
+    "webpack-dev-server": "^3.1.8"
   }
 }
