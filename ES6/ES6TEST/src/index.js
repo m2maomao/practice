@@ -337,8 +337,31 @@
 
 // console.log(setArr.size)//3
 
-let weakObj = new WeakSet();
-let obj = {a:1,b:2}
-weakObj.add(obj);
-console.log(weakObj);//
+// let weakObj = new WeakSet();
+// let obj = {a:1,b:2}
+// weakObj.add(obj);
+// console.log(weakObj);//
 
+// 14.map数据结构
+let json = {
+  name:'Michael',
+  skill:'web'
+}
+console.log(json.name);
+
+var map = new Map();
+map.set(json,'im');
+console.log(map);
+map.set('jsjsjs',json);
+console.log(map);
+//get
+console.log(map.get('jsjsjs'))
+//delete
+map.delete(json);
+console.log(map);
+//clear
+map.clear();
+console.log(map);
+console.log(map.size);
+//has true/false
+console.log(map.has('jsjsjs'));
