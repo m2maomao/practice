@@ -341,31 +341,6 @@
 // weakObj.add(obj);
 // console.log(weakObj);//
 
-<<<<<<< HEAD
-// 14.map数据结构
-let json = {
-  name:'Michael',
-  skill:'web'
-}
-console.log(json.name);
-
-var map = new Map();
-map.set(json,'im');
-console.log(map);
-map.set('jsjsjs',json);
-console.log(map);
-//get
-console.log(map.get('jsjsjs'))
-//delete
-map.delete(json);
-console.log(map);
-//clear
-map.clear();
-console.log(map);
-console.log(map.size);
-//has true/false
-console.log(map.has('jsjsjs'));
-=======
 // 15.用Proxy进行预处理
 // let obj = {
 //   add: function(val) {
@@ -567,6 +542,3 @@ console.log(map.has('jsjsjs'));
 import maomao from './temp'
 
 console.log(maomao)
-
-console.log('a')
->>>>>>> 1dfeb7d5ff07f04ecb8899905b63fbb1684678ce
