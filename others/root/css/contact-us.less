@@ -1,0 +1,73 @@
+.editor-content{
+    &:last-child{
+        border-bottom: none;
+    }
+    overflow: hidden;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 50px;
+    &.pt50{padding-top: 50px}
+    h4{
+        font-size: 24px;
+        color: #0a0425;
+        line-height: 80px;
+    }
+    p{
+        width: 100%;
+        font-size: 18px;
+        color: #222222;
+        line-height: 36px;
+        margin-right: 100px;
+        text-align: justify;
+    }
+    .net {
+        ul{
+            margin: 20px 0;
+        } 
+    }
+    .board{
+        background: #2454a3;
+        padding: 50px 80px;
+        ul{
+            overflow: hidden;
+            li{
+                &.request{
+                    width: 100%;
+                }
+                label{
+                    display: block;
+                    line-height: 40px;
+                    color: #fff;
+                    font-size: 12px;
+                    i{
+                        width: 14px;
+                        height: 14px;
+                        display: inline-block;
+                        background: url('./../img/page/contact/icons-require.png');
+                        position: relative;
+                        top: 2px;
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .success{
+        background: #2454a3;
+        height: 500px;
+        overflow: hidden;
+        i{
+            width: 107px;
+            height: 107px;
+            display: block;
+            margin: 0 auto;
+            background: url('./../img/page/contact/icon-success.png') 0 0 ~'/' 100% auto;
+            margin-top: 160px;
+            margin-bottom: 40px;
+        }
+        p{
+            color: #fff;
+            text-align: center;
+            font-size: 20px;
+        }
+    }
+}

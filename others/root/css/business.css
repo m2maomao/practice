@@ -1,0 +1,48 @@
+.editor-content {
+  overflow: hidden;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 50px;
+}
+.editor-content:last-child {
+  border-bottom: none;
+}
+.editor-content.pt50 {
+  padding-top: 50px;
+}
+.editor-content h4 {
+  font-size: 24px;
+  color: #0a0425;
+  line-height: 80px;
+}
+.editor-content p {
+  width: 100%;
+  font-size: 18px;
+  color: #222222;
+  line-height: 36px;
+  margin-right: 100px;
+  text-align: justify;
+}
+.editor-content .case {
+  margin-top: 40px;
+}
+.editor-content .case dl {
+  background: #f8fafe;
+  display: flex;
+}
+.editor-content .case dl:nth-of-type(even) {
+  background: #e1eff4;
+  flex-direction: row-reverse;
+}
+.editor-content .case dl dd {
+  padding: 20px;
+}
+.editor-content .case dl dd p {
+  font-size: 12px;
+  color: #222222;
+  line-height: 20px;
+}
+.editor-content .case dl dd h5 {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+}

@@ -1,0 +1,323 @@
+#header-common {
+  width: 100%;
+  background: #2454a3;
+  height: 84px;
+  z-index: 2;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all ease-in 0.2s;
+}
+#header-common.index {
+  background: rgba(1, 1, 1, 0);
+  transition: all ease-in 0.2s;
+}
+#header-common .wrap {
+  height: 100px;
+  margin: 0 auto;
+  z-index: 1;
+}
+#header-common .wrap .logo {
+  width: 210px;
+  height: 36px;
+  display: block;
+  background: url('../img/logo/logo-white.png') 0 0 / 100% auto;
+  float: left;
+  margin-top: 22px;
+  transition: all ease-in 0.2s;
+}
+#header-common .wrap > .link {
+  float: right;
+  margin-top: 35px;
+  transition: all ease-in 0.2s;
+}
+#header-common .wrap > .link ul {
+  display: inline;
+}
+#header-common .wrap > .link ul li {
+  float: left;
+  font-size: 16px;
+  color: #fff;
+  border-left: 1px solid #fff;
+  position: relative;
+}
+#header-common .wrap > .link ul li a {
+  margin: 0 40px;
+  color: #fff;
+  font-weight: bold;
+  text-decoration: none;
+}
+#header-common .wrap > .link ul li:first-child {
+  border-left: none;
+}
+#header-common .wrap > .link ul li .s_line.active {
+  display: block;
+  border-bottom: 3px solid #fff;
+  position: absolute;
+  bottom: -33px;
+  width: 60%;
+  left: 20%;
+  transition: all ease-in 0.2s;
+}
+#header-common .wrap > .link .language {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  background: #fff;
+  color: #aaa7aa;
+  border-radius: 12px;
+  font-size: 12px;
+  text-align: center;
+  line-height: 24px;
+  cursor: pointer;
+  text-decoration: none;
+  position: relative;
+  top: -4px;
+}
+#header-common.navMainScroll {
+  height: 50px;
+  transition: all ease-in 0.2s;
+}
+#header-common.navMainScroll.index {
+  background: #2454a3;
+  transition: all ease-in 0.2s;
+}
+#header-common.navMainScroll .wrap > .link {
+  margin-top: 17px;
+  transition: all ease-in 0.2s;
+}
+#header-common.navMainScroll .wrap > .link ul li .s_line.active {
+  bottom: -17px;
+  transition: all ease-in 0.2s;
+}
+#header-common.navMainScroll .wrap .logo {
+  margin-top: 7px;
+  transition: all ease-in 0.2s;
+}
+body > .content {
+  margin: 120px auto 0;
+  overflow: hidden;
+  transition: all ease-in 0.2s;
+}
+body > .content.activated {
+  margin: 80px auto 0;
+  overflow: hidden;
+  transition: all ease-in 0.2s;
+}
+body > .content > .nav {
+  width: 230px;
+  float: left;
+  position: fixed;
+}
+body > .content > .nav li {
+  font-size: 20px;
+  line-height: 50px;
+}
+body > .content > .nav li a {
+  display: block;
+  color: #666666;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: right;
+  padding-right: 14px;
+  text-decoration: none;
+  transition: all ease-in 0.1s;
+}
+body > .content > .nav li a.active,
+body > .content > .nav li a:hover {
+  margin-top: 1px;
+  background: #2454a3;
+  border-bottom: none;
+  color: #fff;
+  transition: all ease-in 0.1s;
+}
+body .content-right {
+  width: 950px;
+  float: right;
+  position: relative;
+  left: 230px;
+}
+body .content-right a.anchor {
+  display: block;
+  position: relative;
+  top: -80px;
+  visibility: hidden;
+}
+#bottom {
+  background: #ecf0f1;
+  padding-top: 40px;
+}
+#bottom .wrap {
+  margin: 0 auto;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #ccc;
+  display: table;
+}
+#bottom .wrap > div {
+  float: left;
+}
+#bottom .wrap > div h4 {
+  font-size: 18px;
+}
+#bottom .wrap > div ul {
+  margin-top: 10px;
+}
+#bottom .wrap > div ul li {
+  position: relative;
+}
+#bottom .wrap > div ul li > a {
+  font-size: 14px;
+  line-height: 34px;
+  text-decoration: none;
+  color: #747b81;
+  position: relative;
+}
+#bottom .wrap > div ul li > a i {
+  width: 22px;
+  height: 18px;
+  display: inline-block;
+  padding: 0 5px;
+  position: relative;
+  top: 5px;
+}
+#bottom .wrap > div ul .erweima {
+  display: none;
+  border: 1px solid #2454a3;
+  background: #fff;
+  float: left;
+  position: absolute;
+  z-index: 1;
+  left: 70px;
+  top: 10px;
+}
+#bottom .wrap > div ul .erweima h5 {
+  line-height: 60px;
+  font-size: 14px;
+  text-indent: 10px;
+}
+#bottom .wrap > div ul .erweima h5 span {
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 26px;
+  height: 26px;
+  background: #2454a3 url('../img/common/icon-close.png') center center / 14px 13px no-repeat;
+}
+#bottom .wrap > div ul .erweima p {
+  overflow: hidden;
+}
+#bottom .wrap > div ul .erweima p img {
+  width: 142px;
+  height: 142px;
+  padding: 0px 10px 10px;
+  overflow: hidden;
+}
+#bottom .wrap .poster h4 {
+  padding-bottom: 10px;
+}
+#bottom .wrap .poster p {
+  font-size: 18px;
+  font-weight: bold;
+  color: #747b81;
+  margin-bottom: 20px;
+}
+#bottom .wrap .logo {
+  float: right;
+  margin-top: 60px;
+}
+#footer {
+  background: #ecf0f1;
+}
+#footer .wrap {
+  margin: 0 auto;
+}
+#footer .wrap > ul {
+  width: 100%;
+  text-align: center;
+}
+#footer .wrap > ul li a {
+  font-size: 14px;
+  color: #747b81;
+  text-decoration: none;
+}
+#footer .wrap .copyright-wrap ul {
+  float: left;
+}
+#footer .wrap .copyright-wrap ul li {
+  float: left;
+  border-left: 2px solid #ccc;
+}
+#footer .wrap .copyright-wrap ul li a {
+  color: #747b81;
+  text-decoration: none;
+  padding: 0 12px;
+  font-size: 14px;
+}
+#footer .wrap .copyright-wrap ul li:first-child {
+  border-left: none;
+}
+#footer .wrap .copyright-wrap p {
+  float: right;
+  color: #747b81;
+  font-size: 14px;
+}
+#nav-m .shade {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: none;
+  transition: all ease-in 0.2s;
+}
+#nav-m .nav-m {
+  position: fixed;
+  right: -60%;
+  top: 0;
+  width: 60%;
+  height: 100%;
+  background: #fff;
+  z-index: 1000;
+  transition: all ease-in 0.2s;
+}
+#nav-m .nav-m .top {
+  position: relative;
+  overflow: hidden;
+}
+#nav-m .nav-m .top .logo {
+  width: 40px;
+  height: 60px;
+  display: block;
+  background: url('../img/common/logo-small.png') 0 0 / 100% auto no-repeat;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+#nav-m .nav-m .top .close {
+  width: 18px;
+  height: 18px;
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  display: block;
+  background: url('../img/common/icon-close2.png') 0 0 / 100% auto no-repeat;
+}
+#nav-m .nav-m ul li {
+  font-size: 20px;
+  line-height: 60px;
+  margin: 0 30px;
+  border-bottom: 1px solid #999999;
+}
+#nav-m .nav-m ul li a {
+  text-decoration: none;
+  color: #222222;
+}
+#nav-m.active .shade {
+  display: block;
+  transition: all ease-in 0.2s;
+}
+#nav-m.active .nav-m {
+  right: 0;
+  transition: all ease-in 0.2s;
+}
