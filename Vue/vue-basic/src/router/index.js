@@ -45,6 +45,10 @@ const routes = [
   {
     path: '/set',
     component: resolve => require(['@/components/Set'], resolve)
+  },
+  {
+    path: '/lifecycle',
+    component: resolve => require(['@/components/LifeCycle'], resolve)
   }
 ]
 
