@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <script type="text/javascript">
+      var func = new function() {
+        this.a = 'AAAAA'
+      }
+      var myFunc = function(x) {
+        var a = "BBBBB"
+        console.log(this.a)
+        console.log(x)
+      }
+      myFunc.call(func,'HAHA')
+      //console.log(func)
+      //AAAAA
+      //HAHA
+    </script>
+  </body>
+</html>
