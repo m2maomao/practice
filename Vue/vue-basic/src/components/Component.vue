@@ -1,10 +1,10 @@
 <template>
-    <div>
-        <jspang here="China" born-from="Chongqing"></jspang>
-        <jspang here="USA" born-from="Los Angeles"></jspang>
-        <jspang here="Tokyo" v-bind:born-from="bornFromLocation"></jspang>
-        <!-- 'v-bind:'可以简写成':' -->
-    </div>
+  <div>
+    <jspang here="China" born-from="Chongqing"></jspang>
+    <jspang here="USA" born-from="Los Angeles"></jspang>
+    <jspang here="Tokyo" v-bind:born-from="bornFromLocation"></jspang>
+    <!-- 'v-bind:'可以简写成':' -->
+  </div>
 </template>
 
 <script>
