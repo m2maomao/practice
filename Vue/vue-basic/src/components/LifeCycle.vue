@@ -33,12 +33,14 @@ export default {
     console.log('1-beforeCreate 初始化之前')
   },
   created () {
+    // 加载loading动画
     console.log('2-created 创建完成')
   },
   beforeMount () {
     console.log('3-beforeMount 挂载之前')
   },
   mounted () {
+    // 隐藏loading动画
     console.log('4-mounted 被挂载之后')
   },
   beforeUpdate () {

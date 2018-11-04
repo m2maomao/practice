@@ -49,6 +49,14 @@ const routes = [
   {
     path: '/lifecycle',
     component: resolve => require(['@/components/LifeCycle'], resolve)
+  },
+  {
+    path: '/template',
+    component: resolve => require(['@/components/Template'], resolve)
+  },
+  {
+    path: '/component',
+    component: resolve => require(['@/components/Component'], resolve)
   }
 ]
 
