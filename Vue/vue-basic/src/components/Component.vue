@@ -1,8 +1,8 @@
 <template>
     <div>
-        <jspang></jspang>
-        <jspang></jspang>
-        <jspang></jspang>
+        <jspang here="China"></jspang>
+        <jspang here="USA"></jspang>
+        <jspang here="Tokyo"></jspang>
     </div>
 </template>
 
@@ -12,7 +12,8 @@ export default {
   name: '',
   components: {
     jspang: {
-      template: `<div style="color:red">我是全局的组件</div>`
+      template: `<div style="color:red">Panda from {{here}}</div>`,
+      props: ['here']
     }
   }
 }
