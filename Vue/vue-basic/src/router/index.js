@@ -57,6 +57,10 @@ const routes = [
   {
     path: '/component',
     component: resolve => require(['@/components/Component'], resolve)
+  },
+  {
+    path: '/componentparent',
+    component: resolve => require(['@/components/ComponentParent'], resolve)
   }
 ]
 
