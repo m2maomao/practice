@@ -4,6 +4,7 @@
     <jspang here="USA" born-from="Los Angeles"></jspang>
     <jspang here="Tokyo" v-bind:born-from="bornFromLocation"></jspang>
     <!-- 'v-bind:'可以简写成':' -->
+    <router-view></router-view>
   </div>
 </template>
 
