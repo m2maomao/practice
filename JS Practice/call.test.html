@@ -3,8 +3,16 @@
   <head>
     <meta charset="utf-8">
     <title></title>
+    <style media="screen">
+      #box{
+        background:pink
+      }
+    </style>
   </head>
   <body>
+    <div id="box">
+      box
+    </div>
     <script type="text/javascript">
       var func = new function() {
         this.a = 'AAAAA'
@@ -15,9 +23,40 @@
         console.log(x)
       }
       myFunc.call(func,'HAHA')
-      //console.log(func)
-      //AAAAA
-      //HAHA
+
+
+      function changeStyle(attr,value) {
+        this.style[attr] = value
+      }
+      var box = document.getElementById('box')
+      window.changeStyle.call(box,'height','200px')
+      box.style['width'] = '200px'
+
+
+      function a() {
+        this.x = '我是在函数类结构a中声明的哦';
+      }
+
+      function f() {
+        alert(this.x);
+      }
+
+      f.call(new a())
+      //以上等同于：
+      /*
+      function a(){
+        this.x = '我是在函数类结构a中声明的哦'
+        alert(this.x)
+      }
+      a()
+      */
+
+      functoin f() {
+        this.a = "a";
+        this.b = function(){
+          alert("b")
+        }
+      }
     </script>
   </body>
 </html>
