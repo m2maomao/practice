@@ -27,7 +27,7 @@ const actions = {
     context.commit('add', 10)
     setTimeout(() => {
       context.commit('reduce')
-    }, 5000)
+    }, 3000)
     console.log('我比reduce先执行了')
   },
   reduceAction ({commit}) {
