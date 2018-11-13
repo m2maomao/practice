@@ -4,6 +4,7 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+// 生产环境去掉警告
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

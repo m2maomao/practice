@@ -1,6 +1,7 @@
 <template>
   <div>
-    <h3>{{$store.state.count}} - {{count}}</h3>
+    <h3>{{count}}</h3>
+    <h3>{{count1}}</h3>
     <p>
       <button @click="$store.commit('add',10)">+</button>
       <button @click="reduce">-</button>
@@ -15,7 +16,7 @@
 
 <script>
 import store from '@/store/store'
-import { mapState, mapMutations, mapGetters, mapActions } from 'vuex'
+import { mapState, mapMutations, mapActions } from 'vuex'
 export default {
   data () {
     return {
@@ -29,11 +30,23 @@ export default {
   // 通过mapState的数组来赋值
   // computed: mapState(['count']),
   computed: {
-    ...mapState(['count'])
+    // ...mapState(['count'])
+
     // ...mapGetters(['count'])
     // count () {
     //   return this.$store.getters.count
     // }
+
+    ...mapState({
+      // 第一种方式
+      count: state => state.count
+      // 第二种方式
+      // count: 'count'
+    }),
+    // 对获取到的全局state.count进行二次运算
+    count1 () {
+      return this.count + 100
+    }
   },
   methods: {
     ...mapMutations(['add', 'reduce']),
