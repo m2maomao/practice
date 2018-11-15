@@ -64,6 +64,10 @@ const routes = [
         component: resolve => require(['@/components/ComponentParent'], resolve)
       }
     ]
+  },
+  {
+    path: '/test/route/index',
+    component: resolve => require(['@/components/Test.vue'], resolve)
   }
 ]
 
