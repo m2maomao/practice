@@ -14,34 +14,34 @@
       box
     </div>
     <script type="text/javascript">
-      var func = new function() {
-        this.a = 'AAAAA'
-      }
-      var myFunc = function(x) {
-        var a = "BBBBB"
-        console.log(this.a)
-        console.log(x)
-      }
-      myFunc.call(func,'HAHA')
+      // var func = new function() {
+      //   this.a = 'AAAAA'
+      // }
+      // var myFunc = function(x) {
+      //   var a = "BBBBB"
+      //   console.log(this.a)
+      //   console.log(x)
+      // }
+      // myFunc.call(func,'HAHA')
 
 
-      function changeStyle(attr,value) {
-        this.style[attr] = value
-      }
-      var box = document.getElementById('box')
-      window.changeStyle.call(box,'height','200px')
-      box.style['width'] = '200px'
+      // function changeStyle(attr,value) {
+      //   this.style[attr] = value
+      // }
+      // var box = document.getElementById('box')
+      // window.changeStyle.call(box,'height','200px')
+      // box.style['width'] = '200px'
 
 
-      function a() {
-        this.x = '我是在函数类结构a中声明的哦';
-      }
+      // function a() {
+      //   this.x = '我是在函数类结构a中声明的哦';
+      // }
 
-      function f() {
-        alert(this.x);
-      }
+      // function f() {
+      //   alert(this.x);
+      // }
 
-      f.call(new a())
+      // f.call(new a())
       //以上等同于：
       /*
       function a(){
@@ -51,12 +51,63 @@
       a()
       */
 
-      functoin f() {
-        this.a = "a";
-        this.b = function(){
-          alert("b")
+      // functoin f() {
+      //   this.a = "a";
+      //   this.b = function(){
+      //     alert("b")
+      //   }
+      // }
+
+      // 【一】基本用法
+      function add(a,b) {
+        return a + b
+      }
+      function sub(a,b) {
+        alert(this)
+        return a - b
+      }
+      // 以下执行的是add方法，this指向为sub，就是说用sub里的this指向去执行add方法。
+      console.log(add.apply(sub,[4,2]))
+      // 以下执行的是sub方法，因为将add对象替换为当前sub的this，所以弹出this指向为add方法
+      console.log(sub.apply(add,[4,2]))
+      // call的用法
+      var a1 = add.call(sub,4,2)
+      console.log('a1', a1)
+
+      // 实现继承
+      function Animal(name) {
+        this.name = name;
+        this.showName = function () {
+          alert(this.name)
         }
       }
+      function Cat(name) {
+        Animal.apply(this,name)
+      }
+      var c1 = new Cat(['毛毛']);
+      c1.showName()
+      Animal.call(this,'欣欣')//挂载全局this，此时的window已具备name属性和showName()方法
+      this.showName()
+      console.log('this', this)
+
+      // 多重继承
+      function Class10() {
+        this.showSub = function(a,b) {
+          return a - b
+        }
+      }
+      function Class11 () {
+        this.showAdd = function (a,b) {
+          return a + b
+        }
+      }
+      function Class12 () {
+        Class10.apply(this);
+        Class11.apply(this);
+      }
+      var c12 = new Class12();
+      alert(c12.showSub(10,5));// 10-5 => 5
+      alert(c12.showAdd(10,5));// 10+5 => 15
     </script>
   </body>
 </html>
