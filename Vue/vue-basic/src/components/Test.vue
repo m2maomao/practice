@@ -4,3 +4,13 @@
     <p>路由路径：#/test/route/index</p>
   </div>
 </template>
+
+<script type="text/javascript">
+export default {
+  name: 'test'
+}
+</script>
+
+<style>
+
+</style>
