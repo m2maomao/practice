@@ -3,6 +3,8 @@
     <hello-world></hello-world>
     <mycomponent my-message="属性传值" :child-array.sync="parentArray" @changeFatherValue="addParentArray"></mycomponent>
     <p>{{a}}</p>
+    <hello v-model="hello"></hello>
+    {{hello}}
     <p>-------以下是router-view--------</p>
     <router-view />
   </div>
@@ -10,17 +12,20 @@
 
 <script>
 import HelloWorld from '@/components/HelloWorld'
+import Hello from '@/components/Hello'
 export default {
   name: 'App',
   data () {
     return {
       a: 'hello,data',
       num: 1,
-      parentArray: 1
+      parentArray: 1,
+      hello: ''
     }
   },
   components: {
-    HelloWorld
+    HelloWorld,
+    Hello
   },
   methods: {
     addParentArray () {
@@ -31,4 +36,8 @@ export default {
 </script>
 
 <style>
+input{
+  border: 1px solid #ebebeb;
+  padding: 10px;
+}
 </style>
