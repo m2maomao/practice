@@ -3,6 +3,10 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import { ToastPlugin } from 'vux'
+import PromptPoints from '@/components/index'
+Vue.use(PromptPoints)
+Vue.use(ToastPlugin)
 
 Vue.config.productionTip = false
 

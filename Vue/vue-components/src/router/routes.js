@@ -1,8 +1,8 @@
 export default [
   {
     path: '/',
-    name: 'HelloWorld',
-    component: resolve => require(['@/components/HelloWorld'], resolve)
+    name: 'ShowPrompPageIndex',
+    component: resolve => require(['@/ShowPrompPage'], resolve)
   },
   {
     path: '/vmodel',
@@ -33,6 +33,11 @@ export default [
     path: '/slot3',
     name: 'Slot3',
     component: resolve => require(['@/components/Slot3'], resolve)
+  },
+  {
+    path: '/showpromptpage',
+    name: 'ShowPrompPage',
+    component: resolve => require(['@/ShowPrompPage'], resolve)
   },
   {
     path: '*',
