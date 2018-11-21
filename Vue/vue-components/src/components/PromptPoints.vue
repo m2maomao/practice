@@ -1,6 +1,6 @@
 <template>
   <div class="PromptPoints">
-    <x-dialog v-model="showFlagCom" class="dialog-demo">
+    <x-dialog v-model="showFlagLocal" class="dialog-demo">
       <div v-html="htmlContent[0]"></div>
     </x-dialog>
   </div>
@@ -17,14 +17,14 @@ export default {
   },
   data () {
     return {
-      showFlagCom: true
+      showFlagLocal: true
     }
   },
   mounted () {
-    // console.log(document.getElementById('link'))
     this.$nextTick().then(() => {
-      // console.log(document.getElementById('link'))
+      console.log(document.getElementById('link'))
       if (document.getElementById('link')) {
+        console.log('有值')
         document.getElementById('link').addEventListener('click', this.showFlagFunc, false)
       }
     })
@@ -33,7 +33,7 @@ export default {
     if (setArr.has(this.htmlContent[0])) {
       console.log('%c 发布成功提示', 'color:blue')
       setTimeout(() => {
-        this.showFlagCom = false
+        this.showFlagLocal = false
         setTimeout(() => {
           this.onOK()
         }, 2000)
@@ -47,7 +47,7 @@ export default {
   methods: {
     showFlagFunc () {
       console.log('点击.......')
-      this.showFlagCom = false
+      this.showFlagLocal = false
       setTimeout(() => {
         this.onOK()
       }, 200)
