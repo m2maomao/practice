@@ -1,10 +1,7 @@
 <template>
   <div class="PromptPoints">
     <x-dialog v-model="showFlagCom" class="dialog-demo">
-      <h1>{{htmlContent}}</h1>
-      <div @click="showFlagFunc">
-        <span class="vux-close">X</span>
-      </div>
+      <div v-html="htmlContent[0]"></div>
     </x-dialog>
   </div>
 </template>
@@ -20,13 +17,19 @@ export default {
   },
   data () {
     return {
-      // showFlagCom: this.showFlag
       showFlagCom: true
     }
   },
   mounted () {
-    let setArr = new Set(['a1', 'b1', 'c1'])
+    // console.log(document.getElementById('link'))
+    this.$nextTick().then(() => {
+      // console.log(document.getElementById('link'))
+      if (document.getElementById('link')) {
+        document.getElementById('link').addEventListener('click', this.showFlagFunc, false)
+      }
+    })
 
+    let setArr = new Set(['a1', 'b1', 'c1'])
     if (setArr.has(this.htmlContent[0])) {
       console.log('%c 发布成功提示', 'color:blue')
       setTimeout(() => {
@@ -43,6 +46,7 @@ export default {
   },
   methods: {
     showFlagFunc () {
+      console.log('点击.......')
       this.showFlagCom = false
       setTimeout(() => {
         this.onOK()

@@ -1,99 +1,67 @@
 <template>
   <div>
-    <!-- <prompt-points :showFlag="showFlag" :htmlContent="htmlData" @delete="dosomeDialog" >
-    </prompt-points> -->
   </div>
 </template>
 
 <script>
-import PromptPoints from '@/components/PromptPoints'
-
 export default{
   name: 'ShowPrompPage',
   components: {
-    PromptPoints
+    // PromptPoints
   },
   data () {
     return {
-      showFlag: true,
-      data: {
-        code: 0,
-        msg: 'success',
-        data: {
-          'bonus': [// 这是额外奖励提示（为空不提示）
-            {
-              'id': 119150,
-              'rule_name': '帖子综合排名奖励（第1）新', // 文案
-              'points': '10.00'// 积分
-            }
-          ],
-          'level': [// 这是等级提示（为空不提示）
-            1,
-            2,
-            3
-          ],
-          'first_login': [
-            {
-              'type': 1, // 是否有头像 1没有2有
-              'points': 20
-            }
-          ]
-        }
-      },
-      dialogArray: [
-        {
-          html: '1111',
-          showFlag: false
-        },
-        {
-          html: '2222',
-          showFlag: false
-        },
-        {
-          html: '3333',
-          showFlag: false
-        },
-        {
-          html: '4444',
-          showFlag: false
-        }
-      ],
+      // 远程数据
       fdata: {
-        a: ['a1', 'a2', 'a3', 'a4', 'a5'],
+        a: [
+          'a1',
+          `<a href="javascript:;" id="link">
+            <span class="vux-close">X</span>
+           </a>`,
+          'a3',
+          'a4',
+          'a5'
+        ],
         b: ['b1', 'b2', 'b3', 'b4', 'b5'],
         c: ['c1', 'c2', 'c3', 'c4', 'c5']
       },
+      // fdata: {
+      //   a: [],
+      //   b: [],
+      //   c: []
+      // },
+      // 本地组装数据
       perfectData: null,
-      htmlData: null,
-      dialogTimer: null
+      // 组件传值
+      htmlData: null
     }
   },
   mounted () {
-    // console.log(this.dialogArray)
-    this.perfectData = this.perfectData = this.fdata.a.concat(this.fdata.b, this.fdata.c)
+    // 组装本地数据
+    this.perfectData = this.fdata.a.concat(this.fdata.b, this.fdata.c)
   },
   methods: {
+    //
     showDialog () {
+      // 判断本地数据是否有值
       if (this.perfectData.length > 0) {
-        console.log('this.perfectData', this.perfectData)
+        // 取数组第一个值传入组件
         this.htmlData = this.perfectData.slice(0, 1)
+        // 执行全局组件propmtPoints
         this.$promptPoints({htmlContent: this.htmlData, onOK: this.dosomeDialog})
-        // this.showFlag = true
-        // this.$vux.toast.text(this.htmlData)
-        // setTimeout(() => {
-        //   this.perfectData.splice(0, 1)
-        // }, 3000)
+      } else {
+        console.warn('远程传入数据为空')
       }
     },
     dosomeDialog () {
+      // 改变本地数组，删除第一个元素
       this.perfectData.splice(0, 1)
     }
   },
   watch: {
+    // 监听本地组装数据，变化则执行传值，调用弹出组件
     perfectData: {
       handler (curVal, oldVal) {
-        // console.log(this.a[0])
-        this.showFlag = true
         this.showDialog()
       }
     }
