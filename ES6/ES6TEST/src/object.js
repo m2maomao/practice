@@ -186,3 +186,30 @@
 // const dog = new Dog('labuladuo');
 // dog.say()
 // dog.eat()
+
+// Promise原理
+// 一旦状态改变，就不会再变，任何时候都可以得到这个结果。Promise对象的状态改变，只有两种可能：
+// 从pending变为fulfilled和从pending变为rejected。promise对象初始化状态为pending；
+// 当调用resolve(成功)，会由pending => fulfilled;当调用reject(失败)，会由pending => rejected.
+
+function loadImg (src) { 
+  const promise = new Promise(function (resolve, reject) {
+    var img = document.createElement('img')
+    img.onload = function () { 
+      resolve(img)
+    }
+    img.onerror = function () { 
+      reject()
+    }
+    img.src = src
+  })
+  return promise
+}
+
+var src = 'http://www.imooc.com/static/img/index/logo_new.png1';
+var result = loadImg(src)
+result.then(function (img) {
+  console.log(img.width)
+}, function () { 
+  console.log('failed')
+})
