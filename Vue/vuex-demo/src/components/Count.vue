@@ -1,7 +1,6 @@
 <template>
   <div>
     <h3>{{count}}</h3>
-    <!-- <h3>{{count1}}</h3> -->
     <p>
       <button @click="$store.commit('add',10)">+</button>
       <button @click="reduce">-</button>
@@ -20,7 +19,7 @@ import { mapMutations, mapActions, mapGetters } from 'vuex'
 export default {
   data () {
     return {
-
+      // count: 1
     }
   },
   // 通过mapState的对象来赋值
