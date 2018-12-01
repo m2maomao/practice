@@ -12,7 +12,7 @@
 <script>
 // 引入store
 import store from '../vuex/store'
-import {mapState} from 'vuex'
+// import {mapState} from 'vuex'
 
 export default {
   name: 'HelloWorld',
