@@ -11,7 +11,7 @@
       <router-link to="/goParams/111111/2222222">goParams</router-link>
       <router-link to="/Hi/jspang">jspang</router-link>
     </p>
-    <!-- <p>{{$route.name}}</p> -->
+    <p>{{$route.name}}</p>
     <p>
       <button @click="goBack">后退</button>
       <button @click="goAhead">前进</button>
