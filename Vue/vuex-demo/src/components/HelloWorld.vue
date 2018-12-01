@@ -21,19 +21,19 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  // // 第一种形式访问state
-  // computed: {
-  //   count () {
-  //     return this.$store.state.count
-  //   }
-  // },
-
-  // 第二种形式访问state
+  // 第一种形式访问state
   computed: {
-    ...mapState({
-      count: state => state.count
-    })
+    count () {
+      return this.$store.state.count
+    }
   },
+
+  // // 第二种形式访问state
+  // computed: {
+  //   ...mapState({
+  //     count: state => state.count
+  //   })
+  // },
 
   // // 第三种形式访问state
   // computed: {
