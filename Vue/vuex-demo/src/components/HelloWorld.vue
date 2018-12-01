@@ -12,7 +12,7 @@
 <script>
 // 引入store
 import store from '../vuex/store'
-// import {mapState} from 'vuex'
+import {mapState} from 'vuex'
 
 export default {
   name: 'HelloWorld',
@@ -21,12 +21,12 @@ export default {
       msg: 'Welcome to Your Vue.js App'
     }
   },
-  // 第一种形式访问state
-  computed: {
-    count () {
-      return this.$store.state.count
-    }
-  },
+  // // 第一种形式访问state
+  // computed: {
+  //   count () {
+  //     return this.$store.state.count
+  //   }
+  // },
 
   // // 第二种形式访问state
   // computed: {
@@ -35,10 +35,10 @@ export default {
   //   })
   // },
 
-  // // 第三种形式访问state
-  // computed: {
-  //   ...mapState(['count'])
-  // },
+  // 第三种形式访问state
+  computed: {
+    ...mapState(['count'])
+  },
   // 使用store
   store
 }
