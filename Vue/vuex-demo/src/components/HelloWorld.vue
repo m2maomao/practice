@@ -28,17 +28,17 @@ export default {
   //   }
   // },
 
-  // // 第二种形式访问state
-  // computed: {
-  //   ...mapState({
-  //     count: state => state.count
-  //   })
-  // },
-
-  // 第三种形式访问state
+  // 第二种形式访问state
   computed: {
-    ...mapState(['count'])
+    ...mapState({
+      count: state => state.count
+    })
   },
+
+  // // 第三种形式访问state
+  // computed: {
+  //   ...mapState(['count'])
+  // },
   // 使用store
   store
 }
