@@ -3,8 +3,14 @@
     <h2>Page-H</h2>
     <hr>
     <h3>{{count}}</h3>
-    <button @click="add(1)">+</button>
-    <button @click="reduce">-</button>
+    <p>
+      <button @click="add">+</button>
+      <button @click="reduce">-</button>
+    </p>
+    <p>
+      <button @click="addAction">+</button>
+      <button @click="reduceAction">-</button>
+    </p>
 
   </div>
 </template>
@@ -12,7 +18,7 @@
 <script>
 // 引入store
 import store from '../vuex/store'
-import {mapState, mapMutations} from 'vuex'
+import {mapState, mapMutations, mapActions} from 'vuex'
 
 export default {
   name: 'HelloWorld',
@@ -45,7 +51,8 @@ export default {
   // 使用store
   store,
   methods: {
-    ...mapMutations(['add', 'reduce'])
+    ...mapMutations(['add', 'reduce']),
+    ...mapActions(['addAction', 'reduceAction'])
   }
 }
 </script>
