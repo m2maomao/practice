@@ -2,9 +2,9 @@
   <div class="hello">
     <h2>Page-H</h2>
     <hr>
-    <h3>{{$store.state.count}}<i> - </i>{{count}}</h3>
-    <button @click="$store.commit('add')">+</button>
-    <button @click="$store.commit('reduce')">-</button>
+    <h3>{{count}}</h3>
+    <button @click="add(1)">+</button>
+    <button @click="reduce">-</button>
 
   </div>
 </template>
@@ -12,7 +12,7 @@
 <script>
 // 引入store
 import store from '../vuex/store'
-import {mapState} from 'vuex'
+import {mapState, mapMutations} from 'vuex'
 
 export default {
   name: 'HelloWorld',
@@ -28,19 +28,25 @@ export default {
   //   }
   // },
 
-  // 第二种形式访问state
-  computed: {
-    ...mapState({
-      count: state => state.count
-    })
-  },
-
-  // // 第三种形式访问state
+  // // 第二种形式访问state
   // computed: {
-  //   ...mapState(['count'])
+  //   ...mapState({
+  //     count: state => state.count
+  //   })
   // },
+
+  // 第三种形式访问state
+  computed: {
+    ...mapState(['count']),
+    count () {
+      return this.$store.getters.count
+    }
+  },
   // 使用store
-  store
+  store,
+  methods: {
+    ...mapMutations(['add', 'reduce'])
+  }
 }
 </script>
 
