@@ -3,6 +3,7 @@
     <h1>姓名:{{info.name}}</h1>
     <h2>年龄:{{info.age}}</h2>
     <h2>兴趣:{{info.interest}}</h2>
+    <img src="~static/transformer.jpg" />
   </div>
 </template>
 
@@ -29,11 +30,22 @@ import axios from 'axios'
   }
 </script>
 
-<style scoped>
+<style>
+body,html{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
 h1,h2{
   text-indent:20px;
   line-height: 1.5em;
   font-size: 20px;
 }
-[v-cloak]{display:none}
+img{
+  width: 100%;
+}
+body{
+  background:lightgoldenrodyellow url('~static/transformer.jpg') center bottom / 100% auto no-repeat;
+  /* background-image: url('~static/transformer.jpg') */
+}
 </style>
