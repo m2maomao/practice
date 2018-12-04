@@ -47,12 +47,14 @@ export default {
   padding: 0;
   list-style: none;
   text-align: center;
-  font-size: 10px;
+  font-size: 12px;
   color: #ffffff;
   border-bottom: 1px solid lightblue;
   padding: 10px 0;
+  font-weight: bold;
 }
 .nav ul li .icon{
-  font-size: 20px;
+  font-size: 30px;
+  font-weight: normal;
 }
 </style>
