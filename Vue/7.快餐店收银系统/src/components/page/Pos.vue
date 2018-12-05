@@ -55,13 +55,37 @@
                 </div>
               </el-tab-pane>
               <el-tab-pane label="小食">
-                小食
+                <div>
+                  <ul class="cookList">
+                    <li v-for="(goods,index) in type1Goods" :key="index">
+                      <span class="foodImg"><img :src="goods.goodsImg" width="100%"></span>
+                      <span class="foodName">{{goods.goodsName}}</span>
+                      <span class="foodPrice">￥{{goods.price}}元</span>
+                    </li>
+                  </ul>
+                </div>
               </el-tab-pane>
               <el-tab-pane label="饮料">
-                饮料
+                <div>
+                  <ul class="cookList">
+                    <li v-for="(goods,index) in type2Goods" :key="index">
+                      <span class="foodImg"><img :src="goods.goodsImg" width="100%"></span>
+                      <span class="foodName">{{goods.goodsName}}</span>
+                      <span class="foodPrice">￥{{goods.price}}元</span>
+                    </li>
+                  </ul>
+                </div>
               </el-tab-pane>
               <el-tab-pane label="套餐">
-                套餐
+                <div>
+                  <ul class="cookList">
+                    <li v-for="(goods,index) in type3Goods" :key="index">
+                      <span class="foodImg"><img :src="goods.goodsImg" width="100%"></span>
+                      <span class="foodName">{{goods.goodsName}}</span>
+                      <span class="foodPrice">￥{{goods.price}}元</span>
+                    </li>
+                  </ul>
+                </div>
               </el-tab-pane>
             </el-tabs>
           </div>
@@ -71,6 +95,7 @@
 </template>
 
 <script>
+import axios from 'axios'
 export default {
   name: 'Pos',
   data () {
@@ -98,86 +123,39 @@ export default {
         }
       ],
       popularGoods: [
-        {
-          goodsId: 1,
-          goodsName: '香辣鸡腿堡',
-          price: '18元'
-        }, {
-          goodsId: 1,
-          goodsName: '田园鸡腿堡',
-          price: '16元'
-        }, {
-          goodsId: 1,
-          goodsName: '脆皮炸鸡腿',
-          price: '14元'
-        }, {
-          goodsId: 1,
-          goodsName: '大块鸡米花',
-          price: '12元'
-        }, {
-          goodsId: 1,
-          goodsName: '雪顶咖啡',
-          price: '10元'
-        }, {
-          goodsId: 1,
-          goodsName: '魔法鸡块',
-          price: '8元'
-        }
       ],
       type0Goods: [
-        {
-          goodsId: 1,
-          goodsImg: 'https://img.4008823823.com.cn/kfcios/Version/473_318550.jpg',
-          goodsName: '香辣鸡腿堡',
-          price: 18
-        }, {
-          goodsId: 2,
-          goodsImg: 'https://img.4008823823.com.cn/kfcios/Version/473_318550.jpg',
-          goodsName: '田园鸡腿堡',
-          price: 15
-        }, {
-          goodsId: 3,
-          goodsImg: 'https://img.4008823823.com.cn/kfcios/Version/473_318550.jpg',
-          goodsName: '和风汉堡',
-          price: 15
-        }, {
-          goodsId: 4,
-          goodsImg: 'https://img.4008823823.com.cn/kfcios/Version/473_318550.jpg',
-          goodsName: '快乐全家桶',
-          price: 80
-        }, {
-          goodsId: 5,
-          goodsImg: 'https://img.4008823823.com.cn/kfcios/Version/473_318550.jpg',
-          goodsName: '脆皮炸鸡腿',
-          price: 10
-        }, {
-          goodsId: 6,
-          goodsImg: 'https://img.4008823823.com.cn/kfcios/Version/473_318550.jpg',
-          goodsName: '魔法鸡块',
-          price: 20
-        }, {
-          goodsId: 7,
-          goodsImg: 'https://img.4008823823.com.cn/kfcios/Version/473_318550.jpg',
-          goodsName: '可乐大杯',
-          price: 10
-        }, {
-          goodsId: 8,
-          goodsImg: 'https://img.4008823823.com.cn/kfcios/Version/473_318550.jpg',
-          goodsName: '雪顶咖啡',
-          price: 18
-        }, {
-          goodsId: 9,
-          goodsImg: 'https://img.4008823823.com.cn/kfcios/Version/473_318550.jpg',
-          goodsName: '大块鸡米花',
-          price: 15
-        }, {
-          goodsId: 20,
-          goodsImg: 'https://img.4008823823.com.cn/kfcios/Version/473_318550.jpg',
-          goodsName: '香脆鸡柳',
-          price: 17
-        }
+      ],
+      type1Goods: [
+      ],
+      type2Goods: [
+      ],
+      type3Goods: [
       ]
     }
+  },
+  created () {
+    // axios获取popularGoods
+    axios.get('https://www.easy-mock.com/mock/5b8b30dbf032f03c5e71de7f/kuaican/oftenGoods')
+      .then((res) => {
+        console.log('res', res)
+        this.popularGoods = res.data
+      })
+      .catch((error) => {
+        console.log('error', error)
+      })
+    // axios获取typeGoods
+    axios.get('https://www.easy-mock.com/mock/5b8b30dbf032f03c5e71de7f/kuaican/typeGoods')
+      .then((res) => {
+        console.log('res', res)
+        this.type0Goods = res.data[0]
+        this.type1Goods = res.data[1]
+        this.type2Goods = res.data[2]
+        this.type3Goods = res.data[3]
+      })
+      .catch((error) => {
+        console.log(error)
+      })
   },
   mounted () {
     let orderHeight = document.body.clientHeight
