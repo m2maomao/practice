@@ -192,24 +192,75 @@
 // 从pending变为fulfilled和从pending变为rejected。promise对象初始化状态为pending；
 // 当调用resolve(成功)，会由pending => fulfilled;当调用reject(失败)，会由pending => rejected.
 
-function loadImg (src) {
-  const promise = new Promise(function (resolve, reject) {
-    var img = document.createElement('img')
-    img.onload = function () {
-      resolve(img)
-    }
-    img.onerror = function () {
-      reject()
-    }
-    img.src = src
-  })
-  return promise
+// function loadImg (src) {
+//   const promise = new Promise(function (resolve, reject) {
+//     var img = document.createElement('img')
+//     img.onload = function () {
+//       resolve(img)
+//     }
+//     img.onerror = function () {
+//       reject()
+//     }
+//     img.src = src
+//   })
+//   return promise
+// }
+
+// var src = 'http://www.imooc.com/static/img/index/logo_new.png';
+// var result = loadImg(src)
+// result.then(function (img) {
+//   console.log(img.width)
+// }, function () {
+//   console.log('failed')
+// })
+
+// Promise链式调用
+function runAsync1() {
+  var p = new Promise((resolve,reject) => {
+    // 做一些异步操作
+    setTimeout(() => {
+      console.log('异步任务1执行完成');
+      resolve('随便什么数据1');
+    },3000);
+  });
+  return p
 }
 
-var src = 'http://www.imooc.com/static/img/index/logo_new.png';
-var result = loadImg(src)
-result.then(function (img) {
-  console.log(img.width)
-}, function () {
-  console.log('failed')
+function runAsync2() {
+  var p = new Promise((resolve,reject) => {
+    setTimeout(()=>{
+      console.log('异步任务2执行完成');
+      resolve('随便什么数据2')
+    },3000)
+  });
+  return p
+}
+
+function runAsync3() {
+  var p = new Promise((resolve,reject) => {
+    setTimeout(()=>{
+      console.log('异步任务3执行完成!');
+      resolve('虽然什么数据3');
+    },5000)
+  });
+  return p
+}
+
+// runAsync1()
+// .then((resolve,reject)=>{
+//   runAsync2().then((resolve,reject)=>{
+//     runAsync3()
+//   })
+// })
+runAsync1()
+.then((resolve,reject)=>{
+  console.log(resolve);
+  return runAsync2();
+})
+.then((resolve,reject) =>{
+  console.log(resolve);
+  return runAsync3();
+})
+.then((resolve,reject) => {
+  console.log(resolve)
 })
