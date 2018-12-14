@@ -1,6 +1,6 @@
 <template>
-  <div class="PromptPoints">
-    <x-dialog v-model="showFlagLocal" class="dialog-demo">
+  <div class="PromptPoints" v-if="showFlagLocal">
+    <x-dialog v-model="showFlagLocal" class="dialog-demo" >
       <div v-html="htmlContent[0]"></div>
     </x-dialog>
   </div>
