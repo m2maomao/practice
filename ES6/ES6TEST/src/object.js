@@ -252,6 +252,7 @@ function runAsync3() {
 //     runAsync3()
 //   })
 // })
+
 runAsync1()
 .then((resolve,reject)=>{
   console.log(resolve);
@@ -264,3 +265,16 @@ runAsync1()
 .then((resolve,reject) => {
   console.log(resolve)
 })
+
+// 生成26个字母添加到数组
+var str = []
+for(var i = 1; i< 26; i++) {
+  str.push(String.fromCharCode(65 + i))
+}
+console.log(str)
+
+//for in
+let arr = [1,2,3]
+for (let i in arr) {
+  console.log(`${i} => ${arr[i]}`)
+}
