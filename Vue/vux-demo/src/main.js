@@ -4,15 +4,12 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 
+import Toast from '@/plugins/toast'
+Vue.use(Toast)
+import MyPlugin from '@/components/MyPlugin/index'
+Vue.use(MyPlugin)
+
 Vue.config.productionTip = false
-
-import { AlertPlugin, ToastPlugin, ConfirmPlugin, WechatPlugin, DevicePlugin } from 'vux'
-Vue.use(AlertPlugin)
-Vue.use(ToastPlugin)
-Vue.use(ConfirmPlugin)
-Vue.use(WechatPlugin)
-Vue.use(DevicePlugin)
-
 
 /* eslint-disable no-new */
 new Vue({
