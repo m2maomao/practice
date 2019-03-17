@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  [v-cloak] {
+    display: none;
+  }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <p v-cloak>{{ msg }}</p>
+    <!-- 默认v-text 是没有闪烁问题的 -->
+    <!-- v-text会覆盖元素中原本的内容，但是差值表达式只会替换自己的占位符，不会把整个元素的内容清空 -->
+    <h4 v-text="msg"></h4>
+    <div v-html="msg2"></div>
+    <!-- v-bind是Vue中提供的用于绑定属性的指令 -->
+    <!-- v-bind:指令可以被简写为:要绑定的属性 -->
+    <!-- v-bind中，可以写合法的JS表达式 -->
+    <input type="button" value="按钮" v-bind:title="myTitle+'123'" v-on:click="show">
+  </div>
+  <script src="./lib/vue-2.4.0.js"></script>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        msg:'欢迎来到Vue',
+        msg2:'<h1>哈哈，我是一个大大的H1</h1>',
+        myTitle:'btn值'
+      },
+      methods:{// 这个methods属性中定义了当前Vue实例所有可用的方法
+        show () {
+          alert('Hello')
+        }
+      }
+    })
+  </script>
+</body>
+</html>
