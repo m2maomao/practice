@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,31 +9,32 @@
   <script src="./lib/vue-2.4.0.js"></script>
   <link rel="stylesheet" href="./lib/bootstrap-3.3.7.css">
 </head>
+
 <body>
   <div id="app">
-    
+
     <div class="panel panel-primary">
-        <div class="panel-heading">
-          <h3 class="panel-title">添加品牌</h3>
-        </div>
-        <div class="panel-body form-inline">
-          <label>
-            Id:
-            <input type="text" class="form-control" v-model="id">
-          </label>
-          <label>
-            Name:
-            <input type="text" class="form-control" v-model="name">
-          </label>
-          <!-- 在Vue中，使用事件绑定机制，为元素制定处理函数的时候，如果加了小括号，就可以给函数传参了 -->
-          <input type="button" value="添加" class="btn btn-primary" @click="add()">
-          <label>
-            搜索名称关键字:
-            <input type="text" class="form-control" v-model="keywords">
-          </label>
-        </div>
+      <div class="panel-heading">
+        <h3 class="panel-title">添加品牌</h3>
+      </div>
+      <div class="panel-body form-inline">
+        <label>
+          Id:
+          <input type="text" class="form-control" v-model="id">
+        </label>
+        <label>
+          Name:
+          <input type="text" class="form-control" v-model="name">
+        </label>
+        <!-- 在Vue中，使用事件绑定机制，为元素制定处理函数的时候，如果加了小括号，就可以给函数传参了 -->
+        <input type="button" value="添加" class="btn btn-primary" @click="add()">
+        <label>
+          搜索名称关键字:
+          <input type="text" class="form-control" v-model="keywords">
+        </label>
+      </div>
     </div>
-    
+
     <table class="table table-bordered table-hover table-striped">
       <thead>
         <tr>
@@ -67,9 +69,9 @@
         keywords: '',
         list: [
           {
-            id:1,
-            name:'奔驰',
-            ctime:new Date()
+            id: 1,
+            name: '奔驰',
+            ctime: new Date()
           },
           {
             id: 2,
@@ -79,22 +81,22 @@
         ]
       },
       methods: {
-        add () { //添加的方法
-        // 分析：
-        // 1.获取到 id 和 name，直接从 data 上面获取
-        // 2.组织出一个对象
-        // 3.把这个号对象，调用 数组的 相关方法，添加到 当前 data 上的list中
-        // 4.注意：在Vue中，已经实现了数据的双向绑定，每当我们修改了 data 中的数据，Vue会默认监听到数据的改动，自动把最新的数据，应用到页面上；
-        // 5.当我们意识到上面的第四步的时候，就证明大家已经入门Vue了，我们更多的是在进行VM中 Model 数据的操作，同时，在操作Model数据的时候，指定的业务逻辑操作;
+        add() { //添加的方法
+          // 分析：
+          // 1.获取到 id 和 name，直接从 data 上面获取
+          // 2.组织出一个对象
+          // 3.把这个号对象，调用 数组的 相关方法，添加到 当前 data 上的list中
+          // 4.注意：在Vue中，已经实现了数据的双向绑定，每当我们修改了 data 中的数据，Vue会默认监听到数据的改动，自动把最新的数据，应用到页面上；
+          // 5.当我们意识到上面的第四步的时候，就证明大家已经入门Vue了，我们更多的是在进行VM中 Model 数据的操作，同时，在操作Model数据的时候，指定的业务逻辑操作;
           this.list.push({
-            id:this.id,
-            name:this.name,
-            ctime:new Date()
+            id: this.id,
+            name: this.name,
+            ctime: new Date()
           })
           this.id = ''
           this.name = ''
         },
-        del (id) { // 根据Id删除数据
+        del(id) { // 根据Id删除数据
           // 分析
           // 1.如何根据Id，找到要删除这一项的索引
           // 2.如果找到索引了，直接调用数组的 splice 方法
@@ -113,7 +115,7 @@
           }) */
 
           var index = this.list.findIndex(item => {
-            if(item.id === id) {
+            if (item.id === id) {
               return true;
             }
           })
@@ -130,10 +132,10 @@
 
           // 注意： forEach some filter findIndex 这些都属于数组的新方法，
           // 都会对数组中的每一项，进行遍历，执行相关的操作；
-          return this.list.filter(item=> {// 返回新数组
+          return this.list.filter(item => {// 返回新数组
             // 注意：ES6中，为字符串提供了一个新方法，叫做 String.prototype.includes('要包含的字符串')
             // 如果包含，则返回true，否则返回false
-            if(item.name.includes(keywords)) {
+            if (item.name.includes(keywords)) {
               return item
             }
           })
@@ -142,4 +144,7 @@
     })
   </script>
 </body>
+
 </html>
+
+<!-- 过滤器调用时候的格式    {{name | nameOpe}} -->
