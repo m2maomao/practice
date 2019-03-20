@@ -51,7 +51,7 @@
         <tr v-for="item in search(keywords)" :key="item.id">
           <td>{{ item.id }}</td>
           <td>{{ item.name }}</td>
-          <td>{{ item.ctime }}</td>
+          <td>{{ item.ctime | dateFormat }}</td>
           <td>
             <a href="" @click.prevent="del(item.id)">删除</a>
           </td>
@@ -59,7 +59,30 @@
       </tbody>
     </table>
   </div>
+
+  <div id="app2">
+    <h3>{{dt | dateFormat}}</h3>
+  </div>
   <script>
+    // 全局的过滤器，进行时间的格式化
+    // 所谓的全局过滤器，就是所有的VM实例都共享的
+    Vue.filter('dateFormat', (dateStr,pattern="") => {
+      // 根据给定的时间字符串，得到特定的时间
+      var dt = new Date(dateStr)
+      var y = dt.getFullYear()
+      var m = dt.getMonth() + 1
+      var d = dt.getDate()
+
+      if(pattern.toLowerCase() === 'yyyy-mm-dd') {
+        return `${y}-${m}-${d}`
+      } else {
+        var hh = dt.getHours()
+        var mm = dt.getMinutes()
+        var ss = dt.getSeconds()
+        return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
+      }
+    })
+
     // 创建 Vue 实例，得到ViewModel
     var vm = new Vue({
       el: '#app',
@@ -139,6 +162,40 @@
               return item
             }
           })
+        }
+      }
+    })
+    // 过滤器的定义语法
+    // Vue.filter('过滤器的名称', function () {
+
+    // 过滤器中的 function，第一个参数已经被规定死了，永远都是过滤器管道符前面 传递过来的数据
+    /* Vue.filter('过滤器的名称', function(data){
+      return data + '123'
+    }) */
+
+    // 如何自定义一个私有的过滤器（局部）
+    var vm2 = new Vue({
+      el:'#app2',
+      data: {
+        dt:new Date()
+      },
+      methods: {},
+      filters: { // 定义私有过滤器 过滤器有两个条件[过滤器名称和处理函数]
+      // 过滤器调用的时候，采用的是就近原则，如果私有过滤器和全局过滤器重名，那么以私有过滤器优先调用。
+        dateFormat:function(dateStr,pattern="") {
+            var dt = new Date(dateStr)
+            var y = dt.getFullYear()
+            var m = (dt.getMonth() + 1).toString().padStart(2,'0')
+            var d = (dt.getDate()).toString().padStart(2,'0')
+
+            if (pattern.toLowerCase() === 'yyyy-mm-dd') {
+              return `${y}-${m}-${d}`
+            } else {
+              var hh = (dt.getHours()).toString().padStart(2,'0')
+              var mm = (dt.getMinutes()).toString().padStart(2, '0')
+              var ss = (dt.getSeconds()).toString().padStart(2, '0')
+              return `${y}-${m}-${d} ${hh}:${mm}:${ss}----`
+            }
         }
       }
     })
