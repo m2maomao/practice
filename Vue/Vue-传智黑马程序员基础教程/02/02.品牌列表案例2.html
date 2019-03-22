@@ -24,7 +24,7 @@
         </label>
         <label>
           Name:
-          <input type="text" class="form-control" v-model="name">
+          <input type="text" class="form-control" v-model="name" @keyup.f2="add">
         </label>
         <!-- 在Vue中，使用事件绑定机制，为元素制定处理函数的时候，如果加了小括号，就可以给函数传参了 -->
         <input type="button" value="添加" class="btn btn-primary" @click="add()">
@@ -82,6 +82,9 @@
         return `${y}-${m}-${d} ${hh}:${mm}:${ss}`
       }
     })
+
+    // 自定义全局按键修饰符
+    Vue.config.keyCodes.f2 = 113
 
     // 创建 Vue 实例，得到ViewModel
     var vm = new Vue({
