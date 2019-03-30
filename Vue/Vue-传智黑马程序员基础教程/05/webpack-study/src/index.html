@@ -11,7 +11,13 @@
   <!-- <script src="./main.js"></script> -->
 
   <!-- 通过 webpack 前端构建啊工具，把 main.js 做了一下处理，生成了一个 bundle.js 的文件 -->
-  <script src="../dist/bundle.js"></script>
+  <!-- <script src="../dist/bundle.js"></script> -->
+
+  <!-- 当使用 html-webpack-plugin 之后，我们不再需要手动处理bundle.js的引用路径了，因为这个插件，已经帮我们自动创建了一个合适的script，并且引用了正确的路径 -->
+  <!-- <script src="../bundle.js"></script> -->
+
+  <!-- css 会发起二次请求，不推荐这么搞 -->
+  <!-- <link rel="stylesheet" href="./css/index.css"> -->
 </head>
 <body>
   <ul>

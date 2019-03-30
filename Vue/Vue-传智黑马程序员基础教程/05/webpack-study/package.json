@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack --mode development",
+    "dev2": "webpack-dev-server --open --port 3000  --contentBase src --hot",
+    "dev": "webpack-dev-server",
     "build": "webpack --mode production"
   },
   "keywords": [],
@@ -16,6 +17,10 @@
     "webpack": "^4.29.6"
   },
   "devDependencies": {
-    "webpack-cli": "^3.3.0"
+    "css-loader": "^2.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.1",
+    "webpack-cli": "^3.3.0",
+    "webpack-dev-server": "^3.2.1"
   }
 }
