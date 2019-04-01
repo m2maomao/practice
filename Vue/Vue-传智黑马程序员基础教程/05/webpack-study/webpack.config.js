@@ -38,6 +38,22 @@ module.exports = {
           'style-loader', 
           'css-loader'
         ] // 配置处理 .css 文件的第三方loader规则
+      },
+      {
+        test:/\.less$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'less-loader' // 配置处理 .less 文件的第三方 loader 规则
+        ]
+      },
+      {
+        test:/\.scss$/,
+        use: [
+          'style-loader',
+          'css-loader',
+          'sass-loader'
+        ]
       }
     ]
   },

@@ -9,6 +9,8 @@ import $ from 'jquery'
 
 // 使用import语法，导入CSS样式表
 import './css/index.css'
+import './css/index.less'
+import './css/index.scss'
 // 注意：webpack，默认只能打包处理 JS 类型的文件，无法处理其他的非JS类型的文件；
 // 如果要处理非JS类型的文件，我们需要手动安装一些合适的第三方 loader 加载器；
 // 1.如果想要打包处理 css 文件，需要安装 cnpm i style-loader css-loader -D
