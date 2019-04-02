@@ -13,15 +13,17 @@ module.exports = {
   },
   plugins: [ // 所有 webpack 插件的配置节点
     new htmlWebpackPlugin({
-      template:path.join(__dirname,'./src/index.html'),
-      filename:'index.html' //设置生成的内存页面名称
+      template: path.join(__dirname, './src/index.html'),
+      filename: 'index.html' //设置生成的内存页面名称
     })
   ],
-  module:{ // 配置所有第三方 loader 模块的
+  module: { // 配置所有第三方 loader 模块的
     rules: [ // 第三方模块的匹配规则
-      { test: /\.css$/, use:['style-loader', 'css-loader']},
-      { test: /\.less$/, use:['style-loader', 'css-loader', 'less-loader']},
-      { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] }
+      { test: /\.css$/, use: ['style-loader', 'css-loader'] },
+      { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] },
+      { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
+      { test: /\.(jpg|gif|png|jpeg|bmp)$/, use: 'url-loader?limit=57241&name=[hash:8]-[name].[ext]' }
+      // limit 给定的值，是图片的大小，单位是 byte，如果我们引用的图片，大于或等于给定的limit值，则不会被转为base64格式的字符串，如果图片小于给定的limit值，则会被转为base64的字符串
     ]
   },
   mode: 'development'
