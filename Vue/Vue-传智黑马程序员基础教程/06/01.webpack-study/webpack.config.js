@@ -22,7 +22,8 @@ module.exports = {
       { test: /\.css$/, use: ['style-loader', 'css-loader'] },
       { test: /\.less$/, use: ['style-loader', 'css-loader', 'less-loader'] },
       { test: /\.scss$/, use: ['style-loader', 'css-loader', 'sass-loader'] },
-      { test: /\.(jpg|gif|png|jpeg|bmp)$/, use: 'url-loader?limit=57241&name=[hash:8]-[name].[ext]' }
+      { test: /\.(jpg|gif|png|jpeg|bmp)$/, use: 'url-loader?limit=57241&name=[hash:8]-[name].[ext]' },
+      { test: /\.(ttf|eot|svg|woff|woff2)$/, use:'url-loader'}
       // limit 给定的值，是图片的大小，单位是 byte，如果我们引用的图片，大于或等于给定的limit值，则不会被转为base64格式的字符串，如果图片小于给定的limit值，则会被转为base64的字符串
     ]
   },
