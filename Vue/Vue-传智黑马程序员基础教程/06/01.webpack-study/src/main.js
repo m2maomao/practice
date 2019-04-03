@@ -36,7 +36,7 @@ console.log(Person.info)
 //   "presets":["env","stage-0"],
 //   "plugins":["transform-runtime"]
 // }
-
+// 4.了解：目前，我们安装的 babel-preset-env, 是比较新的ES语法，之前，我们安装的是babel-preset-es2015,现在，出了一个更新的语法插件，叫做 babel-preset-env,它包含了所有的和ES***相关的语法
 
 // Java C# 实现面向对象的方式完全一样，class是从后端语言中借鉴过来，来实现面向对象
 // var p1 = new Person()
