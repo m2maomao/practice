@@ -5,7 +5,9 @@
     <mt-button type="danger" icon="more" @click="show">default</mt-button>
     <mt-button type="danger" size="large" plain>default</mt-button>
     <mt-button type="danger" size="small" disabled>default</mt-button>
-
+    <button type="button" class="mui-btn mui-btn-royal">
+      紫色
+    </button>
     <router-link to="/account">Account</router-link>
     <router-link to="/goodslist">GoodsList</router-link>
     <router-view></router-view>
