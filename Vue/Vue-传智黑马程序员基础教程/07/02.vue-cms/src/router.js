@@ -6,6 +6,10 @@ import VueRouter from 'vue-router'
 var router = new VueRouter({
   routes: [ // 配置路由规则
     {
+      path:'/',
+      redirect:'/home'
+    },
+    {
       path: '/home',
       component: resolve => require(['./components/tabbar/HomeContainer.vue'],resolve)
     },
