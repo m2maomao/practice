@@ -20,6 +20,8 @@ Vue.use(VueResource)
 
 // 全局设置请求的根路径
 Vue.http.options.root = 'http://localhost:3000/'
+// 全局设置 post 时候表单数据格式组织形式 application/x-www-form-urlencoded
+Vue.http.options.emulateJSON = true
 
 // 导入 MUI 的样式
 import './lib/mui/css/mui.css'
