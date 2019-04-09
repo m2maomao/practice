@@ -33,10 +33,8 @@
 // 1.导入 mui 的js文件
 import mui from '../../lib/mui/js/mui.min.js'
 // 2.初始化滑动控件
-mui('body').on('click','a',function(){document.location.href=this.href;});
-mui('.mui-scroll-wrapper').scroll({
-	deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
-});
+// mui('body').on('click','a',function(){document.location.href=this.href;});
+
 export default {
   data () {
     return {
@@ -45,6 +43,11 @@ export default {
   },
   created() {
     
+  },
+  mounted() {
+    mui('.mui-scroll-wrapper').scroll({
+      deceleration: 0.0005 //flick 减速系数，系数越大，滚动速度越慢，滚动距离越小，默认值0.0006
+    });
   }
 }
 </script>
