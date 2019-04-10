@@ -61,3 +61,15 @@ for (let i = 0; i < 20; i++) {
 }
 // 新闻评论
 Mock.mock('http://localhost:3000/getcomments/1?pageindex=1', comments)
+
+let imageCates = {
+  message: [],
+  status: 0
+}
+for (let i = 0; i < 10; i++) {
+  imageCates.message.push({
+    id:Random.natural(1,20),
+    title:Random.ctitle(4)
+  })
+}
+Mock.mock('http://localhost:3000/getimgcategory',imageCates)
