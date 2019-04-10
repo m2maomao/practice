@@ -36,6 +36,10 @@ var router = new VueRouter({
     {
       path: '/home/photolist',
       component: resolve => require(['./components/photos/PhotoList.vue'], resolve)
+    },
+    {
+      path: '/home/photoinfo/:id',
+      component: resolve => require(['./components/photos/PhotoInfo.vue'], resolve)
     }
   ],
   linkActiveClass: 'mui-active' // 覆盖默认的路由高亮的类，默认的类叫做：router-link-active

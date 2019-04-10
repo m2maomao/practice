@@ -72,4 +72,36 @@ for (let i = 0; i < 10; i++) {
     title:Random.ctitle(4)
   })
 }
+// 图片分类
 Mock.mock('http://localhost:3000/getimgcategory',imageCates)
+
+let imagesList = {
+  message: [],
+  status: 0
+}
+for (let i = 0; i < 10; i++) {
+  imagesList.message.push({
+    id:Random.natural(1,20),
+    title:Random.ctitle(10,20),
+    img_url: Random.dataImage('700x500'),
+    zhaiyao: Random.ctitle(30,50)
+  })
+}
+// 图片列表
+Mock.mock('http://localhost:3000/getimages/0',imagesList)
+
+let imageInfo = {
+  message: [],
+  status: 0
+}
+for (let i=0; i< 5; i++) {
+  imageInfo.message.push({
+    id:Random.natural(1,20),
+    title:Random.ctitle(15),
+    click:Random.natural(200,500),
+    add_time: Random.datetime(),
+    content:Random.cparagraph(5,10)
+  })
+}
+// 图片详情
+Mock.mock('http://localhost:3000/getimageInfo/0', imageInfo)
