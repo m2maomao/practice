@@ -180,6 +180,7 @@
           this.list.splice(index, 1)
         },
         search(keywords) { // 根据关键字进行搜索
+        // 当使用 .map() 时候，不可以直接在前面return，因为 .map()的结果是该数组中每个元素都调用一个提供的函数后返回的结果，如果需要直接return筛选数组并返回某些值，可以使用 .filter()
           /* var newList = []
           this.list.map(item=> {
             if(item.name.indexOf(keywords) !== -1) {
