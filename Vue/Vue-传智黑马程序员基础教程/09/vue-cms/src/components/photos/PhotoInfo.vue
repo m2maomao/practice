@@ -7,7 +7,9 @@
     </p>
     <hr>
     <!-- 缩略图区域 -->
-    <vue-preview :slides="slide1" @close="handleClose"></vue-preview>
+    <div class="photo-wrap">
+      <vue-preview :slides="list" class="img"></vue-preview>
+    </div>
     <!-- 图片内容区域 -->
     <div class="content" v-html="photoinfo.content"></div>
 
@@ -24,24 +26,7 @@ export default {
     return {
       id:this.$route.params.id,
       photoinfo:{}, //图片详情
-      slide1: [
-        {
-          src: 'https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_b.jpg',
-          msrc: 'https://farm6.staticflickr.com/5591/15008867125_68a8ed88cc_m.jpg',
-          alt: 'picture1',
-          title: 'Image Caption 1',
-          w: 600,
-          h: 400
-        },
-        {
-          src: 'https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_b.jpg',
-          msrc: 'https://farm4.staticflickr.com/3902/14985871946_86abb8c56f_m.jpg',
-          alt: 'picture2',
-          title: 'Image Caption 2',
-          w: 1200,
-          h: 900
-        }
-      ]
+      list: []
     }
   },
   components:{
@@ -49,6 +34,7 @@ export default {
   },
   created() {
     this.getPhotoInfo()
+    this.getThumbs()
   },
   methods: {
     getPhotoInfo() {
@@ -56,6 +42,20 @@ export default {
       this.$http.get('getimageInfo/0').then(res => {
         if (res.body.status === 0) {
           this.photoinfo = res.body.message[0]
+        }
+      })
+    },
+    getThumbs () {
+      // 获取缩略图
+      this.$http.get('getthumimages/0').then(res => {
+        if (res.body.status === 0) {
+          // 循环每个图片数据，补全图片的宽和高
+          res.body.message.forEach(item => {
+            item.w = 1000
+            item.h = 1800
+          })
+          // 把完整的数据保存到 list 中
+          this.list = res.body.message
         }
       })
     }
@@ -83,3 +83,22 @@ export default {
   }
 }
 </style>
+<style lang="less">
+.photo-wrap{
+  .img{
+    .my-gallery{
+      display: flex;
+      flex-direction:row;
+      flex-wrap: wrap;
+      figure{
+        margin:10px;
+      }
+    }
+    img{
+      width: 100px;
+      box-shadow: 0 0 10px #666;
+    }
+  }
+}
+</style>
+

@@ -34,7 +34,7 @@ export default {
   methods: {
     // 获取评论
     getComments() {
-      this.$http.get('getcomments/' + this.id + '?pageindex=' + this.pageIndex).then(res => {
+      this.$http.get('getcomments/1?pageindex=' + this.pageIndex).then(res => {
         console.log('res', res)
         if(res.body.status === 0) {
           this.comments.push(...res.body.message)

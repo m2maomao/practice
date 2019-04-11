@@ -105,3 +105,29 @@ for (let i=0; i< 5; i++) {
 }
 // 图片详情
 Mock.mock('http://localhost:3000/getimageInfo/0', imageInfo)
+
+let thumbs = {
+  message:[
+    {
+      src:'https://hbimg.huabanimg.com/60aaaa328fed7c8d91878a4ec35164d0cd49b9704d2a6-dL7vbu_fw236',
+      msrc:'https://hbimg.huabanimg.com/60aaaa328fed7c8d91878a4ec35164d0cd49b9704d2a6-dL7vbu_fw236',
+      alt:Random.ctitle(10),
+      title: Random.ctitle(10)
+    },
+    {
+      src: 'http://hbimg.huabanimg.com/bf0d9e0eccd6df2307ebbd5d3388d044a8be119d44a6c-XrLIvP_fw236',
+      msrc: 'http://hbimg.huabanimg.com/bf0d9e0eccd6df2307ebbd5d3388d044a8be119d44a6c-XrLIvP_fw236',
+      alt: Random.ctitle(10),
+      title: Random.ctitle(10)
+    },
+    {
+      src: 'http://hbimg.huabanimg.com/ecd113874f2d41ca1f57c4b33e3d0082063049a3d7eb6-Kf9tZr_fw236',
+      msrc: 'http://hbimg.huabanimg.com/ecd113874f2d41ca1f57c4b33e3d0082063049a3d7eb6-Kf9tZr_fw236',
+      alt: 'alt:' + Random.ctitle(10),
+      title: 'title:' + Random.ctitle(10)
+    }
+  ],
+  status: 0
+}
+// 缩略图
+Mock.mock('http://localhost:3000/getthumimages/0', thumbs)
