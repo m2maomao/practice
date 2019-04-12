@@ -131,3 +131,99 @@ let thumbs = {
 }
 // 缩略图
 Mock.mock('http://localhost:3000/getthumimages/0', thumbs)
+
+let goods = {
+  message:[
+    {
+      id:1,
+      title:'花瓣的图片摘选',
+      add_time:Random.datetime(),
+      zhaiyao:'简单的摘要文字',
+      click:0,
+      img_url:'https://hbimg.huabanimg.com/312c9391a6930b4cfa7322610b6c58226ffef580430da-Vv1cZH_fw236',
+      sell_price:2195,
+      market_price:2499,
+      stock_quantity:60
+    },
+    {
+      id: 2,
+      title: '花瓣的图片摘选',
+      add_time: Random.datetime(),
+      zhaiyao: '简单的摘要文字',
+      click: 0,
+      img_url: 'https://hbimg.huabanimg.com/8ee7471a8aa671acc9f51ec48cedc26718f17cdf88a84-6glPM5_fw236',
+      sell_price: 2195,
+      market_price: 2499,
+      stock_quantity: 60
+    },
+    {
+      id: 3,
+      title: '花瓣的图片摘选',
+      add_time: Random.datetime(),
+      zhaiyao: '简单的摘要文字',
+      click: 0,
+      img_url: 'https://hbimg.huabanimg.com/e3256baa0fe287f5826b5661334f610de4feb0033e3749-5rH3BV_fw236',
+      sell_price: 2195,
+      market_price: 2499,
+      stock_quantity: 60
+    },
+    {
+      id: 4,
+      title: '花瓣的图片摘选',
+      add_time: Random.datetime(),
+      zhaiyao: '简单的摘要文字',
+      click: 0,
+      img_url: 'https://hbimg.huabanimg.com/20fdc58a13d16482e01aa49e25f7026e50d0866f33716d-DnhfsY_fw236',
+      sell_price: 2195,
+      market_price: 2499,
+      stock_quantity: 60
+    },
+    {
+      id: 5,
+      title: '花瓣的图片摘选',
+      add_time: Random.datetime(),
+      zhaiyao: '简单的摘要文字',
+      click: 0,
+      img_url: 'https://hbimg.huabanimg.com/8cb0d817fb918869b4f4854a662704c71a8d753c10a4e0-CuHjTq_fw236',
+      sell_price: 2195,
+      market_price: 2499,
+      stock_quantity: 60
+    },
+    {
+      id: 6,
+      title: '花瓣的图片摘选',
+      add_time: Random.datetime(),
+      zhaiyao: '简单的摘要文字',
+      click: 0,
+      img_url: 'https://hbimg.huabanimg.com/41c8e7d5bbafafb11f032879d6b27ec118381e112e37a-c6PKak_fw236',
+      sell_price: 2195,
+      market_price: 2499,
+      stock_quantity: 60
+    },
+    {
+      id: 7,
+      title: '花瓣的图片摘选',
+      add_time: Random.datetime(),
+      zhaiyao: '简单的摘要文字',
+      click: 0,
+      img_url: 'https://hbimg.huabanimg.com/cc88112b2ad0c2d1cd13ed4e8434c10618b3612fed20-60TyEG_fw236',
+      sell_price: 2195,
+      market_price: 2499,
+      stock_quantity: 60
+    },
+    {
+      id: 8,
+      title: '花瓣的图片摘选8',
+      add_time: Random.datetime(),
+      zhaiyao: '简单的摘要文字',
+      click: 0,
+      img_url: 'https://hbimg.huabanimg.com/f3ee9951d34afe066f95c54e33ec214b55027d7637a992-DXVtG5_fw236',
+      sell_price: 2195,
+      market_price: 2499,
+      stock_quantity: 60
+    }
+  ],
+  status: 0
+}
+// 商品列表
+Mock.mock('http://localhost:3000/getgoods?pageindex=1', goods)
