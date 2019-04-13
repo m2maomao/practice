@@ -47,7 +47,8 @@ var router = new VueRouter({
     },
     {
       path:'/home/goodsinfo/:id',
-      component: resolve => require(['./components/goods/GoodsInfo.vue'], resolve)
+      component: resolve => require(['./components/goods/GoodsInfo.vue'], resolve),
+      name:'goodsinfo'
     }
   ],
   linkActiveClass: 'mui-active' // 覆盖默认的路由高亮的类，默认的类叫做：router-link-active
