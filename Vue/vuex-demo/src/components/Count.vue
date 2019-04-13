@@ -50,7 +50,7 @@ export default {
     //   return this.count + 22
     // }
 
-    ...mapGetters(['count'])
+    ...mapGetters(['count']) // 注意：引入的是store中的count，默认值为1
   },
   methods: {
     ...mapMutations(['add', 'reduce']),
