@@ -43,7 +43,7 @@ export default {
 
   // 第三种形式访问state
   computed: {
-    ...mapState(['count']),
+    ...mapState(['count']), // 注意：此时count引入的是vuex中的count，默认值为3
     count () {
       return this.$store.getters.count
     }
