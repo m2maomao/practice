@@ -1,12 +1,18 @@
 <template>
   <div>
-    <h3>商品评论页面</h3>
+    <cmtbox id="1"></cmtbox>
   </div>
 </template>
 
 <script>
+import cmtbox from '../subcomponents/comment.vue'
 export default {
-  
+  data () {
+    return {}
+  },
+  components: {
+    cmtbox
+  }
 }
 </script>
 

@@ -242,4 +242,17 @@ let goodsinfo = {
   ],
   status: 0
 }
+// 商品详情
 Mock.mock('http://localhost:3000/goods/getinfo/0', goodsinfo)
+
+let goodsdesc = {
+  message: [
+    {
+      title: Random.ctitle(20),
+      content: Random.cparagraph(10)
+    }
+  ],
+  status: 0
+}
+// 图文介绍
+Mock.mock('http://localhost:3000/goods/getdesc/1', goodsdesc)
