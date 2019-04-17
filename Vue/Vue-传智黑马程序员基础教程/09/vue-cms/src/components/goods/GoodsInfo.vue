@@ -5,7 +5,7 @@
     @before-enter="beforeEnter"
     @enter="enter"
     @after-enter="afterEnter">
-      <div class="ball" v-show="ballFlag"></div>
+      <div class="ball" v-show="ballFlag" ref="ball"></div>
     </transition>
 
     <!-- 商品轮播图区域 -->
@@ -114,7 +114,26 @@ export default {
     },
     enter(el,done) {
       el.offsetWidth
-      el.style.transform = "translate(93px, 230px)"
+
+      // 小球动画优化思路：
+      // 1.分析导致动画不准确的本质原因：我们把小球最终位移到的为止，已经局限在了某一分辨率下的滚动条未滚动的情况下；
+      // 2.只要分辨率和测试的时候不一样，或者滚动条有一定的滚动距离之后，问题就出现了
+      // 3、因此，我们经过分析，得到结论：不能把位移的横纵坐标直接写死，而是应该根据不同情况，动态计算这个坐标值；
+      // 4.经分析，先得到徽标的横纵坐标，再得到小球的横纵坐标，然后让 y 值求差，x值也求差，得到的结果就是横纵坐标要位移的距离
+      // 5.如何获取徽标和小球的位置  domObject.getBoundingClientRect()
+
+      // 获取小球在页面中的位置
+      const ballPosition = this.$refs.ball.getBoundingClientRect()
+      // 获取徽标在页面中的位置
+      const badgePostion = document.getElementById('badge').getBoundingClientRect()
+
+      const xDist = badgePostion.left - ballPosition.left
+      const yDist = badgePostion.top - ballPosition.top
+
+
+
+
+      el.style.transform = `translate(${xDist}px, ${yDist}px)`
       el.style.transition = 'all .8s ease'
       done()
     },
