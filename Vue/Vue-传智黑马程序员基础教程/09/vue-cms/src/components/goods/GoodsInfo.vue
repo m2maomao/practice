@@ -26,7 +26,7 @@
             <span>销售价：<em class="now_price">￥{{ goodsinfo.sell_price }}</em></span>
           </p>
           <p>
-            购买数量:<numbox @getcount="getSelectedCount"></numbox>
+            购买数量:<numbox @getcount="getSelectedCount" :max="goodsinfo.stock_quantity"></numbox>
           </p>
           <p>
             <mt-button type="primary" size="small">立即购买</mt-button>
