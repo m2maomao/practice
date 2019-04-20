@@ -1,13 +1,26 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <h1>这是App组件</h1>
+    <hr>
+    <counter></counter>
+    <hr>
+    <amount></amount>
   </div>
 </template>
 
 <script>
+import counter from './components/counter.vue'
+import amount from './components/amount.vue'
+
 export default {
-  name: 'App'
+  name: 'App',
+  data () {
+    return {}
+  },
+  components: {
+    counter,
+    amount
+  }
 }
 </script>
 
