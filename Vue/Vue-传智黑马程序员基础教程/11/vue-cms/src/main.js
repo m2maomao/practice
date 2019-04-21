@@ -11,9 +11,12 @@ import router from './router.js'
 import Vuex from 'vuex'
 Vue.use(Vuex)
 
+// 每次刚进入网站，肯定会调用main.js 在刚调用的时候，先从本地存储中，把购物车的数据读出来，放到store中
+var car = JSON.parse(localStorage.getItem('car') || '[]')
+
 var store = new Vuex.Store({
   state: { // this.$store.state.***
-    car: [] // 将购物车中的商品的数据，用一个数组存储起来，在car数组中存储一些商品的对象，可以暂时将这个商品对象，设计成如下：
+    car: car // 将购物车中的商品的数据，用一个数组存储起来，在car数组中存储一些商品的对象，可以暂时将这个商品对象，设计成如下：
     // {id:商品的id, count: 要购买的数量, price:商品的单价，selected：是否被选中}
   },
   mutations:{ // this.$store.commit('方法名称','按需传递唯一的参数')
@@ -38,6 +41,9 @@ var store = new Vuex.Store({
       if(!flag) {
         state.car.push(goodsinfo)
       }
+
+      // 当更新 car 之后，把 car 数组，存储到本地的localStorage中
+      localStorage.setItem('car',JSON.stringify(state.car))
     }
   },
   getters:{ // this.$store.getters.***
