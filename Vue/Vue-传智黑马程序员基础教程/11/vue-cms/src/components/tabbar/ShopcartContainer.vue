@@ -13,7 +13,9 @@
               <h2>{{item.title}}</h2>
               <p>
                 <span class="price">￥{{item.sell_price}}</span>
-                <numbox></numbox>
+                <numbox :goodsid="item.id" :initcount="$store.getters.getGoodsCount[item.id]"></numbox>
+                <!-- 问题：如何从购物车中获取商品的数量？ -->
+                <!-- 1.我们可以先创建一个空对象，然后循环购物车中所有商品的数据，把当前循环这条商品的Id，作为对象的属性名，count值作为对象的属性值，这样，当把所有的商品循环一遍，就会得到一个对象：{id: count} {88:2} {89:4} -->
                 <a href="#">删除</a>
               </p>
             </div>

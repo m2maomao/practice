@@ -260,22 +260,22 @@ Mock.mock('http://localhost:3000/goods/getdesc/1', goodsdesc)
 let shopcarlist = {
   message: [
     {
-      cou: 1,
-      id: 87,
+      cou: 5,
+      id: 1,
       title: '华为(HUAWEI)荣耀6PLUS 16G双4G版',
       sell_price: 2195,
       thumb_path: 'https://hbimg.huabanimg.com/f3ee9951d34afe066f95c54e33ec214b55027d7637a992-DXVtG5_fw236'
     },
     {
-      cou: 1,
-      id: 88,
+      cou: 6,
+      id: 2,
       title: '第二个标题',
       sell_price: 1688,
       thumb_path: 'https://hbimg.huabanimg.com/cc88112b2ad0c2d1cd13ed4e8434c10618b3612fed20-60TyEG_fw236'
     },
     {
-      cou: 1,
-      id: 89,
+      cou: 7,
+      id: 3,
       title: '第三个标题哦哦哦',
       sell_price: 999,
       thumb_path: 'https://hbimg.huabanimg.com/41c8e7d5bbafafb11f032879d6b27ec118381e112e37a-c6PKak_fw236'
