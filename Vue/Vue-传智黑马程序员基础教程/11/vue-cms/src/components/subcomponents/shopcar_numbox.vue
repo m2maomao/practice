@@ -14,7 +14,6 @@ import mui from '../../lib/mui/js/mui.min.js'
 
 export default {
   mounted() {
-    console.log(this.max)
     // 初始化数字选择框组件
     mui('.mui-numbox').numbox()
   },

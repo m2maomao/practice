@@ -27,9 +27,7 @@
     <div class="mui-card">
       <div class="mui-card-content">
         <div class="mui-card-content-inner">
-          
-          <mt-switch v-model="value"></mt-switch>
-
+          结算区域的文案
         </div>
       </div>
     </div>
@@ -62,9 +60,10 @@ export default {
         return;
       }
       // 获取购物车商品列表
-      this.$http.get('getshopcarlist/'+idArr.join(',')).then(res => {
+      // this.$http.get('getshopcarlist/'+idArr.join(',')).then(res => {
+      this.$http.get('getshopcarlist/1').then(res => {
         if(res.body.status === 0) {
-          this.goodslist = result.body.message
+          this.goodslist = res.body.message
         }
       })
     }
