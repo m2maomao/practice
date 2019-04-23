@@ -56,6 +56,17 @@ var store = new Vuex.Store({
       })
       // 当修改完商品的数量，把最新的购物车数据，保存到本地存储中
       localStorage.setItem('car', JSON.stringify(state.car))
+    },
+    removeFromCar(state, id) {
+      // 根据Id，从store中的购物车中删除对应的那条商品数据
+      state.car.some((item, i)=>{
+        if(item.id === id) {
+          state.car.splice(i,1)
+          return true
+        }
+      })
+      // 将删除完毕后的，最新的购物车数据，同步到本地存储中
+      localStorage.setItem('car', JSON.stringify(state.car))
     }
   },
   getters:{ // this.$store.getters.***
