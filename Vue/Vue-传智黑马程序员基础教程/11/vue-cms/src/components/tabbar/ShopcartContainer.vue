@@ -7,7 +7,9 @@
         <div class="mui-card-content">
           <div class="mui-card-content-inner">
             
-            <mt-switch ></mt-switch>
+            <mt-switch 
+              v-model="$store.getters.getGoodsSelected[item.id]"
+              @change="selectedChanged(item.id,$store.getters.getGoodsSelected[item.id])" ></mt-switch>
             <img :src="item.thumb_path">
             <div class="info">
               <h2>{{item.title}}</h2>
@@ -31,12 +33,14 @@
         <div class="mui-card-content-inner jiesuan">
           <div class="left">
             <p>总计（不含运费）</p>
-            <p>已勾选商品 <span class="red">0</span> 件，总价￥<span class="red">0</span></p>
+            <p>已勾选商品 <span class="red">{{$store.getters.getGoodsCountAndAmount.count}}</span> 件，总价￥<span class="red">{{$store.getters.getGoodsCountAndAmount.amount}}</span></p>
           </div>
           <mt-button type="danger">去结算</mt-button>
         </div>
       </div>
     </div>
+
+    <p>{{$store.getters.getGoodsSelected}}</p>
     
   </div>
 </template>
@@ -77,6 +81,12 @@ export default {
       // 点击删除，把商品从 store 中根据传递的Id 删除，同时，把当前组件中的 goodslist中对应要删除的那个商品使用 index 来删除
       this.goodslist.splice(index,1);
       this.$store.commit('removeFromCar', id)
+    },
+    selectedChanged(id, val) {
+      console.log(id, val)
+      // 每当点击开关，把最新的开关状态，同步到store中
+      // console.log('id:' + id + '-----' + 'val:' + val)
+      this.$store.commit('updateGoodsSelected', {id:id, selected:val})
     }
   }
 }
