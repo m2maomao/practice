@@ -45,7 +45,7 @@ export default {
 	},
 	methods: {
 		goBack () {
-			// 点击后退
+			// 点击后退，跳转用$router,获取参数用$route
 			this.$router.go(-1)
 		}	
 	},
