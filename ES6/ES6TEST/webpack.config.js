@@ -5,7 +5,7 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  entry: {
+  entry: {//入口
     index: ['./src/index.js', './src/object.js']
   },
   output: {
