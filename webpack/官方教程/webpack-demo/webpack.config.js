@@ -5,37 +5,31 @@ const webpack = require('webpack')
 
 module.exports = {
   entry: {
-    app: './src/index.js',
-  },
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
-    hot: true
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader'
-        ]
-      }
+    main: './src/index.js',
+    vendor: [
+      'lodash'
     ]
   },
-  output:{
-    filename:'[name].bundle.js',
-    path:path.resolve(__dirname,'dist'),
-    publicPath: '/'
-  },
-  // mode: 'development',
-  mode: 'production',
   plugins: [
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({path: ['dist']}),
     new HtmlWebpackPlugin({
-      title: 'Output Management'
+      title: 'Caching'
     }),
-    new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
-  ]
+    new webpack.HashedModuleIdsPlugin(),
+  ],
+  optimization: {
+    splitChunks:{
+      cacheGroups:{
+        commons:{
+          name:'commons',
+          chunks:'initial',
+          minChunks:2
+        }
+      }
+    }
+  },
+  output:{
+    filename:'[name].[chunkhash].js',
+    path:path.resolve(__dirname,'dist')
+  }
 }
