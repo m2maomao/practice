@@ -1,35 +1,30 @@
 const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const {CleanWebpackPlugin} = require('clean-webpack-plugin')
 const webpack = require('webpack')
 
 module.exports = {
   entry: {
-    main: './src/index.js',
-    vendor: [
-      'lodash'
+    polyfills: './src/polyfills.js',
+    index: './src/index.js'
+  },
+  output:{
+    filename:'[name].bundle.js',
+    path:path.resolve(__dirname,'dist')
+  },
+  module: {
+    rules: [
+      {
+        test: require.resolve('./src/index.js'),
+        use: 'imports-loader?this=>window'
+      },
+      {
+        test: require.resolve('./src/globals.js'),
+        use:'exports-loader?file,parse=helpers.parse'
+      }
     ]
   },
   plugins: [
-    new CleanWebpackPlugin({path: ['dist']}),
-    new HtmlWebpackPlugin({
-      title: 'Caching'
-    }),
-    new webpack.HashedModuleIdsPlugin(),
-  ],
-  optimization: {
-    splitChunks:{
-      cacheGroups:{
-        commons:{
-          name:'commons',
-          chunks:'initial',
-          minChunks:2
-        }
-      }
-    }
-  },
-  output:{
-    filename:'[name].[chunkhash].js',
-    path:path.resolve(__dirname,'dist')
-  }
+    new webpack.ProvidePlugin({
+      join: ['lodash','join']
+    })
+  ]
 }
