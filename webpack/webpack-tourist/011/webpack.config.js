@@ -1,10 +1,10 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const PATHS = {
   app: path.join(__dirname, 'app'),
-  build: path.join(__dirname, 'build')
-}
+  build: path.join(__dirname, 'build'),
+};
 
 module.exports = {
   mode: 'development',
@@ -14,23 +14,32 @@ module.exports = {
     port: 80, // Default to 8080
   },
   entry: {
-    app: PATHS.app
+    app: PATHS.app,
   },
   output: {
     path: PATHS.build,
-    filename: '[name].js'
+    filename: '[name].js',
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use:['style-loader', 'css-loader']
-      }
-    ]
+        exclude: /node_modules/,
+        use:[
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+            },
+          },
+        ],
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title:'Webpack demo'
-    })
-  ]
-}
+      title:'Webpack demo',
+    }),
+  ],
+};
