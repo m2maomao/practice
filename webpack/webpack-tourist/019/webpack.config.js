@@ -1,5 +1,5 @@
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 
 const PATHS = {
@@ -28,7 +28,9 @@ module.exports = {
     maxAssetSize: 450000, // bytes
   },
   entry: {
-    app: PATHS.app,
+    // app: PATHS.app,
+    index: './app/index.js',
+    about: './app/about.js',
     vendor: ['react'],// 供应商
   },
   output: {
@@ -53,9 +55,9 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      title:'Webpack demo',
-    }),
+    // new HtmlWebpackPlugin({
+    //   title:'Webpack demo',
+    // }),
     plugin,
     // 分离打包项目代码与组件代码[webpack4已废弃]
     // new webpack.optimize.CommonsChunkPlugin({
