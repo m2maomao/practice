@@ -116,20 +116,116 @@
 // console.log(md5('name','zhangsan'))
 
 
-interface Animal{
-  name:string;
-  eat(str:string):void;
-}
+// interface Animal{
+//   name:string;
+//   eat(str:string):void;
+// }
 
-class Dog implements Animal {
-  name:string;
-  constructor(name:string) {
-      this.name = name;
-  }
-  eat():void {
-      console.log(this.name + '吃粮食');
-  }
-}
+// class Dog implements Animal {
+//   name:string;
+//   constructor(name:string) {
+//       this.name = name;
+//   }
+//   eat():void {
+//       console.log(this.name + '吃粮食');
+//   }
+// }
 
-var d = new Dog('小黑');
-d.eat();
+// var d = new Dog('小黑');
+// d.eat();
+
+// class Cat implements Animal {
+//   name:string;
+//   constructor(name:string){
+//       this.name = name;
+//   }
+//   eat(food:string):void {
+//       console.log(this.name + food)
+//   }
+// }
+// var c = new Cat('咪咪');
+// c.eat('猫粮');
+
+
+// interface Animal {
+//   eat():void;
+// }
+// interface Person extends Animal {
+//   work():void;
+// }
+
+// class Programmer {
+//   public name: string;
+//   constructor(name:string) {
+//       this.name = name;
+//   }
+//   coding(code:string):void {
+//       console.log(this.name+code)
+//   }
+// }
+
+// class Web extends Programmer implements Person{
+//   constructor(name:string) {
+//       super(name);
+//   }
+//   eat():void {
+//       console.log(this.name + '吃面条')
+//   }
+//   work():void {
+//       console.log(this.name + '写代码')
+//   }
+// }
+
+// var w = new Web('毛毛');
+// w.work();
+// w.coding('写ts代码');
+
+
+// class MainClass {
+//   public list:number[] = [];
+  
+//   add(num:number) {
+//       this.list.push(num)
+//   }
+//   min():number {
+//       var minNum = this.list[0];
+//       for(var i= 0; i < this.list.length; i++) {
+//           if(minNum>this.list[i]) {
+//               minNum = this.list[i]
+//           }
+//       }
+//       return minNum;
+//   }
+// }
+// var m = new MainClass();
+// m.add(3);
+// m.add(1);
+// m.add(2);
+// console.log(m.min());
+
+
+// class User {
+//   username: string | undefined;
+//   password: string | undefined;
+// }
+
+// class MysqlDb{
+//   add(user:User):boolean {
+//       console.log(user)
+//       return true;
+//   }
+// }
+
+// var u = new User();
+// u.username = '张三';
+// u.password = '123456';
+
+// var db = new MysqlDb();
+// db.add(u);
+
+
+//
+import { getData, save } from './modules/db'
+
+console.log(getData());
+save();
