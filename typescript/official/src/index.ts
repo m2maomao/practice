@@ -8,12 +8,53 @@ jQuery('#foo');
 // 需要注意的是，声明语句中只能定义类型，切勿在声明语句中定义具体的实现：
 
 /* declare function */
-jQuery(function () {
-  alert('Dom Ready!');
-});
+// jQuery(function () {
+//   alert('Dom Ready!');
+// });
 
 /* declare class */
-var cat = new Animal('小花');
+// var cat = new Animal('小花');
 
 /* declare enum */
-let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+// let directions = [Directions.Up, Directions.Down, Directions.Left, Directions.Right];
+
+/* declare namespace */
+// jQuery.ajax('api/something');
+// console.log(jQuery.version);
+// const e = new jQuery.Event();
+// e.blur(jQuery.EventType.CustomClick);
+// jQuery.fn.extend({
+//   check: function() {
+//     return this.each(function() {
+//       this.checked = true;
+//     });
+//   }
+// })
+
+// jQuery.fn.extend({
+//   check:function() {
+//     return this.each(() => {
+//       this.checked = true;
+//     })
+//   }
+// })
+
+// let settings: AjaxSettings = {
+//   method: 'POST',
+//   data: {
+//     name:'foo'
+//   }
+// }
+
+// jQuery.ajax('/api/post_something', settings);
+
+// let settings: jQuery.AjaxSettings = {
+//   method: 'POST',
+//   data: {
+//     name:'foo'
+//   }
+// }
+// jQuery.ajax('/api/some_thing', settings);
+
+jQuery('#app');
+jQuery.ajax('/api/some_thing');
