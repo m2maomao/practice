@@ -56,5 +56,9 @@ jQuery('#foo');
 // }
 // jQuery.ajax('/api/some_thing', settings);
 
-jQuery('#app');
-jQuery.ajax('/api/some_thing');
+// jQuery('#app');
+// jQuery.ajax('/api/some_thing');
+
+// function getLength(something: string | number): number{
+//   return something.toString();
+// }
