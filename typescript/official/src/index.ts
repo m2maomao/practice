@@ -60,5 +60,16 @@ jQuery('#foo');
 // jQuery.ajax('/api/some_thing');
 
 // function getLength(something: string | number): number{
+//   return something.length();
+// }
+
+// function getLength(something: string | number): string {
 //   return something.toString();
 // }
+
+// let myFavoriteNumber: string | number;
+// myFavoriteNumber = 'Tom';
+// console.log(myFavoriteNumber.length);
+
+// myFavoriteNumber = 5
+// console.log(myFavoriteNumber.toString());
