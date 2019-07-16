@@ -1,5 +1,5 @@
 /* declare var */
-jQuery('#foo');
+// jQuery('#foo');
 // 使用 declare let 定义的 jQuery 类型，允许修改这个全局变量
 // jQuery = function(selector) {
 //   return document.querySelector(selector);
@@ -56,5 +56,52 @@ jQuery('#foo');
 // }
 // jQuery.ajax('/api/some_thing', settings);
 
-jQuery('#app');
-jQuery.ajax('/api/some_thing');
+// jQuery('#app');
+// jQuery.ajax('/api/some_thing');
+
+// var a:number = 5;
+// var b: string = 'Tom';
+// alert(a.length);
+// alert(b.length);
+
+// interface Person {
+//   name: string;
+//   age?: number;
+//   [propName: string]: any;
+// }
+// let tom:Person = {
+//   name: 'tom',
+//   gender: 'male',
+//   age: 23
+// }
+
+// interface NumberArray {
+//   arr: number[];
+//   age: number;
+// }
+
+// let n:NumberArray = {
+//   arr: [1, 2],
+//   age: 2
+// }
+
+// interface ArrNum {
+//   [index:number]: string
+// }
+// let arr:ArrNum = ['11', '22', '33'];
+  
+// function buildName(firstName: string, lastName: string = 'Cat') {
+//   return firstName + ' ' + lastName;
+// }
+
+// let tomcat = buildName('Tom', 'Cat');
+// let tom = buildName('Tom',undefined);
+
+function push(array:any[], ...items:any[]) {
+  items.forEach(function(item:any) {
+      array.push(item); 
+  })
+}
+let a:number[] = [];
+push(a,1,2,3);
+console.log(a);
