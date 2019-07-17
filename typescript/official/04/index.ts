@@ -1,4 +1,4 @@
-import $ from 'jquery';
+import $ = require('jquery');
 class Greeter {
   greeting: string;
   constructor (message: string) {

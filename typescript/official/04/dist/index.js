@@ -94,7 +94,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nvar __importDefault = (this && this.__importDefault) || function (mod) {\n    return (mod && mod.__esModule) ? mod : { \"default\": mod };\n};\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar jquery_1 = __importDefault(__webpack_require__(/*! jquery */ \"./node_modules/_jquery@3.4.1@jquery/dist/jquery.js\"));\nvar Greeter = /** @class */ (function () {\n    function Greeter(message) {\n        this.greeting = message;\n    }\n    Greeter.prototype.greet = function () {\n        return 'Hello, ' + this.greeting;\n    };\n    return Greeter;\n}());\nvar greeter = new Greeter('World!');\nconsole.log(greeter.greet());\njquery_1.default('#a').html('123456');\n\n\n//# sourceURL=webpack:///./index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar $ = __webpack_require__(/*! jquery */ \"./node_modules/_jquery@3.4.1@jquery/dist/jquery.js\");\nvar Greeter = /** @class */ (function () {\n    function Greeter(message) {\n        this.greeting = message;\n    }\n    Greeter.prototype.greet = function () {\n        return 'Hello, ' + this.greeting;\n    };\n    return Greeter;\n}());\nvar greeter = new Greeter('World!');\nconsole.log(greeter.greet());\n$('#a').html('123456');\n\n\n//# sourceURL=webpack:///./index.ts?");
 
 /***/ }),
 
