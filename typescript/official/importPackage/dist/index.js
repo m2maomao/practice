@@ -94,19 +94,19 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar m2maomao = __webpack_require__(/*! m2maomao */ \"./node_modules/_m2maomao@1.0.3@m2maomao/index.js\");\r\nconsole.log(m2maomao.sum());\r\n\n\n//# sourceURL=webpack:///./index.ts?");
+eval("\r\nObject.defineProperty(exports, \"__esModule\", { value: true });\r\nvar m2maomao = __webpack_require__(/*! m2maomao */ \"./node_modules/_m2maomao@1.0.4@m2maomao/index.js\");\r\nconsole.log(m2maomao.sum());\r\nconsole.log(m2maomao.reduce());\r\n\n\n//# sourceURL=webpack:///./index.ts?");
 
 /***/ }),
 
-/***/ "./node_modules/_m2maomao@1.0.3@m2maomao/index.js":
+/***/ "./node_modules/_m2maomao@1.0.4@m2maomao/index.js":
 /*!********************************************************!*\
-  !*** ./node_modules/_m2maomao@1.0.3@m2maomao/index.js ***!
+  !*** ./node_modules/_m2maomao@1.0.4@m2maomao/index.js ***!
   \********************************************************/
-/*! exports provided: sum */
+/*! exports provided: sum, reduce */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sum\", function() { return sum; });\nfunction sum() {\r\n  return 12345678;\r\n}\n\n//# sourceURL=webpack:///./node_modules/_m2maomao@1.0.3@m2maomao/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"sum\", function() { return sum; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"reduce\", function() { return reduce; });\nfunction sum() {\r\n  return 12345678;\r\n}\r\nfunction reduce() {\r\n  return 'reduce test'\r\n}\r\n\r\n\n\n//# sourceURL=webpack:///./node_modules/_m2maomao@1.0.4@m2maomao/index.js?");
 
 /***/ })
 
