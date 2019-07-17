@@ -59,6 +59,7 @@
 // jQuery('#app');
 // jQuery.ajax('/api/some_thing');
 
+<<<<<<< HEAD:typescript/official/01/src/index.ts
 // var a:number = 5;
 // var b: string = 'Tom';
 // alert(a.length);
@@ -105,3 +106,19 @@ function push(array:any[], ...items:any[]) {
 let a:number[] = [];
 push(a,1,2,3);
 console.log(a);
+=======
+// function getLength(something: string | number): number{
+//   return something.length();
+// }
+
+// function getLength(something: string | number): string {
+//   return something.toString();
+// }
+
+// let myFavoriteNumber: string | number;
+// myFavoriteNumber = 'Tom';
+// console.log(myFavoriteNumber.length);
+
+// myFavoriteNumber = 5
+// console.log(myFavoriteNumber.toString());
+>>>>>>> 1e1a80174c7312e7e543b2274e186675af866347:typescript/official/src/index.ts
