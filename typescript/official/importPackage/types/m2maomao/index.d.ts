@@ -1,6 +1,1 @@
-declare function sum():number;
-declare function reduce(): number;
-export {
-  sum,
-  reduce
-}
+declare module 'm2maomao';
