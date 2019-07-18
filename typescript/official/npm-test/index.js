@@ -1,11 +1,33 @@
-function sum() {
-  return 12345678;
+const name = 'Michael911';
+
+function getName() {
+  return '我是getName里面的返回值'
 }
-function reduce() {
-  return 'reduce test'
+
+class Animal {
+  constructor(name) {
+    this.name = name;
+  }
+  sayHi() {
+    return 'sayHi的方法输出name:' + this.name
+  }
+}
+
+let Directions = {
+  Up:0,
+  Down:1,
+  Left:2,
+  Right:3
+}
+
+let Options = {
+  data: null
 }
 
 export {
-  sum,
-  reduce
+  name,
+  getName,
+  Animal,
+  Directions,
+  Options
 }
