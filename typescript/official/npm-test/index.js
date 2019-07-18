@@ -24,10 +24,20 @@ let Options = {
   data: null
 }
 
+let foo = {
+  name: '毛毛',
+  bar: {
+    baz: function(n) {
+      return 'baz func 的名字' + n
+    }
+  }
+}
+
 export {
   name,
   getName,
   Animal,
   Directions,
-  Options
+  Options,
+  foo
 }
