@@ -1,0 +1,17 @@
+{
+  "name": "ts-npm-export-default-demo",
+  "version": "1.0.0",
+  "description": "typescript npm export-default",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "ts",
+    "npm",
+    "export",
+    "default"
+  ],
+  "author": "m2maomao",
+  "license": "ISC"
+}

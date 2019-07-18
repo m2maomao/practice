@@ -94,19 +94,19 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar m2maomao_1 = __webpack_require__(/*! m2maomao */ \"./node_modules/_m2maomao@1.0.6@m2maomao/index.js\");\nconsole.log(m2maomao_1.name);\nconsole.log(m2maomao_1.getName());\nvar a = new m2maomao_1.Animal('maomao');\nconsole.log(a.sayHi());\nconsole.log(m2maomao_1.Directions.Up);\nvar b = {\n    data: '我是Options里data的值'\n};\nconsole.log(b.data);\n\n\n//# sourceURL=webpack:///./index.ts?");
+eval("\nObject.defineProperty(exports, \"__esModule\", { value: true });\nvar m2maomao_1 = __webpack_require__(/*! m2maomao */ \"./node_modules/_m2maomao@1.0.7@m2maomao/index.js\");\nconsole.log(m2maomao_1.name);\nconsole.log(m2maomao_1.getName());\nvar a = new m2maomao_1.Animal('maomao');\nconsole.log(a.sayHi());\nconsole.log(m2maomao_1.Directions.Up);\nvar b = {\n    data: '我是Options里data的值'\n};\nconsole.log(b.data);\n// 导出一个拥有子属性的对象\nconsole.log(m2maomao_1.foo.name);\nconsole.log(m2maomao_1.foo.bar.baz('猫猫'));\n\n\n//# sourceURL=webpack:///./index.ts?");
 
 /***/ }),
 
-/***/ "./node_modules/_m2maomao@1.0.6@m2maomao/index.js":
+/***/ "./node_modules/_m2maomao@1.0.7@m2maomao/index.js":
 /*!********************************************************!*\
-  !*** ./node_modules/_m2maomao@1.0.6@m2maomao/index.js ***!
+  !*** ./node_modules/_m2maomao@1.0.7@m2maomao/index.js ***!
   \********************************************************/
-/*! exports provided: name, getName, Animal, Directions, Options */
+/*! exports provided: name, getName, Animal, Directions, Options, foo */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"name\", function() { return name; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getName\", function() { return getName; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Animal\", function() { return Animal; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Directions\", function() { return Directions; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Options\", function() { return Options; });\nconst name = 'Michael911';\n\nfunction getName() {\n  return '我是getName里面的返回值'\n}\n\nclass Animal {\n  constructor(name) {\n    this.name = name;\n  }\n  sayHi() {\n    return 'sayHi的方法输出name:' + this.name\n  }\n}\n\nlet Directions = {\n  Up:0,\n  Down:1,\n  Left:2,\n  Right:3\n}\n\nlet Options = {\n  data: null\n}\n\n\n\n//# sourceURL=webpack:///./node_modules/_m2maomao@1.0.6@m2maomao/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"name\", function() { return name; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getName\", function() { return getName; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Animal\", function() { return Animal; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Directions\", function() { return Directions; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"Options\", function() { return Options; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"foo\", function() { return foo; });\nconst name = 'Michael911';\n\nfunction getName() {\n  return '我是getName里面的返回值'\n}\n\nclass Animal {\n  constructor(name) {\n    this.name = name;\n  }\n  sayHi() {\n    return 'sayHi的方法输出name:' + this.name\n  }\n}\n\nlet Directions = {\n  Up:0,\n  Down:1,\n  Left:2,\n  Right:3\n}\n\nlet Options = {\n  data: null\n}\n\nlet foo = {\n  name: '毛毛',\n  bar: {\n    baz: function(n) {\n      return 'baz func 的名字' + n\n    }\n  }\n}\n\n\n\n//# sourceURL=webpack:///./node_modules/_m2maomao@1.0.7@m2maomao/index.js?");
 
 /***/ })
 
