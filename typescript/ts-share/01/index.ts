@@ -1,2 +1,2 @@
-declare var jQuery:(selector:string) => any;
+// declare var jQuery:(selector:string) => any;
 jQuery('#box');
