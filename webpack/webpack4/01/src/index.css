@@ -1,3 +1,9 @@
+.bg {
+  width: 200px;
+  height: 200px;
+  background-image: url('dream.jpg');
+}
 div {
-  font-size: 24px;
+  background: greenyellow;
+  transform: rotate(45deg);
 }

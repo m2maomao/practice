@@ -1,5 +1,9 @@
 // 打包引入图片
-
+import dream from './dream.jpg';
+let img = new Image();
+// img.src = './dream.jpg';
+img.src = dream;
+document.body.appendChild(img);
 
 /* eslint-disable no-useless-catch */
 // import $ from 'expose-loader?$!jquery';
@@ -16,24 +20,24 @@
 // console.log('-------------')
 
 // console.log(window.$);
-/* let str = require('./a');
+// let str = require('./a');
 require('./index.css');
 require('./index.less');
-console.log('hello', str);
+// console.log('hello', str);
 
-let fn = () => {
-  console.log('执行es6箭头函数 =>')
-}
-fn();
+// let fn = () => {
+//   console.log('执行es6箭头函数 =>')
+// }
+// fn();
 
-@log
-class A {
-  name = 'michael'
-}
+// @log
+// class A {
+//   name = 'michael'
+// }
 
-let a = new A();
-console.log(a.name);
+// let a = new A();
+// console.log(a.name);
 
-function log(target) {
-  console.log(target)
-} */
+// function log(target) {
+//   console.log(target)
+// }

@@ -81,49 +81,54 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 0);
+/******/ 	return __webpack_require__(__webpack_require__.s = "./src/index.js");
 /******/ })
 /************************************************************************/
-/******/ ([
-/* 0 */
+/******/ ({
+
+/***/ "./src/dream.jpg":
+/*!***********************!*\
+  !*** ./src/dream.jpg ***!
+  \***********************/
+/*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function($) {/* eslint-disable no-useless-catch */
-// import $ from 'expose-loader?$!jquery';
-// import $ from 'jquery';
-// expose-loader 暴露全局的loader 内联的loader
-// 'pre' 前面执行的loader  normal 普通的loader 后置loader 'post'
-console.log($);
-console.log('-------------'); // console.log(window.$);
-
-/* let str = require('./a');
-require('./index.css');
-require('./index.less');
-console.log('hello', str);
-
-let fn = () => {
-  console.log('执行es6箭头函数 =>')
-}
-fn();
-
-@log
-class A {
-  name = 'michael'
-}
-
-let a = new A();
-console.log(a.name);
-
-function log(target) {
-  console.log(target)
-} */
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(1)))
+eval("module.exports = __webpack_require__.p + \"img/8273410079a9732c27fdca7cbc5e7077.jpg\";\n\n//# sourceURL=webpack:///./src/dream.jpg?");
 
 /***/ }),
-/* 1 */
-/***/ (function(module, exports) {
 
-module.exports = jQuery;
+/***/ "./src/index.css":
+/*!***********************!*\
+  !*** ./src/index.css ***!
+  \***********************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/index.css?");
+
+/***/ }),
+
+/***/ "./src/index.js":
+/*!**********************!*\
+  !*** ./src/index.js ***!
+  \**********************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dream_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dream.jpg */ \"./src/dream.jpg\");\n/* harmony import */ var _dream_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_dream_jpg__WEBPACK_IMPORTED_MODULE_0__);\n// 打包引入图片\n\nvar img = new Image(); // img.src = './dream.jpg';\n\nimg.src = _dream_jpg__WEBPACK_IMPORTED_MODULE_0___default.a;\ndocument.body.appendChild(img);\n/* eslint-disable no-useless-catch */\n// import $ from 'expose-loader?$!jquery';\n// import $ from 'jquery';\n// expose-loader 暴露全局的loader 内联的loader\n// 'pre' 前面执行的loader  normal 普通的loader 后置loader 'post'\n// console.log($);\n\n/* 引入jquery的方式\n- expose-loader 暴露到window上\n- provicePlugin给每个模块提供一个$\n- 引入不打包 */\n// console.log('-------------')\n// console.log(window.$);\n// let str = require('./a');\n\n__webpack_require__(/*! ./index.css */ \"./src/index.css\");\n\n__webpack_require__(/*! ./index.less */ \"./src/index.less\"); // console.log('hello', str);\n// let fn = () => {\n//   console.log('执行es6箭头函数 =>')\n// }\n// fn();\n// @log\n// class A {\n//   name = 'michael'\n// }\n// let a = new A();\n// console.log(a.name);\n// function log(target) {\n//   console.log(target)\n// }\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/index.less":
+/*!************************!*\
+  !*** ./src/index.less ***!
+  \************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("// extracted by mini-css-extract-plugin\n\n//# sourceURL=webpack:///./src/index.less?");
 
 /***/ })
-/******/ ]);
+
+/******/ });

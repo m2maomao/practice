@@ -1,0 +1,22 @@
+.bg {
+  width: 200px;
+  height: 200px;
+  background-image: url(img/8273410079a9732c27fdca7cbc5e7077.jpg);
+}
+div {
+  background: greenyellow;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.bg {
+  width: 200px;
+  height: 200px;
+  background-image: url(img/8273410079a9732c27fdca7cbc5e7077.jpg);
+}
+div {
+  background: greenyellow;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+

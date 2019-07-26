@@ -18,11 +18,12 @@ module.exports = {
       new OptimizeCss({}) // 此选项为压缩css文件，仅当mode=“production”
     ]
   },
-  mode: 'production',
+  mode: 'development',
   entry: './src/index.js',
   output:{
     filename:'bundle-[hash:8].js',
-    path: path.resolve(__dirname,'dist')
+    path: path.resolve(__dirname,'dist'),
+    publicPath:'http://www.baidu.com'
   },
   module:{ // 模块
     rules:[// 数组
@@ -30,6 +31,10 @@ module.exports = {
       //   test: require.resolve('jquery'),
       //   use:'expose-loader?$' // 暴露全局
       // },
+      {
+        test:/\.html$/,
+        use:'html-withimg-loader'
+      },
       {// style-loader 把css插入到head标签中 // css-loader 负责解析 @import 这种语法
         test:/\.css$/,
         use:[
@@ -72,6 +77,17 @@ module.exports = {
       //     loader:'eslint-loader'
       //   }
       // }
+      {
+        test:/\.(png|jpg|gif)$/,
+        use:{
+          loader:'url-loader',
+          options:{
+            //小于limit的值则用base64转换，大于limit则产生真实图片
+            limit:1*1024,
+            outputPath:'/img',
+          }
+        }
+      }
     ]
   },
   plugins:[//数组，存放所有webpack插件
@@ -85,7 +101,7 @@ module.exports = {
       hash: true
     }),
     new MiniCssExtractPlugin({
-      filename: 'main.css',
+      filename: 'css/main.css',
     }),
     new Webpack.ProvidePlugin({// 在每个模块中都注入$
       $:'jquery'
