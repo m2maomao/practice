@@ -5,6 +5,11 @@ const webpack = require('webpack');
 module.exports = {
   mode:'development',
   entry:'./src/index.js',
+  devServer:{
+    port:3000,
+    open:true,
+    contentBase:'./dist'
+  },
   module:{
     noParse:/jquery/,// 不去解析jquery的依赖关系
     rules:[
@@ -29,6 +34,9 @@ module.exports = {
     path:path.resolve(__dirname,'dist')
   },
   plugins:[
+    new webpack.DllReferencePlugin({
+      manifest:path.resolve(__dirname,'dist','mainfest.json')
+    }),
     new webpack.IgnorePlugin(/\.\/locale/,/moment/),
     new htmlWebpackPlugin({
       template:'./public/index.html'
