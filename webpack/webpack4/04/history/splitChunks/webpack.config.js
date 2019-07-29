@@ -3,9 +3,30 @@ const htmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 
 module.exports = {
+  optimization: {
+    splitChunks: {// 分割代码块，多页才需要
+      cacheGroups: { // 缓存组
+        commons: { // 公共模块
+          minSize:0,
+          minChunks:2, // 至少2次以上引用
+          chunks: "initial",
+          // name: "commons",
+        },
+        //第三方
+        vendor:{
+          priority:1,//权重，先抽离第三方模块，抽离完再抽离公共的
+          test:/node_modules/, // 抽离出来
+          minSize:0,
+          minChunks:2, // 至少2次以上引用
+          chunks: "initial",
+        }
+      }
+    }
+  },
   mode:'production',
   entry:{
-    index:'./src/index.js'
+    index:'./src/index.js',
+    other:'./src/other.js'
   },
   devServer:{
     port:3000,
