@@ -9,6 +9,7 @@
 <body>
   <div id="test1"></div>
   <div id="test2"></div>
+  <div id="demo"></div>
   <script src="../js/react.development.js"></script>
   <script src="../js/react-dom.development.js"></script>
   <script src="../js/babel.min.js"></script>
@@ -18,6 +19,11 @@
     let myData = 'HelLo,WORld!'
     // 1.创建虚拟DOM
     let vDOM = React.createElement('h2',{id:myId.toLowerCase()},myData.toLowerCase());
+    let trueDOM = document.getElementById('demo');
+    
+    // console.log(typeof vDOM)
+    // console.log(typeof trueDOM)
+    // debugger
     // 2.渲染虚拟DOM到页面
     ReactDOM.render(vDOM,document.getElementById('test1'));
   </script>
@@ -30,6 +36,10 @@
       vDOM2,
       document.getElementById('test2')
     )
+
+    // 关于虚拟DOM和真实DOM
+    // 1.虚拟DOM：轻
+    // 2.真实DOM：重
   </script>
 </body>
 </html>
