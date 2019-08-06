@@ -12,7 +12,27 @@
   <script src="../js/react-dom.development.js"></script>
   <script src="../js/babel.min.js"></script>
   <script type="text/babel">
-    class
+  // 定义组件
+    class Weather extends React.Component {
+      constructor(props) {
+        super(props)
+        this.state = {isHot: false}
+      }
+      clickHanlder() {
+
+      }
+      // 如果使用了es6这种形式定义组件，那么React底层将所有程序员自定义的方法中的this全部改为了undefined
+      // 重写父类render
+      render() {
+        let {isHot} = this.state
+        return <h1 onClick={this.clickHanlder}>今天天气很{isHot?'炎热':'凉爽'}</h1>
+      }
+    }
+// 渲染组件标签到页面
+    ReactDOM.render(
+      <Weather />,
+      document.getElementById('test')
+    )
   </script>
 </body>
 </html>
