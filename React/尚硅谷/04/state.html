@@ -17,9 +17,14 @@
       constructor(props) {
         super(props)
         this.state = {isHot: false}
+        this.clickHanlder = this.clickHanlder.bind(this)
       }
       clickHanlder() {
-
+        let isHot = !this.state.isHot
+        // 更新状态时，必须使用setState，否则react不能“监听”到
+        this.setState({
+          isHot
+        })
       }
       // 如果使用了es6这种形式定义组件，那么React底层将所有程序员自定义的方法中的this全部改为了undefined
       // 重写父类render
