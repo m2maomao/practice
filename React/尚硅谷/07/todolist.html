@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+    <h2>to do list demo</h2>
+    <div id="root"></div>
+    <script src="../js/react.development.js"></script>
+    <script src="../js/react-dom.development.js"></script>
+    <script src="../js/babel.min.js"></script>
+    <script src="../js/prop-types.js"></script>
+    <script type="text/babel">
+      class ToDoList extends React.Component {
+        constructor(props) {
+          super(props)
+        }
+        state = {item:[]}
+        addItem = () => {
+          this.setState({
+            item:[...this.state.item, this.refs.ipt.value]
+          })
+        }
+        render() {
+          return (
+            <div>
+                <div>
+                  <input type="text" ref="ipt"/>
+                  <button onClick={this.addItem} >Add # {this.state.item.length>0?this.state.item.length:''}</button>
+                </div>
+                <ul>
+                  {
+                    this.state.item.map((item,index) => {
+                      return <li key={index}>{item}</li>
+                    })
+                  }
+                </ul>
+            </div>
+          )
+        }
+      }
+      ReactDOM.render(
+        <ToDoList />,
+        document.getElementById('root')
+      )
+    </script>
+</body>
+</html>
