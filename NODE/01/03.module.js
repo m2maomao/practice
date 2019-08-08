@@ -7,4 +7,10 @@
  * 使用require()引入模块以后，该函数会返回一个对象，这个对象代表的是引入的模块
  *  */
 var md = require('./02.module');
+var math = require('./math');
+var fs = require('fs');
+
+
 console.log(md)
+console.log(math.add(111,222));
+console.log(fs)
