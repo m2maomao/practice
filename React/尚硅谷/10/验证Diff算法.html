@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="root"></div>
+  <script src="../js/react.development.js"></script>
+  <script src="../js/react-dom.development.js"></script>
+  <script src="../js/babel.min.js"></script>
+  <script src="../js/prop-types.js"></script>
+  <script type="text/babel">
+  class ShowTime extends React.Component {
+    state = {times:new Date()}
+    componentDidMount() {
+      setInterval(() => {
+        this.setState({
+          times:new Date()
+        })
+      }, 1000);
+    }
+    render() {
+      let {times} = this.state
+      return (
+        <div>
+          <h3>现在时间是<span>{times.toLocaleString()}</span></h3>
+        </div>
+      )
+    }
+  }
+  ReactDOM.render(
+    <ShowTime />,
+    document.getElementById('root')
+  )
+  </script>
+</body>
+</html>
