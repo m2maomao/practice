@@ -10,7 +10,7 @@ class App extends Component {
   }
   keyWord = 'v'
   async componentDidMount() {
-    const url = `https://api.github.com/search/repositories11?q=${this.keyWord}&sort=stars`
+    const url = `https://api.github.com/search/repositories?q=${this.keyWord}&sort=stars`
     try {
       axios.get(url).then(res => {
         this.setState({
