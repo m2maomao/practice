@@ -1,0 +1,10 @@
+body{
+  background: pink;
+}
+.link{
+  color: #fff;
+  text-decoration: none;
+}
+.link.active{
+  color:black;
+}
