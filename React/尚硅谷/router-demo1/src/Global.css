@@ -1,0 +1,10 @@
+.simple-link{
+  font-size: 20px;
+  color: cornflowerblue;
+  text-decoration: none;
+}
+.active-link{
+  font-size: 20px;
+  color: blue;
+  text-decoration: underline;
+}
