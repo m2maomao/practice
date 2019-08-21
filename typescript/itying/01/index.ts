@@ -305,18 +305,19 @@ http.getData(); */
 
 
 
-// 类装饰器
+/* // 类装饰器
 function logClass(params) {
   return function(target) {
-    console.log(target)
+    console.log('target1', target)//输出类,最后执行
+    console.log('params', params)//xxx
   }
 }
 
 // 属性装饰器
 function logProperty(params:any){
   return function (target,attr) {
-    console.log(target)
-    console.log(attr);
+    console.log('target2', target)//返回构造函数
+    console.log('attr', attr);//1、url 2、price
     target[attr] = params;
   }
 }
@@ -335,4 +336,64 @@ class HttpClient {
 }
 
 var http = new HttpClient()
-http.getData()
+http.getData() */
+
+
+// 方法装饰器1
+/* function get(params:any) {
+  return function(target:any,methodName:any,desc:any) {
+    console.log(target);
+    console.log(methodName);
+    console.log(desc);
+
+    target.apiUrl = 'xxxx';
+    target.run = function() {
+      console.log('run');
+    }
+  }
+}
+
+class HttpClient {
+  public url: any | undefined;
+  constructor() {}
+  @get('http://www.baidu.com')
+  getData() {
+    console.log(this.url)
+  }
+}
+
+var http:any = new HttpClient();
+console.log(http.apiUrl);
+http.run() */
+/* 
+{getData: ƒ, constructor: ƒ}
+getData
+undefined
+xxxx
+run
+ */
+
+
+
+// 方法装饰器2
+function get(params) {
+  return function(target:any,methodName:any,desc:any) {
+    console.log(target);
+    console.log(methodName);
+    console.log(desc);
+    console.log(desc.value);
+  }
+}
+
+class HttpClient {
+  public url: any | undefined;
+  constructor() {}
+  @get('http://www.baidu.com')
+  getData() {
+    console.log(this.url)
+  }
+}
+
+// var http = new HttpClient();
+// http.getData(123,'222');
+get('11',222);

@@ -1,2 +1,2 @@
 // declare var jQuery:(selector:string) => any;
-jQuery('#box');
+jQuery(123);
