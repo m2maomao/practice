@@ -225,7 +225,114 @@
 
 
 //
-import { getData, save } from './modules/db'
+// import { getData, save } from './modules/db'
 
-console.log(getData());
-save();
+// console.log(getData());
+// save();
+
+
+// 1.普通装饰器(不带参数)
+/* function logClass (params:any) {
+  console.log(params)
+  params.prototype.apiUrl = '动态扩展的属性'
+  params.prototype.run = function() {
+    console.log('我是一个run方法')
+  }
+}
+@logClass
+class HttpClient {
+  constructor() {
+
+  }
+  getData() {
+
+  }
+}
+
+var http:any = new HttpClient();
+console.log(http.apiUrl);
+http.run(); */
+
+// 装饰器工厂(带参数)
+/* function logClass (params:string) {
+  return function(target:any) {
+    console.log(target);
+    console.log(params);
+
+    target.prototype.apiUrl = params;
+  }
+}
+
+@logClass('http://www.baidu.com/')
+class HttpClient {
+  constructor() {
+
+  }
+  getData() {
+
+  }
+}
+
+var http = new HttpClient();
+console.log(http.apiUrl) */
+
+
+/* function logClass(target) {
+  console.log(target);
+  return class extends target {
+    apiUrl = '我是修改后的数据';
+    getData() {
+      this.apiUrl = this.apiUrl + '------'
+      console.log(this.apiUrl);
+    }
+  }
+}
+
+
+@logClass
+class HttpClient {
+  public apiUrl: string| undefined;
+  constructor() {
+    this.apiUrl = '我是构造函数里面的apiUrl'
+  }
+  getData() {
+    console.log(this.apiUrl)
+  }
+}
+
+var http = new HttpClient();
+http.getData(); */
+
+
+
+// 类装饰器
+function logClass(params) {
+  return function(target) {
+    console.log(target)
+  }
+}
+
+// 属性装饰器
+function logProperty(params:any){
+  return function (target,attr) {
+    console.log(target)
+    console.log(attr);
+    target[attr] = params;
+  }
+}
+
+@logClass('xxx')
+class HttpClient {
+  @logProperty('http://itying.com')
+  public url:any | undefined;
+  @logProperty(500)
+  public price:any | undefined;
+  constructor() {
+  }
+  getData() {
+    console.log(this.url,this.price)
+  }
+}
+
+var http = new HttpClient()
+http.getData()
