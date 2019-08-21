@@ -376,7 +376,7 @@ run
 
 
 // 方法装饰器2
-function get(params) {
+function get(params:any) {
   return function(target:any,methodName:any,desc:any) {
     console.log(target);
     console.log(methodName);
