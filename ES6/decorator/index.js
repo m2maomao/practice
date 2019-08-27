@@ -332,14 +332,12 @@ class Math {
 // 输出日志
 function log(target, name, descriptor) {
     var oldValue = descriptor.value;
-    console.log('oldValue', oldValue)
 
     descriptor.value = function() {
         console.log(`Calling ${name} with`, arguments);
         return oldValue.apply(this, arguments)
     }
-    console.log('descriptor.value', descriptor.value)
-    return descriptor
+    // return descriptor
 }
 
 const math = new Math();
