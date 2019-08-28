@@ -321,7 +321,7 @@ Object.defineProperty(Person, 'name', { // Cannot redefine property: name
     configurable: true
 })
  */
-
+/* 
 class Math {
     @log
     add(a,b) {
@@ -342,5 +342,225 @@ function log(target, name, descriptor) {
 
 const math = new Math();
 
-var a = math.add(2,4)
-console.log('a', a)
+math.add(2,4)
+ */
+
+/* 
+function  doSomething(name) {
+    console.log('Hello, ' + name);
+}
+
+function loggingDecorator(wrapped) {
+    return function() {
+        console.log('Starting!');
+        const result = wrapped.apply(this,arguments)
+        console.log('Finished!');
+        return result
+    }
+}
+const wrapped = loggingDecorator(doSomething)
+wrapped('Michael')
+// Starting!
+// Hello, Michael
+// Finished!
+ */
+
+
+/* 
+import { autobind } from 'core-decorators';
+class Person {
+    @autobind
+    getPerson() {
+        return this;
+    }
+}
+let person = new Person();
+let getPerson = person.getPerson;
+console.log(getPerson());
+console.log(person);
+
+console.log(getPerson() === person);
+ */
+
+/* 
+import { readonly } from 'core-decorators';
+
+class Meal {
+    @readonly
+    entree = 'michael'
+}
+
+var dinner = new Meal();
+dinner.entree = 'salmon'; // Cannot assign to read only property 'entree' of object
+ */
+
+
+/* 
+import { override } from 'core-decorators'
+class Parent {
+    speak(first, second) {}
+}
+
+class Child extends Parent{
+    @override
+    speak() {}
+    // Child#speak() does not properly override Parent#speak(first, second)
+}
+
+class Child extends Parent {
+    @override
+    speaks() {}
+}
+ */
+
+/* 
+import { deprecate } from 'core-decorators'
+
+class Person {
+    @deprecate
+    facepalm() {}
+
+    @deprecate('We stopped facepalming')
+    facepalmHard() {}
+
+    @deprecate('We stopped facepalming', {url:'http://konwyourname.com'})
+    facepalmHarder() {}
+}
+
+let person = new Person()
+person.facepalm(); // This function will be removed in future versions.
+person.facepalmHard(); // We stopped facepalming
+person.facepalmHarder(); // We stopped facepalming See http://konwyourname.com for more details.
+ */
+
+/* 
+import { suppressWarnings, deprecate } from 'core-decorators';
+
+class Person {
+    @deprecate
+    facepalm() { }
+
+    @suppressWarnings
+    facepalmWithoutWarning() {
+        this.facepalm();
+    }
+}
+
+let person = new Person();
+
+person.facepalmWithoutWarning();
+// no warning is logged
+ */
+
+
+// 装饰类
+/* 
+function log(target, name, descriptor) {
+    console.log(target);
+    console.log(name);
+    console.log(descriptor);
+    target.prototype.name = 'Michael' // 动态扩展的属性
+}
+
+@log
+class Car {
+    run() {
+        console.log('Car is running');
+    }
+}
+
+const c1 = new Car()
+c1.run()
+console.log(c1.name)
+ */
+
+/* 
+//  装饰类方法
+ function log(target, name, descriptor) {
+     console.log(target) // {constructor: ƒ, run: ƒ}
+     console.log(name); // run
+     console.log(descriptor); // {value: ƒ, writable: true, enumerable: false, configurable: true}
+     var oldValue = descriptor.value
+     descriptor.value = function() {
+         console.log('我被改了')
+         oldValue.call(this,arguments)
+     }
+ }
+
+ class Car {
+     @log
+     run() {
+         console.log('Car is running!')
+     }
+ }
+
+ const c1 = new Car()
+ c1.run()
+  */
+
+/* 
+function log(target, name, descriptor) {
+    console.log(target);
+    console.log(name);
+    console.log(descriptor);
+    return class Bike {
+        run() {
+            console.log('Bike is running!')
+        }
+    }
+    // return null
+}
+
+@log
+class Car {
+    run() {
+        console.log('Car is running!');
+    }
+}
+
+const c1 = new Car()
+c1.run()
+ */
+
+/* 
+//  1.日志输出
+function log(target, name, descriptor) {
+    console.log(Date.now())
+}
+
+class Car {
+    @log
+    run() {
+        console.log('Car is running!');
+    }
+}
+
+const c1 =new Car()
+c1.run()
+ */
+
+
+/* 
+// 2.函数劫持
+function log(target, name, descriptor) {
+    const old = descriptor.value
+    descriptor.value = function(...arg) { // 注意这里需要保留原this作用域，不能使用箭头函数
+        console.log('哈哈哈哈劫持啦')
+        return old.apply(this,arg)
+    }
+}
+
+class Car {
+    @log
+    run() {
+        console.log('Car is running!');
+    }
+}
+
+const c1 = new Car()
+c1.run()
+ */
+
+
+
+// 3.Cache
