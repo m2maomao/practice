@@ -23,6 +23,10 @@ export default class Hello extends Component<IProps, IState>{
         })
     }
 
+    clickMsgHandler = () => {
+        console.log('ss');
+    }
+
     render() {
         const {title, age} = this.props
         const {count} = this.state
@@ -30,7 +34,8 @@ export default class Hello extends Component<IProps, IState>{
             <div>
                 <p>Hello:{title} - {age}</p>
                 <p>{count}</p>
-                <button onClick={ this.clickHandler }>点击加1</button>
+                <button onClick={ this.clickHandler }>Click Add</button>
+                <button onClick={ this.clickMsgHandler }>Send Message</button>
             </div>
         )
     }
