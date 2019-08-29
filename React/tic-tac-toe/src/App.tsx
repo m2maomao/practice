@@ -55,7 +55,6 @@ class App extends Component<{},IState>{
 
     for(const player of board) {
       if(player === Player.None) {
-        console.log('player', player)
         return ONGOING_GAME
       }
     }
