@@ -1,19 +1,24 @@
 import React from 'react';
 import Hello from './components/Hello';
+import List from './pages/List';
 
 
-const App: React.FC = () => {
+class App extends React.Component {
 
-  myClickHandler() {
-    console.log('111')
+  myClickHandler = (data:string) => {
+    console.log('App Event')
+    console.log(data)
   };
-
-  return (
-    <div className="App">
-     123
-     <Hello title={"标题"} age={200} onMyClick={this.myClickHandler} />
-    </div>
-  );
+  render() {
+    return (
+      <div className="App">
+        123
+        <Hello title={"标题"} age={200} onMyClick={this.myClickHandler} />
+        <List />
+      </div>
+    );
+  }
+  
 }
 
 export default App;

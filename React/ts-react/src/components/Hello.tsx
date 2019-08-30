@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
+import Button from 'antd/es/button'
 
 interface IProps {
     title:string,
-    age?:number
+    age?:number,
+    onMyClick: any
 }
 
 interface IState {
@@ -24,7 +26,7 @@ export default class Hello extends Component<IProps, IState>{
     }
 
     clickMsgHandler = () => {
-        console.log('ss');
+        this.props.onMyClick("child msg");
     }
 
     render() {
@@ -34,8 +36,8 @@ export default class Hello extends Component<IProps, IState>{
             <div>
                 <p>Hello:{title} - {age}</p>
                 <p>{count}</p>
-                <button onClick={ this.clickHandler }>Click Add</button>
-                <button onClick={ this.clickMsgHandler }>Send Message</button>
+                <Button onClick={this.clickHandler}>Click Add</Button>
+                <Button type="primary" onClick={ this.clickMsgHandler }>Send Message</Button>
             </div>
         )
     }
