@@ -12,10 +12,7 @@ class IndexPage extends React.Component {
   }
   handleSetNameAsync = () => {
     this.props.dispatch({
-      type: "indexTest/setNameAsync",
-      data:{
-        name:"猪猪侠222"
-      }
+      type: "indexTest/setNameAsync"
     })
   }
   render() {
