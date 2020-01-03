@@ -9,3 +9,8 @@ export function query() {
 export function testCnode() {
   return request(pox + '/api/v1/topics');
 }
+// 注册mock接口
+export function mockdata() {
+    return request('api/mockdata');
+}
+
