@@ -31,7 +31,7 @@ class List extends React.Component<{},IState> {
                     <ul>
                         {
                             this.state.dataInfo.map((item,index) => {
-                                return <ListView data={item} />
+                                return <ListView key={index} data={item} />
                             })
                         }
                     </ul>
