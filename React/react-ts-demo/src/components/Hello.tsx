@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'antd/lib/button';
 
 // 通过接口声明传参类型
 interface IProps {
@@ -44,7 +45,8 @@ export default class Hello extends React.Component<IProps, IState> {
                 <div>Michael {title}: {age}</div>
                 <p>{this.state.count}</p>
                 <button onClick={this.clickHandler}>按钮</button>
-                <button onClick={this.sendMsgHandler}>Send Msg</button>
+                <Button onClick={this.sendMsgHandler}>Send Msg</Button>
+                <Button type="primary">antd-button</Button>
             </div>
         )
     }
