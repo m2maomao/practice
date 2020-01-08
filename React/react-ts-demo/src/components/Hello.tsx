@@ -2,10 +2,12 @@ import React from 'react';
 
 // 通过接口声明传参类型
 interface IProps {
-    title: String,
-    age: Number,
-    work?: String,
-    onMyClick:Function
+    title: String;
+    age: Number;
+    work?: String;
+    onMyClick:Function;
+    onIncrement?: () => void;
+    onDecrement?: () => void;
 }
 
 // 通过接口声明状态
@@ -38,13 +40,16 @@ export default class Hello extends React.Component<IProps, IState> {
     }
 
     public render() {
-        const {title, age} = this.props
+        const {title, age, onDecrement, onIncrement} = this.props
         return (
             <div>
                 <div>Michael {title}: {age}</div>
                 <p>{this.state.count}</p>
                 <button onClick={this.clickHandler}>按钮</button>
                 <button onClick={this.sendMsgHandler}>Send Msg</button>
+                <hr />
+                <button onClick={onDecrement}>-</button>
+                <button onClick={onIncrement}>+</button>
             </div>
         )
     }
