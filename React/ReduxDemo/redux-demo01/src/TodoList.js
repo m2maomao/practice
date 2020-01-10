@@ -25,6 +25,14 @@ class TodoList extends Component { // ccc
         }
         store.dispatch(action)
     }
+    deleteItem = (index) => {
+        console.log('index', index)
+        const action = {
+            type: 'deleteItem',
+            index
+        }
+        store.dispatch(action)
+    }
     render() { 
         return ( 
             <div style={{margin:'10px'}}>
@@ -44,7 +52,7 @@ class TodoList extends Component { // ccc
                     <List
                         bordered
                         dataSource={this.state.list}
-                        renderItem={item => (<List.Item>{item}</List.Item>)}
+                        renderItem={(item, i) => (<List.Item onClick={() => this.deleteItem(i)}>{item}</List.Item>)}
                     />
                 </div>
             </div>
