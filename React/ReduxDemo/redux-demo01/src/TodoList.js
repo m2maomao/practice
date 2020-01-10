@@ -8,15 +8,37 @@ class TodoList extends Component { // ccc
        super(props);
        this.state = store.getState()
     }
+    changeInputValue = (e) => {
+        const action = {
+            type: 'changeValue',
+            value: e.target.value
+        }
+        store.dispatch(action)
+        store.subscribe(this.storeChange)
+    }
+    storeChange = () => {
+        this.setState(store.getState())
+    }
+    clickBtn = () => {
+        const action = {
+            type:'addItem'
+        }
+        store.dispatch(action)
+    }
     render() { 
         return ( 
             <div style={{margin:'10px'}}>
                 <div>
                     <Input 
                         placeholder={this.state.inputValue}
-                        style={{width:'250px', marginRight:'10px'}} 
+                        style={{width:'250px', marginRight:'10px'}}
+                        onChange={this.changeInputValue}
+                        value={this.state.inputValue}
                     />
-                    <Button type="primary">Add</Button>
+                    <Button 
+                        type="primary"
+                        onClick={this.clickBtn}
+                    >Add</Button>
                 </div>
                 <div style={{marginTop:'10px', width:'310px'}}>
                     <List
