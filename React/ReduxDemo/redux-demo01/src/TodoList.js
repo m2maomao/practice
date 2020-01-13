@@ -1,8 +1,8 @@
 import React, { Component } from 'react'; // imrc
 import store from './store'
-import {changeValueAction, addItemAction, deleteItemAction, getListAction} from './store/actionCreators'
+import {changeValueAction, addItemAction, deleteItemAction, getTodoList} from './store/actionCreators'
 import TodoListUI from './TodoListUI'
-import axios from 'axios'
+
 class TodoList extends Component { // ccc
     constructor(props) {
        super(props);
@@ -10,13 +10,8 @@ class TodoList extends Component { // ccc
        store.subscribe(this.storeChange)
     }
     componentDidMount() {
-        axios.get('http://yapi.demo.qunar.com/mock/76166/todolist/list').then((res) => {
-            console.log(res)
-            const data = res.data
-            const action = getListAction(data)
-            store.dispatch(action)
-        })
-        
+        const action = getTodoList()
+        store.dispatch(action)
     }
     changeInputValue = (e) => {
         const action = changeValueAction(e.target.value)
