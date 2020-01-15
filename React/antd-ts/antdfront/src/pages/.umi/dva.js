@@ -20,10 +20,10 @@ export function _onCreate() {
     app.use(plugin);
   });
   
-  app.model({ namespace: 'global', ...(require('/Users/Michael/Desktop/prepare5/antdfront/src/models/global.ts').default) });
-app.model({ namespace: 'login', ...(require('/Users/Michael/Desktop/prepare5/antdfront/src/models/login.ts').default) });
-app.model({ namespace: 'setting', ...(require('/Users/Michael/Desktop/prepare5/antdfront/src/models/setting.ts').default) });
-app.model({ namespace: 'user', ...(require('/Users/Michael/Desktop/prepare5/antdfront/src/models/user.ts').default) });
+  app.model({ namespace: 'global', ...(require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/models/global.ts').default) });
+app.model({ namespace: 'login', ...(require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/models/login.ts').default) });
+app.model({ namespace: 'setting', ...(require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/models/setting.ts').default) });
+app.model({ namespace: 'user', ...(require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/models/user.ts').default) });
   return app;
 }
 

@@ -8,7 +8,7 @@ import {
 import dynamic from 'umi/dynamic';
 import renderRoutes from 'umi/lib/renderRoutes';
 import history from '@@/history';
-import RendererWrapper0 from '/Users/Michael/Desktop/prepare5/antdfront/src/pages/.umi/LocaleWrapper.jsx';
+import RendererWrapper0 from '/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/pages/.umi/LocaleWrapper.jsx';
 import { routerRedux, dynamic as _dvaDynamic } from 'dva';
 
 const Router = routerRedux.ConnectedRouter;
@@ -20,7 +20,7 @@ const routes = [
       ? _dvaDynamic({
           component: () =>
             import(/* webpackChunkName: "layouts__UserLayout" */ '../../layouts/UserLayout'),
-          LoadingComponent: require('/Users/Michael/Desktop/prepare5/antdfront/src/components/PageLoading/index')
+          LoadingComponent: require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/components/PageLoading/index')
             .default,
         })
       : require('../../layouts/UserLayout').default,
@@ -32,7 +32,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__user__login" */ '../user/login'),
-              LoadingComponent: require('/Users/Michael/Desktop/prepare5/antdfront/src/components/PageLoading/index')
+              LoadingComponent: require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/components/PageLoading/index')
                 .default,
             })
           : require('../user/login').default,
@@ -46,7 +46,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__user__register-result" */ '../user/register-result'),
-              LoadingComponent: require('/Users/Michael/Desktop/prepare5/antdfront/src/components/PageLoading/index')
+              LoadingComponent: require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/components/PageLoading/index')
                 .default,
             })
           : require('../user/register-result').default,
@@ -60,7 +60,7 @@ const routes = [
           ? _dvaDynamic({
               app: require('@tmp/dva').getApp(),
               models: () => [
-                import(/* webpackChunkName: 'p__user__register__model.ts' */ '/Users/Michael/Desktop/prepare5/antdfront/src/pages/user/register/model.ts').then(
+                import(/* webpackChunkName: 'p__user__register__model.ts' */ '/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/pages/user/register/model.ts').then(
                   m => {
                     return { namespace: 'model', ...m.default };
                   },
@@ -68,7 +68,7 @@ const routes = [
               ],
               component: () =>
                 import(/* webpackChunkName: "p__user__register" */ '../user/register'),
-              LoadingComponent: require('/Users/Michael/Desktop/prepare5/antdfront/src/components/PageLoading/index')
+              LoadingComponent: require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/components/PageLoading/index')
                 .default,
             })
           : require('../user/register').default,
@@ -77,7 +77,7 @@ const routes = [
       {
         component: () =>
           React.createElement(
-            require('/Users/Michael/Desktop/prepare5/antdfront/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+            require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/node_modules/_umi-build-dev@1.17.1@umi-build-dev/lib/plugins/404/NotFound.js')
               .default,
             { pagesPath: 'src/pages', hasRoutesInConfig: true },
           ),
@@ -90,7 +90,7 @@ const routes = [
       ? _dvaDynamic({
           component: () =>
             import(/* webpackChunkName: "layouts__SecurityLayout" */ '../../layouts/SecurityLayout'),
-          LoadingComponent: require('/Users/Michael/Desktop/prepare5/antdfront/src/components/PageLoading/index')
+          LoadingComponent: require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/components/PageLoading/index')
             .default,
         })
       : require('../../layouts/SecurityLayout').default,
@@ -101,7 +101,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "layouts__BasicLayout" */ '../../layouts/BasicLayout'),
-              LoadingComponent: require('/Users/Michael/Desktop/prepare5/antdfront/src/components/PageLoading/index')
+              LoadingComponent: require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/components/PageLoading/index')
                 .default,
             })
           : require('../../layouts/BasicLayout').default,
@@ -120,7 +120,7 @@ const routes = [
               ? _dvaDynamic({
                   component: () =>
                     import(/* webpackChunkName: "p__Welcome" */ '../Welcome'),
-                  LoadingComponent: require('/Users/Michael/Desktop/prepare5/antdfront/src/components/PageLoading/index')
+                  LoadingComponent: require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/components/PageLoading/index')
                     .default,
                 })
               : require('../Welcome').default,
@@ -134,7 +134,7 @@ const routes = [
               ? _dvaDynamic({
                   component: () =>
                     import(/* webpackChunkName: "p__Admin" */ '../Admin'),
-                  LoadingComponent: require('/Users/Michael/Desktop/prepare5/antdfront/src/components/PageLoading/index')
+                  LoadingComponent: require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/components/PageLoading/index')
                     .default,
                 })
               : require('../Admin').default,
@@ -146,7 +146,7 @@ const routes = [
               ? _dvaDynamic({
                   component: () =>
                     import(/* webpackChunkName: "p__404" */ '../404'),
-                  LoadingComponent: require('/Users/Michael/Desktop/prepare5/antdfront/src/components/PageLoading/index')
+                  LoadingComponent: require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/components/PageLoading/index')
                     .default,
                 })
               : require('../404').default,
@@ -155,7 +155,7 @@ const routes = [
           {
             component: () =>
               React.createElement(
-                require('/Users/Michael/Desktop/prepare5/antdfront/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+                require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/node_modules/_umi-build-dev@1.17.1@umi-build-dev/lib/plugins/404/NotFound.js')
                   .default,
                 { pagesPath: 'src/pages', hasRoutesInConfig: true },
               ),
@@ -167,7 +167,7 @@ const routes = [
           ? _dvaDynamic({
               component: () =>
                 import(/* webpackChunkName: "p__404" */ '../404'),
-              LoadingComponent: require('/Users/Michael/Desktop/prepare5/antdfront/src/components/PageLoading/index')
+              LoadingComponent: require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/components/PageLoading/index')
                 .default,
             })
           : require('../404').default,
@@ -176,7 +176,7 @@ const routes = [
       {
         component: () =>
           React.createElement(
-            require('/Users/Michael/Desktop/prepare5/antdfront/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+            require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/node_modules/_umi-build-dev@1.17.1@umi-build-dev/lib/plugins/404/NotFound.js')
               .default,
             { pagesPath: 'src/pages', hasRoutesInConfig: true },
           ),
@@ -187,7 +187,7 @@ const routes = [
     component: __IS_BROWSER
       ? _dvaDynamic({
           component: () => import(/* webpackChunkName: "p__404" */ '../404'),
-          LoadingComponent: require('/Users/Michael/Desktop/prepare5/antdfront/src/components/PageLoading/index')
+          LoadingComponent: require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/src/components/PageLoading/index')
             .default,
         })
       : require('../404').default,
@@ -196,7 +196,7 @@ const routes = [
   {
     component: () =>
       React.createElement(
-        require('/Users/Michael/Desktop/prepare5/antdfront/node_modules/umi-build-dev/lib/plugins/404/NotFound.js')
+        require('/Users/Michael/Desktop/Practice/React/antd-ts/antdfront/node_modules/_umi-build-dev@1.17.1@umi-build-dev/lib/plugins/404/NotFound.js')
           .default,
         { pagesPath: 'src/pages', hasRoutesInConfig: true },
       ),
