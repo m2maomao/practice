@@ -9,8 +9,8 @@ import { enthusiasm } from './reducers/index';
 import { StoreState } from './types/index';
 
 const store = createStore<StoreState>(enthusiasm, {
-    enthusiasmLevel: 1,
-    languageName: 'TypeScript'
+    languageName: 'TypeScript',
+    enthusiasmLevel: 1
 })
 
 ReactDOM.render(
