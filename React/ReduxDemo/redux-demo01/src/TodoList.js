@@ -3,6 +3,7 @@ import 'antd/dist/antd.css'
 import { Input, Button, List } from 'antd'
 import store from './store'
 import {CHANGE_VALUE, ADD_ITEM, DELETE_ITEM} from './store/actionTypes'
+import { changeValueAction } from './store/actionCreators'
 
 class TodoList extends Component { // ccc
     constructor(props) {
@@ -10,10 +11,7 @@ class TodoList extends Component { // ccc
        this.state = store.getState()
     }
     changeInputValue = (e) => {
-        const action = {
-            type: CHANGE_VALUE,
-            value: e.target.value
-        }
+        const action = changeValueAction(e.target.value)
         store.dispatch(action)
         store.subscribe(this.storeChange)
     }
