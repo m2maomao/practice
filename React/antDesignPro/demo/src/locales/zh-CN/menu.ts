@@ -1,4 +1,6 @@
 export default {
+  'menu.input': 'input',
+  'menu.login1': '自定义登陆页面',
   'menu.welcome': '欢迎',
   'menu.more-blocks': '更多区块',
   'menu.home': '首页',

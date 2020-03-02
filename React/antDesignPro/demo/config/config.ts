@@ -89,6 +89,17 @@ export default {
       ],
     },
     {
+      path: '/user1',
+      component: '../layouts/UserLayout',
+      routes: [
+        {
+          name: 'login1',
+          path: '/user1/login',
+          component: './user1/login'
+        }
+      ]
+    },
+    {
       path: '/',
       component: '../layouts/SecurityLayout',
       routes: [
@@ -115,10 +126,15 @@ export default {
               authority: ['admin'],
             },
             {
+              path: '/list',
               name: 'list.table-list',
               icon: 'table',
-              path: '/list',
               component: './ListTableList',
+            },
+            {
+              path: '/demo/input',
+              name: 'input',
+              component: './demo/input'
             },
             {
               component: './404',
