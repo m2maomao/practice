@@ -15,7 +15,7 @@ const enum Month {
     Mar
 }
 let month = [Month.Jan, Month.Feb]
-console.log(month)
+// console.log(month)
 
 // 枚举类型
 enum E { a, b }
