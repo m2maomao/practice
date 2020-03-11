@@ -13,7 +13,8 @@
 // import './advanced6';
 // import './advanced7';
 
-import './es6/c';
+// import './es6/c';
+import './merge'
 
 let hello : string = 'Hello, Typescript'
 document.querySelectorAll('.app')[0].innerHTML = hello;
