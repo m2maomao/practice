@@ -6,7 +6,7 @@
  * 函数之间兼容：参数多的兼容参数少的
  */
 let s: string = 'a'
-s = null
+// s = null
 
 // 接口兼容性
 interface X {
@@ -44,8 +44,8 @@ let cc = (...args: number[]) => {}
 aa = bb
 aa = cc
 
-bb = cc
-bb = aa
+// bb = cc
+// bb = aa
 cc = aa
 
 // 2.参数类型
