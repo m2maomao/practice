@@ -14,7 +14,8 @@
 // import './advanced7';
 
 // import './es6/c';
-import './merge'
+// import './merge'
+import './libs/index'
 
 let hello : string = 'Hello, Typescript'
 document.querySelectorAll('.app')[0].innerHTML = hello;
