@@ -1,0 +1,12 @@
+{
+    "extends": "../../tsconfig.json", // 可以通过指定一个其他的tsconfig.json文件路径，来继承这个配置文件里的配置，继承来的文件的配置会覆盖当前文件定义的配置。TS在3.2版本开始，支持继承一个来自Node.js包的tsconfig.json配置文件
+    "compilerOptions": { 
+        "outDir": "../../dist/client",
+    },
+    // 一个对象数组，指定要引用的项目
+    "references": [
+        {
+            "path": "../common"
+        }
+    ]
+}
