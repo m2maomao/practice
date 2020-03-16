@@ -1,0 +1,8 @@
+{
+  // 继承
+  "extends": "./tsconfig.base.json",
+  // 排除
+  "exclude": [],
+  // 保存时自动编译
+  "compileOnSave": true
+}
