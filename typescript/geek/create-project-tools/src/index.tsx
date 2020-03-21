@@ -1,11 +1,21 @@
+import React from 'react'
+import ReactDOM from 'react-dom'
 // let hello: string = 'Hello TypeScript'
 // document.querySelectorAll('.app')[0].innerHTML = hello
 
-import React from 'react'
-import ReactDOM from 'react-dom'
-import Hello from './component/demo/Hello'
+// import Hello from './component/demo/Hello';
+// import HelloClass from './component/demo/HelloClass';
+// import HelloHOC from './component/demo/HelloHOC';
+// import HelloHooks from './component/demo/HelloHooks';
+// import App from './component/App'
+import Root from './routers'
 
 ReactDOM.render(
-    <Hello name="Michael!!!" />,
+    // <Hello name="Michael!!!" />,
+    // <HelloClass name="TypeScript" />,
+    // <HelloHOC name="TypeScript" loading={false} />,
+    // <HelloHooks name="TypeScript" />,
+    // <App />,
+    <Root />,
     document.querySelectorAll('.app')[0]
 )
