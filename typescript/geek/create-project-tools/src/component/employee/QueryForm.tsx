@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {Form, Input, Select, Button} from 'antd';
-import { EmployeeRequest, EmployeeResponse } from '../../interface/employee';
+import { EmployeeRequest } from '../../interface/employee';
 
 const {Option} = Select;
 
