@@ -9,6 +9,8 @@ import ReactDOM from 'react-dom'
 // import HelloHooks from './component/demo/HelloHooks';
 // import App from './component/App'
 import Root from './routers'
+import {Provider} from 'react-redux';
+import store from './redux/store'
 
 ReactDOM.render(
     // <Hello name="Michael!!!" />,
@@ -16,6 +18,9 @@ ReactDOM.render(
     // <HelloHOC name="TypeScript" loading={false} />,
     // <HelloHooks name="TypeScript" />,
     // <App />,
-    <Root />,
+    // 作为外层容器
+    <Provider store={store}>
+        <Root />
+    </Provider>,
     document.querySelectorAll('.app')[0]
 )

@@ -1,47 +1,44 @@
 import React, { Component } from 'react';
 import { Table } from 'antd';
 
+import { bindActionCreators, Dispatch} from 'redux';
+import { connect} from 'react-redux';
+
 import './index.css';
 
 import QueryForm from './QueryForm';
 
 import { employeeColumns } from './columns';
-import {EmployeeResponse} from '../../interface/employee';
+import {EmployeeResponse, EmployeeRequest} from '../../interface/employee';
+import {getEmployee} from '../../redux/employee';
 
-interface State {
-    employee: EmployeeResponse
+interface Props {
+    onGetEmployee(params: EmployeeRequest): void;
+    employeeList: EmployeeResponse;
 }
 
-class Employee extends Component<{}, State> {
-    // 初始状态
-    state: State = {
-        employee: undefined
-    }
-    setEmployee = (employee:EmployeeResponse) => {
-        this.setState({
-            employee
-        })
-    }
-    getTotal = () => {
-        // 类型保护
-        let total: number;
-        if (typeof this.state.employee !== 'undefined') {
-            total = this.state.employee.length
-        } else {
-            total = 0
-        }
-        return <p>共有 {total} 名员工</p>
-    }
+class Employee extends Component<Props> {
     render() {
+        const {employeeList, onGetEmployee} = this.props;
+        console.log('this.props', this.props)
         return (
             <>
-                <QueryForm onDataChange={this.setEmployee} />
-                {this.getTotal()}
-                {/* 如何渲染，可以给父组件，也就是Employee绑定状态 */}
-                <Table columns={employeeColumns} dataSource={this.state.employee} className="table" />
+                <QueryForm getData={onGetEmployee} />
+                <Table columns={employeeColumns} dataSource={employeeList} className="table" />
             </>
         )
     }
 }
+// 第一件事：将redux store上的状态映射到组件上的一个状态
+const mapStateToProps = (state: any) => ({
+    employeeList: state.employee.employeeList
+});
+// 第二件事：把更新状态的action也映射到了Employee组件的属性上
+const mapDispatchToProps = (dispatch: Dispatch) => bindActionCreators({
+    onGetEmployee: getEmployee
+}, dispatch);
 
-export default Employee;
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Employee)
