@@ -35,8 +35,9 @@ class Employee extends Component<{}, State> {
     render() {
         return (
             <>
-                <QueryForm onDateChange={this.setEmployee} />
+                <QueryForm onDataChange={this.setEmployee} />
                 {this.getTotal()}
+                {/* 如何渲染，可以给父组件，也就是Employee绑定状态 */}
                 <Table columns={employeeColumns} dataSource={this.state.employee} className="table" />
             </>
         )
